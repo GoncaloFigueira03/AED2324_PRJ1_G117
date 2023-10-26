@@ -12,4 +12,8 @@ add_executable(Code
         source/Reader.cpp
         source/Reader.h
         source/structs.h
-        source/App.cpp)
+        source/App.cpp
+        source/Schedule.h
+        source/Schedule.cpp
+        source/Menu.cpp
+)

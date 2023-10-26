@@ -3,6 +3,7 @@
 #define CODE_APP_H
 
 #include "Reader.h"
+#include "Menu.h"
 
 class App
 {

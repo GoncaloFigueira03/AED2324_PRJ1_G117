@@ -1,18 +1,11 @@
 #include <iostream>
+#include <stdio.h>
 
 #include "App.h"
+#include "Menu.h"
 
-
-int main(int argc, char **argv)
+int main()
 {
-    Reader reader;
-
-    vector<classes_per_uc> cu = reader.read_classes_per_uc();
-
-    vector<classes> c = reader.read_classes();
-
-    vector<students_classes> sc = reader.read_students_classes();
-
     //Menu CLI
     cout << endl;
 
@@ -30,12 +23,18 @@ int main(int argc, char **argv)
 
         int option;
 
+        string txtOption;
+
         cout << endl << "Please type the number corresponding to de wanted option:";
         cin >> option;
         cout << endl;
 
         switch (option) {
             case 1: //View the Schedule of a Student
+                cout << "Insert the Name or Code of the Desired Student:";
+                cin >> txtOption;
+
+                Menu::viewStudentSchedule(txtOption);
                 break;
 
             case 2: //View the Schedule of a Class
@@ -58,7 +57,7 @@ int main(int argc, char **argv)
                 {
                     cout << "========================[OPTIONS]========================" << endl << endl
                          << "1 - Request a Class Schedule Change;" << endl
-                         << "2 - Request a Class Schedule Change;" << endl
+                         << "2 - Request an Uc Change;" << endl
                          << "0 - Go Back." << endl << endl
                          << "========================[OPTIONS]========================" << endl;
 
@@ -96,23 +95,6 @@ int main(int argc, char **argv)
         }
     }
 
-
-    /*
-    for (auto cu_:cu)
-    {
-        cout << cu_.UcCode + ' ' + cu_.ClassCode + '\n';
-    }
-
-    for (auto c_:c)
-    {
-        cout << c_.UcCode + ' ' + c_.ClassCode + ' ' + c_.Type + ' ' + c_.Duration + ' ' + c_.StartHour + ' ' + c_.Weekday + '\n';
-    }
-
-    for (auto sc_:sc)
-    {
-        cout << sc_.UcCode + ' ' + sc_.ClassCode + ' ' + sc_.StudentCode + ' ' + sc_.StudentName + '\n';
-    }
-    */
 
     return 0;
 }
