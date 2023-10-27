@@ -26,6 +26,7 @@ int main()
         int option;
 
         string txtOption;
+        string txtOption2;
 
         cout << endl << "Please type the number corresponding to de wanted option:";
         cin >> option;
@@ -45,6 +46,7 @@ int main()
                 cout << "Insert the Code of the Desired Class:";
                 cin >> txtOption;
 
+                cout << endl;
                 Class::getClassUcCodes(txtOption);
                 Class::printClassSchedulePerUc(Class::getClassUcCodes(txtOption));
                 break;
@@ -56,7 +58,11 @@ int main()
                 cout << "Insert the Code of the Desired Class:";
                 cin >> txtOption;
 
-                Class::printStudentsPerClass(txtOption);
+                cout << "Insert the Code of the Desired Uc:";
+                cin >> txtOption2;
+
+                cout << endl;
+                Class::printStudentsPerClassOfAGivenUc(txtOption, txtOption2);
                 break;
 
             case 5: //View the Students Enrolled in an Uc

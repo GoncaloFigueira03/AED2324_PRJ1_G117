@@ -46,20 +46,13 @@ void Class::printClassSchedulePerUc(vector<std::string> classUcCodes) {
         getClassSchedulePerUc(it_classUcCodes);
     }
 }
-/*
-void Class::printStudentsPerClass(std::string classCode) {
-    vector<string> studentsPerClass;
 
+void Class::printStudentsPerClassOfAGivenUc(std::string classCode, std::string ucCode) {
     vector<students_classes> readStudentsClasses = classReader.read_students_classes();
 
     for (auto it_readStudentsClasses:readStudentsClasses) {
-        if (classCode == it_readStudentsClasses.ClassCode) {
-            studentsPerClass.push_back(it_readStudentsClasses.StudentName);
-            studentsPerClass.push_back(it_readStudentsClasses.StudentCode);
-
-            cout << it_readStudentsClasses.StudentName << endl;
-            cout << it_readStudentsClasses.StudentCode << endl;
+        if (classCode == it_readStudentsClasses.ClassCode && ucCode == it_readStudentsClasses.UcCode) {
+            cout << it_readStudentsClasses.StudentName + ' ' + it_readStudentsClasses.StudentCode << endl;
         }
     }
 }
-*/

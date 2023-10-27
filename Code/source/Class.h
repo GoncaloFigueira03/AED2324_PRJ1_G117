@@ -12,6 +12,7 @@ public:
 
     static void printClassSchedulePerUc(vector<string> classUcCodes);
 
-    //static void printStudentsPerClass(string classCode);
+    static void printStudentsPerClassOfAGivenUc(string classCode, string ucCode);
 };
+
 #endif //CODE_CLASS_H
