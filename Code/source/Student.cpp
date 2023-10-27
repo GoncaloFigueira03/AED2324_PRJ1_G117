@@ -12,7 +12,6 @@ vector<string> StudentSchedule::getStudentClassCodes(std::string studentNameOrCo
         if (studentNameOrCode == it_StudentsClasses.StudentName || studentNameOrCode == it_StudentsClasses.StudentCode) {
             studentClassCodes.push_back(it_StudentsClasses.ClassCode);
 
-            cout << it_StudentsClasses.ClassCode << endl;
         }
     }
 
@@ -28,10 +27,51 @@ vector<string> StudentSchedule::getStudentUcCodes(std::string studentNameOrCode)
         if (studentNameOrCode == it_StudentsClasses.StudentName || studentNameOrCode == it_StudentsClasses.StudentCode) {
             studentUcCodes.push_back(it_StudentsClasses.UcCode);
 
-            cout << it_StudentsClasses.UcCode << endl;
         }
     }
 
     return studentUcCodes;
+}
 
+list<string> StudentSchedule::pairStudentUcCodesWithClassCodes(vector<std::string> ucCodes, vector<std::string> classCodes) {
+    list<string> studentUcCodesWithClassCodes;
+
+    for (auto it_ucCodes:ucCodes) {
+        for (auto it_classCodes:classCodes) {
+            studentUcCodesWithClassCodes.push_back(it_ucCodes + it_classCodes);
+        }
+    }
+
+    return studentUcCodesWithClassCodes;
+}
+
+vector<string> StudentSchedule::getStudentClasses(list<std::string> studentUcCodesWithClassCodes) {
+    vector<string> studentClasses;
+
+    vector<classes> readClasses = studentReader.read_classes();
+
+    for (auto it_studentUcCodesWithClassCodes:studentUcCodesWithClassCodes) {
+        for (auto it_readClasses:readClasses) {
+            if (it_studentUcCodesWithClassCodes == it_readClasses.UcCode + it_readClasses.ClassCode) {
+                studentClasses.push_back(it_readClasses.Weekday + " " + it_readClasses.StartHour + " " + it_readClasses.Duration + " " + it_readClasses.Type);
+
+                cout << it_readClasses.Weekday + " " + it_readClasses.StartHour + " " + it_readClasses.Duration + " " + it_readClasses.Type << endl;
+            }
+        }
+    }
+
+    return studentClasses;
+}
+
+vector<string> StudentSchedule::getStudentSchedule(std::string studentNameOrCode) {
+    vector<string> studentSchedule;
+
+    vector<string> studentClassCodes = getStudentClassCodes(studentNameOrCode);
+    vector<string> studentUcCodes = getStudentUcCodes(studentNameOrCode);
+
+    list<string> studentUcCodesWithClassCodes = pairStudentUcCodesWithClassCodes(studentUcCodes, studentClassCodes);
+
+    vector<string> studentClasses = getStudentClasses(studentUcCodesWithClassCodes);
+
+    return studentClasses;
 }

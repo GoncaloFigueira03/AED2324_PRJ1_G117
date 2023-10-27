@@ -13,6 +13,10 @@ public:
 
     static vector<string> getStudentUcCodes(string studentNameOrCode);
 
+    static list<string> pairStudentUcCodesWithClassCodes(vector<string> ucCodes, vector<string> classCodes);
+
+    static vector<string> getStudentClasses(list<string> studentUcCodesWithClassCodes);
+
     static vector<string> getStudentSchedule(string studentNameOrCode);
 
 };

@@ -35,9 +35,8 @@ int main()
                 cout << "Insert the Name or Code of the Desired Student:";
                 cin >> txtOption;
 
-                StudentSchedule::getStudentClassCodes(txtOption);
-
-                //Menu::viewStudentSchedule(txtOption);
+                StudentSchedule::getStudentSchedule(txtOption);
+                cout << endl;
                 break;
 
             case 2: //View the Schedule of a Class
