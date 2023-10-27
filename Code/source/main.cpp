@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <stdio.h>
 
@@ -6,7 +5,6 @@
 #include "Menu.h"
 #include "Student.h"
 #include "Class.h"
-#include "Uc.h"
 
 int main()
 {
@@ -48,6 +46,7 @@ int main()
                 cout << "Insert the Code of the Desired Class:";
                 cin >> txtOption;
 
+                cout << endl;
                 Class::getClassUcCodes(txtOption);
                 Class::printClassSchedulePerUc(Class::getClassUcCodes(txtOption));
                 break;
@@ -59,14 +58,14 @@ int main()
                 cout << "Insert the Code of the Desired Class:";
                 cin >> txtOption;
 
-                //Class::printStudentsPerClass(txtOption);
+                cout << "Insert the Code of the Desired Uc:";
+                cin >> txtOption2;
+
+                cout << endl;
+                Class::printStudentsPerClassOfAGivenUc(txtOption, txtOption2);
                 break;
 
             case 5: //View the Students Enrolled in an Uc
-                cout << "Insert the Code of the Desired Uc:";
-                cin >> txtOption;
-
-                Uc::printStudentsInAUc(txtOption);
                 break;
 
             case 6: //Enroll a New Student
