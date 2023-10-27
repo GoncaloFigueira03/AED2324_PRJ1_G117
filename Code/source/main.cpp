@@ -1,9 +1,10 @@
 #include <iostream>
-#include <stdio.h>
 
 #include "App.h"
 #include "Menu.h"
 #include "Student.h"
+#include "Class.h"
+#include "Uc.h"
 
 int main()
 {
@@ -25,6 +26,7 @@ int main()
         int option;
 
         string txtOption;
+        string txtOption2;
 
         cout << endl << "Please type the number corresponding to de wanted option:";
         cin >> option;
@@ -46,9 +48,22 @@ int main()
                 break;
 
             case 4: //View the Students Enrolled in a Class of a given Uc
+                cout << "Insert the Code of the Desired Class:";
+                cin >> txtOption;
+
+                cout << "Insert the Code of the Desired Uc:";
+                cin >> txtOption2;
+
+                Class::printStudentsPerClassOfAGivenUc(txtOption, txtOption2);
+                cout << endl;
                 break;
 
             case 5: //View the Students Enrolled in an Uc
+                cout << "Insert the Code of the Desired Uc:";
+                cin >> txtOption;
+
+                Uc::printStudentsInAUc(txtOption);
+                cout << endl;
                 break;
 
             case 6: //Enroll a New Student
