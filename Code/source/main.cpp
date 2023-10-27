@@ -1,10 +1,8 @@
 #include <iostream>
-#include <stdio.h>
 
-#include "App.h"
-#include "Menu.h"
 #include "Student.h"
 #include "Class.h"
+#include "Uc.h"
 
 int main()
 {
@@ -38,8 +36,6 @@ int main()
                 cin >> txtOption;
 
                 StudentSchedule::getStudentClassCodes(txtOption);
-
-                //Menu::viewStudentSchedule(txtOption);
                 break;
 
             case 2: //View the Schedule of a Class
@@ -63,9 +59,15 @@ int main()
 
                 cout << endl;
                 Class::printStudentsPerClassOfAGivenUc(txtOption, txtOption2);
+                cout << endl;
                 break;
 
             case 5: //View the Students Enrolled in an Uc
+                cout << "Insert the Code of the Desired Uc:";
+                cin >> txtOption;
+
+                Uc::printStudentsInAUc(txtOption);
+                cout << endl;
                 break;
 
             case 6: //Enroll a New Student

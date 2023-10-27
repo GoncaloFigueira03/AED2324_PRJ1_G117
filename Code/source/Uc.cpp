@@ -42,8 +42,8 @@ void Uc::printStudentsInAUc(string ucCode) {
     for (auto it_readStudentInAUc:readStudentInAUc) {
         if (it_readStudentInAUc.UcCode == ucCode) {
             studentsInAUc.push_back(it_readStudentInAUc.StudentName);
-        }
 
-        cout << it_readStudentInAUc.StudentName << endl;
+            cout << it_readStudentInAUc.StudentName << endl;
+        }
     }
 }
