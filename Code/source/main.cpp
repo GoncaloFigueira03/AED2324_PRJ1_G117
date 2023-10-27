@@ -3,6 +3,7 @@
 
 #include "App.h"
 #include "Menu.h"
+#include "Student.h"
 
 int main()
 {
@@ -34,7 +35,9 @@ int main()
                 cout << "Insert the Name or Code of the Desired Student:";
                 cin >> txtOption;
 
-                Menu::viewStudentSchedule(txtOption);
+                StudentSchedule::getStudentClassCodes(txtOption);
+
+                //Menu::viewStudentSchedule(txtOption);
                 break;
 
             case 2: //View the Schedule of a Class

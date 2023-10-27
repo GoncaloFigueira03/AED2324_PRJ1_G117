@@ -16,4 +16,6 @@ add_executable(Code
         source/Schedule.h
         source/Schedule.cpp
         source/Menu.cpp
+        source/Student.cpp
+        source/Uc.cpp
 )
