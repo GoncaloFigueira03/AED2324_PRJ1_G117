@@ -45,17 +45,15 @@ list<string> StudentSchedule::pairStudentUcCodesWithClassCodes(vector<std::strin
     return studentUcCodesWithClassCodes;
 }
 
-vector<string> StudentSchedule::getStudentClasses(list<std::string> studentUcCodesWithClassCodes) {
-    vector<string> studentClasses;
+vector<classes> StudentSchedule::getStudentClasses(list<std::string> studentUcCodesWithClassCodes) {
+    vector<classes> studentClasses;
 
     vector<classes> readClasses = studentReader.read_classes();
 
     for (auto it_studentUcCodesWithClassCodes:studentUcCodesWithClassCodes) {
         for (auto it_readClasses:readClasses) {
             if (it_studentUcCodesWithClassCodes == it_readClasses.UcCode + it_readClasses.ClassCode) {
-                studentClasses.push_back(it_readClasses.Weekday + " " + it_readClasses.StartHour + " " + it_readClasses.Duration + " " + it_readClasses.Type);
-
-                cout << it_readClasses.Weekday + " " + it_readClasses.StartHour + " " + it_readClasses.Duration + " " + it_readClasses.Type << endl;
+                studentClasses.push_back(it_readClasses);
             }
         }
     }
@@ -63,15 +61,15 @@ vector<string> StudentSchedule::getStudentClasses(list<std::string> studentUcCod
     return studentClasses;
 }
 
-vector<string> StudentSchedule::getStudentSchedule(std::string studentNameOrCode) {
-    vector<string> studentSchedule;
+vector<classes> StudentSchedule::getStudentSchedule(std::string studentNameOrCode) {
+    vector<classes> studentSchedule;
 
     vector<string> studentClassCodes = getStudentClassCodes(studentNameOrCode);
     vector<string> studentUcCodes = getStudentUcCodes(studentNameOrCode);
 
     list<string> studentUcCodesWithClassCodes = pairStudentUcCodesWithClassCodes(studentUcCodes, studentClassCodes);
 
-    vector<string> studentClasses = getStudentClasses(studentUcCodesWithClassCodes);
+    vector<classes> studentClasses = getStudentClasses(studentUcCodesWithClassCodes);
 
     return studentClasses;
 }

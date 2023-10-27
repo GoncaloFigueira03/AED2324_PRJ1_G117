@@ -15,9 +15,9 @@ public:
 
     static list<string> pairStudentUcCodesWithClassCodes(vector<string> ucCodes, vector<string> classCodes);
 
-    static vector<string> getStudentClasses(list<string> studentUcCodesWithClassCodes);
+    static vector<classes> getStudentClasses(list<string> studentUcCodesWithClassCodes);
 
-    static vector<string> getStudentSchedule(string studentNameOrCode);
+    static vector<classes> getStudentSchedule(string studentNameOrCode);
 
 };
 #endif //CODE_STUDENT_H

@@ -11,14 +11,12 @@
 
 using namespace std;
 
-struct classes_per_uc
-{
+struct classes_per_uc {
     string UcCode;
     string ClassCode;
 };
 
-struct classes
-{
+struct classes {
     string ClassCode;
     string UcCode;
     string Weekday;
@@ -27,8 +25,7 @@ struct classes
     string Type;
 };
 
-struct students_classes
-{
+struct students_classes {
     string StudentCode;
     string StudentName;
     string UcCode;
