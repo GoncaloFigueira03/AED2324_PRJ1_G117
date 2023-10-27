@@ -4,6 +4,7 @@
 #include "App.h"
 #include "Menu.h"
 #include "Student.h"
+#include "Class.h"
 
 int main()
 {
@@ -41,12 +42,21 @@ int main()
                 break;
 
             case 2: //View the Schedule of a Class
+                cout << "Insert the Code of the Desired Class:";
+                cin >> txtOption;
+
+                Class::getClassUcCodes(txtOption);
+                Class::printClassSchedulePerUc(Class::getClassUcCodes(txtOption));
                 break;
 
             case 3: //View the Schedule of an Uc
                 break;
 
             case 4: //View the Students Enrolled in a Class of a given Uc
+                cout << "Insert the Code of the Desired Class:";
+                cin >> txtOption;
+
+                Class::printStudentsPerClass(txtOption);
                 break;
 
             case 5: //View the Students Enrolled in an Uc
