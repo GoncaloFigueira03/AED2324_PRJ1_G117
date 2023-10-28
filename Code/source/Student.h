@@ -19,5 +19,9 @@ public:
 
     static vector<classes> getStudentSchedule(string studentNameOrCode);
 
+    static bool isTClassOverTPOrPL(classes tClass, classes secondClass);
+
+    static void isTClassOverTPOrPLV2(classes tClass, vector<classes> secondClasses, vector<classes> studentClassesFixed);
+
 };
 #endif //CODE_STUDENT_H

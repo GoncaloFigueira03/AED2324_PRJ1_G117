@@ -45,8 +45,28 @@ list<string> StudentSchedule::pairStudentUcCodesWithClassCodes(vector<std::strin
     return studentUcCodesWithClassCodes;
 }
 
+void StudentSchedule::isTClassOverTPOrPLV2(classes tClass, vector<classes> secondClasses, vector<classes> studentClassesFixed) {
+    for (auto it_secondClasses:secondClasses) {
+        if (tClass.Weekday == it_secondClasses.Weekday && ((stoi(tClass.StartHour) + stoi(tClass.Duration)) > stoi(it_secondClasses.StartHour))) {
+            break;
+        }
+        else {
+            studentClassesFixed.push_back(tClass);
+        }
+    }
+}
+
+bool StudentSchedule::isTClassOverTPOrPL(classes tClass, classes secondClass) {
+    if (tClass.Weekday == secondClass.Weekday &&
+        ((stoi(tClass.StartHour) + stoi(tClass.Duration)) > stoi(secondClass.StartHour))) {
+        return true;
+    }
+
+    return false;
+}
 vector<classes> StudentSchedule::getStudentClasses(list<std::string> studentUcCodesWithClassCodes) {
     vector<classes> studentClasses;
+    vector<classes> studentClassesFixed;
 
     vector<classes> readClasses = studentReader.read_classes();
 
@@ -58,12 +78,38 @@ vector<classes> StudentSchedule::getStudentClasses(list<std::string> studentUcCo
         }
     }
 
-    return studentClasses;
+    for (auto it_studentClasses:studentClasses) {
+        if (it_studentClasses.Type == "T") {
+            for (auto it_studentClasses2:studentClasses) {
+                if (it_studentClasses2.Type == "PL" || it_studentClasses2.Type == "TP") {
+                    if (isTClassOverTPOrPL(it_studentClasses, it_studentClasses2)) {
+                        break;
+                    }
+                }
+                else {
+                    studentClassesFixed.push_back(it_studentClasses);
+                }
+            }
+        }
+        else {
+            studentClassesFixed.push_back(it_studentClasses);
+        }
+    }
+
+/*
+    for (auto it_studentClasses:studentClasses) {
+        if (it_studentClasses.Type == "T") {
+            StudentSchedule::isTClassOverTPOrPLV2(it_studentClasses, studentClasses, studentClassesFixed);
+        }
+        else
+            studentClassesFixed.push_back(it_studentClasses);
+    }
+*/
+
+    return studentClassesFixed;
 }
 
-vector<classes> StudentSchedule::getStudentSchedule(std::string studentNameOrCode) {
-    vector<classes> studentSchedule;
-
+vector<classes> StudentSchedule::getStudentSchedule(string studentNameOrCode) {
     vector<string> studentClassCodes = getStudentClassCodes(studentNameOrCode);
     vector<string> studentUcCodes = getStudentUcCodes(studentNameOrCode);
 

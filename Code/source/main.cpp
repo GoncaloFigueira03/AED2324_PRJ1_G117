@@ -5,6 +5,7 @@
 #include "Student.h"
 #include "Class.h"
 #include "Uc.h"
+#include "SchedulePrinter.h"
 
 int main()
 {
@@ -37,7 +38,7 @@ int main()
                 cout << "Insert the Name or Code of the Desired Student:";
                 cin >> txtOption;
 
-                StudentSchedule::getStudentSchedule(txtOption);
+                SchedulePrinter::printStudentSchedule(txtOption);
                 cout << endl;
                 break;
 
@@ -111,7 +112,4 @@ int main()
                 cout << "Invalid Option!" << endl << endl;
         }
     }
-
-
-    return 0;
 }
