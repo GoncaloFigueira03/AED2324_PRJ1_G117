@@ -32,4 +32,10 @@ struct students_classes {
     string ClassCode;
 };
 
+struct classTime {
+    string weekday;
+    string startHour;
+    string duration;
+};
+
 #endif

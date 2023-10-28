@@ -6,10 +6,14 @@ Reader scheduleReader;
 vector<vector<string>> SchedulePrinter::studentScheduleBuilder(string studentCode) {
     vector<vector<string>> printableSchedule(5, vector<string>(32));
 
+    vector<classTime> = Class::getClassTimes();
+
     vector<classes> studentSchedule = StudentSchedule::getStudentSchedule(studentCode);
 
     for (auto it_studentSchedule:studentSchedule) {
+        if (it_studentSchedule.Weekday == "Monday"){
 
+        }
     }
 }
 
