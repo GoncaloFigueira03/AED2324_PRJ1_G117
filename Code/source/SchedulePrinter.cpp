@@ -29,7 +29,7 @@ classTimeIndexes SchedulePrinter::getClassTimes(classes classTimes) {
         classTimeWeekday.pop_front();
     }
 
-    classTimeIndexes.durationIndex = stoi(classTimes.Duration)*4;
+    classTimeIndexes.durationIndex = classTimes.Duration;
 
     return classTimeIndexes;
 }
@@ -42,7 +42,7 @@ vector<vector<string>> SchedulePrinter::studentScheduleBuilder(string studentNam
     for (auto it_studentSchedule:studentSchedule) {
         classTimeIndexes classTimes = getClassTimes(it_studentSchedule);
 
-        if(classTimes.durationIndex == 4) {
+        if(classTimes.durationIndex == "1") {
             printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex] = ' ' + it_studentSchedule.UcCode + "  ";
             printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 1] = ' ' + it_studentSchedule.ClassCode + "   ";
             if(it_studentSchedule.Type == "PL" || it_studentSchedule.Type == "TP")
@@ -50,7 +50,7 @@ vector<vector<string>> SchedulePrinter::studentScheduleBuilder(string studentNam
             else
                 printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 2] = ' ' + it_studentSchedule.Type + "         ";
         }
-        else if(classTimes.durationIndex == 6) {
+        else if(classTimes.durationIndex == "1.5") {
             printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex] = "           ";
             printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 1] = ' ' + it_studentSchedule.UcCode + "  ";
             printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 2] = ' ' + it_studentSchedule.ClassCode + "   ";
@@ -60,7 +60,7 @@ vector<vector<string>> SchedulePrinter::studentScheduleBuilder(string studentNam
                 printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 3] = ' ' + it_studentSchedule.Type + "         ";
             printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 4] = "           ";
         }
-        else if(classTimes.durationIndex == 8) {
+        else if(classTimes.durationIndex == "2") {
             printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex] = "           ";
             printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 1] = "           ";
             printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 2] = ' ' + it_studentSchedule.UcCode + "  ";

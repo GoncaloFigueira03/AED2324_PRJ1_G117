@@ -35,7 +35,7 @@ struct students_classes {
 struct classTimeIndexes {
     int weekdayIndex;
     int startHourIndex;
-    int durationIndex;
+    string durationIndex;
 };
 
 #endif
