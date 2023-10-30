@@ -10,7 +10,7 @@ class Uc{
 public:
     static vector<string> getUcClassCodes(string ucCode);
 
-    static vector<string> getUcSchedule(string ucCode);
+    static vector<classes> getUcSchedule(string ucCode);
 
     static void printStudentsInAUc(string ucCode);
 };

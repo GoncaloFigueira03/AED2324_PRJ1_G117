@@ -11,19 +11,19 @@
 
 using namespace std;
 
-class SchedulePrinter{
+class SchedulePrinter {
 public:
     static classTimeIndexes getClassTimes(classes classTimes);
 
-    static vector<vector<string>> studentScheduleBuilder(string studentNameOrCode);
-
-    static vector<vector<string>> classScheduleBuilder(string classCode);
-
-    static vector<vector<string>> ucScheduleBuilder(string ucCode);
+    static vector<vector<string>> scheduleBuilder(vector<classes> classesSchedule);
 
     static void printSchedule(vector<vector<string>> schedule);
 
     static void printStudentSchedule(string studentNameOrCode);
+
+    static void printClassSchedule(string classCode);
+
+    static void printUcSchedule(string ucCode);
 };
 
 #endif //CODE_SCHEDULEPRINTER_H

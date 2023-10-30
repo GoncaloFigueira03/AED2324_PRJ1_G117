@@ -17,17 +17,14 @@ vector<string> Uc::getUcClassCodes(std::string ucCode) {
     return ucClassCodes;
 }
 
-vector<string> Uc::getUcSchedule(std::string ucCode) {
-    vector<string> ucSchedule;
+vector<classes> Uc::getUcSchedule(std::string ucCode) {
+    vector<classes> ucSchedule;
 
     vector<classes> readClasses = ucReader.read_classes();
 
     for (auto it_readClasses:readClasses) {
         if (it_readClasses.UcCode == ucCode) {
-            ucSchedule.push_back(it_readClasses.Weekday);
-            ucSchedule.push_back(it_readClasses.StartHour);
-            ucSchedule.push_back(it_readClasses.Duration);
-            ucSchedule.push_back(it_readClasses.Type);
+            ucSchedule.push_back(it_readClasses);
         }
     }
 

@@ -8,9 +8,9 @@ class Class{
 public:
     static vector<string> getClassUcCodes(string classCode);
 
-    static vector<string> getClassSchedulePerUc(string classUcCode);
+    static classes getClassSchedulePerUc(string classUcCode);
 
-    static void printClassSchedulePerUc(vector<string> classUcCodes);
+    static vector<classes> getClassSchedule(string classUcCodes);
 
     static void printStudentsPerClassOfAGivenUc(string classCode, string ucCode);
 };

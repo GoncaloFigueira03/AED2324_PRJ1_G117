@@ -43,9 +43,17 @@ int main()
                 break;
 
             case 2: //View the Schedule of a Class
+                cout << "Insert the Code of the Desired Class:";
+                cin >> txtOption;
+
+                SchedulePrinter::printClassSchedule(txtOption);
                 break;
 
             case 3: //View the Schedule of an Uc
+                cout << "Insert the Code of the Desired Uc:";
+                cin >> txtOption;
+
+                SchedulePrinter::printUcSchedule(txtOption);
                 break;
 
             case 4: //View the Students Enrolled in a Class of a given Uc

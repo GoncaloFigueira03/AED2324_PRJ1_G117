@@ -1,8 +1,6 @@
 
 #include "SchedulePrinter.h"
 
-Reader scheduleReader;
-
 classTimeIndexes SchedulePrinter::getClassTimes(classes classTimes) {
     list<string> classTimeStamp = {"8", " ", "8.5", " ", "9", " ", "9.5", " ", "10", " ", "10.5", " ",
                                    "11", " ", "11.5", " ", "12", " ", "12.5", " ", "13", " ", "13.5", " ",
@@ -34,41 +32,40 @@ classTimeIndexes SchedulePrinter::getClassTimes(classes classTimes) {
     return classTimeIndexes;
 }
 
-vector<vector<string>> SchedulePrinter::studentScheduleBuilder(string studentNameOrCode) {
+vector<vector<string>> SchedulePrinter::scheduleBuilder(vector<classes> classesSchedule) {
     vector<vector<string>> printableSchedule(6, vector<string>(47));
 
-    vector<classes> studentSchedule = StudentSchedule::getStudentSchedule(studentNameOrCode);
+    for (auto it_classesSchedule:classesSchedule) {
+        classTimeIndexes classTimes = getClassTimes(it_classesSchedule);
 
-    for (auto it_studentSchedule:studentSchedule) {
-        classTimeIndexes classTimes = getClassTimes(it_studentSchedule);
-
-        if(classTimes.durationIndex == "1") {
-            printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex] = ' ' + it_studentSchedule.UcCode + "  ";
-            printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 1] = ' ' + it_studentSchedule.ClassCode + "   ";
-            if(it_studentSchedule.Type == "PL" || it_studentSchedule.Type == "TP")
-                printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 2] = ' ' + it_studentSchedule.Type + "        ";
+        if (classTimes.durationIndex == "1") {
+            printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex] = ' ' + it_classesSchedule.UcCode + "  ";
+            printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 1] = ' ' + it_classesSchedule.ClassCode + "   ";
+            if (it_classesSchedule.Type == "PL" || it_classesSchedule.Type == "TP")
+                printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 2] = ' ' + it_classesSchedule.Type + "        ";
             else
-                printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 2] = ' ' + it_studentSchedule.Type + "         ";
-        }
-        else if(classTimes.durationIndex == "1.5") {
+                printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 2] = ' ' + it_classesSchedule.Type + "         ";
+        } else if (classTimes.durationIndex == "1.5") {
             printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex] = "           ";
-            printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 1] = ' ' + it_studentSchedule.UcCode + "  ";
-            printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 2] = ' ' + it_studentSchedule.ClassCode + "   ";
-            if(it_studentSchedule.Type == "PL" || it_studentSchedule.Type == "TP")
-                printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 3] = ' ' + it_studentSchedule.Type + "        ";
+            if (it_classesSchedule.UcCode == "UP001")
+                printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 1] = ' ' + it_classesSchedule.UcCode + "     ";
             else
-                printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 3] = ' ' + it_studentSchedule.Type + "         ";
+                printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 1] = ' ' + it_classesSchedule.UcCode + "  ";
+            printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 2] = ' ' + it_classesSchedule.ClassCode + "   ";
+            if (it_classesSchedule.Type == "PL" || it_classesSchedule.Type == "TP")
+                printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 3] = ' ' + it_classesSchedule.Type + "        ";
+            else
+                printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 3] = ' ' + it_classesSchedule.Type + "         ";
             printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 4] = "           ";
-        }
-        else if(classTimes.durationIndex == "2") {
+        } else if (classTimes.durationIndex == "2") {
             printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex] = "           ";
             printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 1] = "           ";
-            printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 2] = ' ' + it_studentSchedule.UcCode + "  ";
-            printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 3] = ' ' + it_studentSchedule.ClassCode + "   ";
-            if(it_studentSchedule.Type == "PL" || it_studentSchedule.Type == "TP")
-                printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 4] = ' ' + it_studentSchedule.Type + "        ";
+            printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 2] = ' ' + it_classesSchedule.UcCode + "  ";
+            printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 3] = ' ' + it_classesSchedule.ClassCode + "   ";
+            if (it_classesSchedule.Type == "PL" || it_classesSchedule.Type == "TP")
+                printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 4] = ' ' + it_classesSchedule.Type + "        ";
             else
-                printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 4] = ' ' + it_studentSchedule.Type + "         ";
+                printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 4] = ' ' + it_classesSchedule.Type + "         ";
             printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 5] = "           ";
             printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 6] = "           ";
         }
@@ -79,7 +76,7 @@ vector<vector<string>> SchedulePrinter::studentScheduleBuilder(string studentNam
 
 void SchedulePrinter::printSchedule(vector<vector<string>> schedule) {
 
-    // Print the schedule
+    // Print the Time Slots
     string startTime = "08:00";
 
     for (int i = 1; i <= 46; ++i) {
@@ -89,7 +86,7 @@ void SchedulePrinter::printSchedule(vector<vector<string>> schedule) {
             continue;
         }
 
-        //manipulate time
+        // Manipulate Time
         int hour = (startTime[0] - '0') * 10 + (startTime[1] - '0');
         int minute = (startTime[3] - '0') * 10 + (startTime[4] - '0');
 
@@ -109,7 +106,8 @@ void SchedulePrinter::printSchedule(vector<vector<string>> schedule) {
         startTime = end.str();
     }
 
-    // Print the schedule
+    // Print the Schedule
+    cout << endl;
     cout << "///////////////|  Monday   |  Tuesday  | Wednesday | Thursday  |  Friday" << endl;
     cout << "---------------|-----------|-----------|-----------|-----------|-----------|" << std::endl;
 
@@ -126,8 +124,23 @@ void SchedulePrinter::printSchedule(vector<vector<string>> schedule) {
         }
         cout << endl;
     }
+    cout << endl;
 }
 
-void SchedulePrinter::printStudentSchedule(string studentNameOrCode){
-    printSchedule(studentScheduleBuilder(studentNameOrCode));
+void SchedulePrinter::printStudentSchedule(string studentNameOrCode) {
+    vector<classes> studentSchedule = StudentSchedule::getStudentSchedule(studentNameOrCode);
+
+    printSchedule(scheduleBuilder(studentSchedule));
+}
+
+void SchedulePrinter::printClassSchedule(string classCode) {
+    vector<classes> classSchedule = Class::getClassSchedule(classCode);
+
+    printSchedule(scheduleBuilder(classSchedule));
+}
+
+void SchedulePrinter::printUcSchedule(std::string ucCode) {
+    vector<classes> ucSchedule = Uc::getUcSchedule(ucCode);
+
+    printSchedule(scheduleBuilder(ucSchedule));
 }
