@@ -3,6 +3,42 @@
 
 Reader classReader;
 
+bool Class::isClass(std::string classCode) {
+    vector<classes> readClasses = classReader.read_classes();
+
+    for (auto it_readClasses:readClasses) {
+        if (classCode == it_readClasses.ClassCode) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+void Class::printStudentsInAClass(std::string classCode) {
+    vector<students_classes> readStudentsClasses = classReader.read_students_classes();
+
+    stack<students_classes> studentsClassesStack;
+
+    for (auto it_readStudentsClasses:readStudentsClasses) {
+        if (classCode == it_readStudentsClasses.ClassCode) {
+            if (studentsClassesStack.empty())
+                studentsClassesStack.push(it_readStudentsClasses);
+
+            else if (studentsClassesStack.top().StudentCode != it_readStudentsClasses.StudentCode ) {
+                studentsClassesStack.push(it_readStudentsClasses);
+            }
+        }
+    }
+
+    cout << endl;
+
+    while (!studentsClassesStack.empty()) {
+        cout << studentsClassesStack.top().StudentName + ' ' + studentsClassesStack.top().StudentCode << endl;
+        studentsClassesStack.pop();
+    }
+}
+
 vector<string> Class::getClassUcCodes(string classCode) {
     vector<string> classUcCodes;
 

@@ -5,20 +5,41 @@
 #include "structs.h"
 #include "Reader.h"
 #include "App.h"
+#include "SchedulePrinter.h"
 
 #include <stdio.h>
 #include <iostream>
 
+using namespace std;
+
 class Menu {
 public:
-    // Menu options (Work in progress)
-    static void viewStudentSchedule(string studentNameOrCode);
+    // Initializes the Menu
+    static void initMenu();
 
-    // Menu options (Work in progress)
-    static void viewClassSchedule(string classCode);
+    // Display menu Option
+    static void displayMenu();
 
-    // Menu options (Work in progress)
-    static void viewUcSchedule(string ucCode);
+    // Add menu Option
+    static void addMenu();
+
+    // Remove menu Option
+    static void removeMenu();
+
+    // Change menu Option
+    static void changeMenu();
+
+    // Requests menu Option
+    static void requestsMenu();
+
+    // Student menu Option
+    static void studentMenu();
+
+    // Class menu Option
+    static void classMenu();
+
+    // Uc menu Option
+    static void ucMenu();
 };
 
 #endif //CODE_MENU_H

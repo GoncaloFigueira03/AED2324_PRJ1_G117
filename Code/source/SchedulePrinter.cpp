@@ -126,7 +126,6 @@ void SchedulePrinter::printSchedule(vector<vector<string>> schedule) {
         }
         cout << endl;
     }
-    cout << endl;
 }
 
 void SchedulePrinter::printStudentSchedule(string studentNameOrCode) {

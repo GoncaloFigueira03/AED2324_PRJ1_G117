@@ -8,6 +8,12 @@
 
 class Class {
 public:
+    // Is Class a Real Class
+    static bool isClass(string classCode);
+
+    // Gets Students in a Given Class
+    static void printStudentsInAClass(string classCode);
+
     // Gets the Uc Codes of a Given Class
     static vector<string> getClassUcCodes(string classCode);
 

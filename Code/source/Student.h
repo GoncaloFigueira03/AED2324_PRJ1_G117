@@ -8,6 +8,9 @@
 
 class StudentSchedule {
 public:
+    // Is Student a Real Student
+    static bool isStudent(string studentNameOrCode);
+
     // Gets the Class Codes of a Student
     static vector<string> getStudentClassCodes(string studentNameOrCode);
 
@@ -22,6 +25,12 @@ public:
 
     // Outputs a Vector with the Final Schedule of a Student (without overlapping classes)
     static vector<classes> getStudentSchedule(string studentNameOrCode);
+
+    // Prints the Student Classes
+    static void printStudentClasses(string studentNameOrCode);
+
+    // Prints the Student Ucs
+    static void printStudentUcs(string studentNameOrCode);
 
     // Checks if there are Overlapping T Classes with PL or TP Classes
     static bool isTClassOverTPOrPL(classes tClass, classes secondClass);

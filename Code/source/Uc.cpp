@@ -3,21 +3,19 @@
 
 Reader ucReader;
 
-vector<string> Uc::getUcClassCodes(std::string ucCode) {
-    vector<string> ucClassCodes;
+bool Uc::isUc(string ucCode) {
+    vector<classes_per_uc> readUcs = ucReader.read_classes_per_uc();
 
-    vector<classes_per_uc> readClassesPerUc = ucReader.read_classes_per_uc();
-
-    for (auto it_readClassesPerUc:readClassesPerUc) {
-        if (it_readClassesPerUc.UcCode == ucCode) {
-            ucClassCodes.push_back(it_readClassesPerUc.ClassCode);
+    for (auto it_readUcs:readUcs) {
+        if (ucCode == it_readUcs.UcCode) {
+            return true;
         }
     }
 
-    return ucClassCodes;
+    return false;
 }
 
-vector<classes> Uc::getUcSchedule(std::string ucCode) {
+vector<classes> Uc::getUcSchedule(string ucCode) {
     vector<classes> ucSchedule;
 
     vector<classes> readClasses = ucReader.read_classes();
@@ -32,15 +30,18 @@ vector<classes> Uc::getUcSchedule(std::string ucCode) {
 }
 
 void Uc::printStudentsInAUc(string ucCode) {
-    vector<string> studentsInAUc;
-
     vector<students_classes> readStudentInAUc = ucReader.read_students_classes();
+
+    stack<students_classes> studentsInAUcStack;
 
     for (auto it_readStudentInAUc:readStudentInAUc) {
         if (it_readStudentInAUc.UcCode == ucCode) {
-            studentsInAUc.push_back(it_readStudentInAUc.StudentName);
-
-            cout << it_readStudentInAUc.StudentName << endl;
+            studentsInAUcStack.push(it_readStudentInAUc);
         }
+    }
+
+    while (!studentsInAUcStack.empty()) {
+        cout << studentsInAUcStack.top().StudentCode + ' ' + studentsInAUcStack.top().StudentName << endl;
+        studentsInAUcStack.pop();
     }
 }

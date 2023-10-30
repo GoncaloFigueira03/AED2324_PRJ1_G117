@@ -6,10 +6,12 @@
 #include "App.h"
 #include "Class.h"
 
+using namespace std;
+
 class Uc {
 public:
-    // Gets the Class Codes of a Given Uc
-    static vector<string> getUcClassCodes(string ucCode);
+    // Is Uc a Real Uc
+    static bool isUc(string ucCode);
 
     // Gets the Schedule of a Given Uc
     static vector<classes> getUcSchedule(string ucCode);
