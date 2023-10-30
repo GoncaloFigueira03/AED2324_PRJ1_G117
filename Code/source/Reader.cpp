@@ -1,98 +1,95 @@
 
 #include "Reader.h"
 
-vector<classes_per_uc> Reader::read_classes_per_uc()
-{
-    vector<classes_per_uc> v;
-    ifstream fi;
-    fi.open("../classes_per_uc.csv");
-    if (!fi.is_open())
-    {
-        return v;
+vector<classes_per_uc> Reader::read_classes_per_uc() {
+    vector<classes_per_uc> classesPerUc;
+
+    ifstream fileClassesPerUc;
+
+    fileClassesPerUc.open("../classes_per_uc.csv");
+    if (!fileClassesPerUc.is_open()) {
+        return classesPerUc;
     }
 
     string buffer;
-    getline(fi, buffer, '\n');
-    while (getline(fi, buffer, '\n'))
-    {
+    getline(fileClassesPerUc, buffer, '\n');
+    while (getline(fileClassesPerUc, buffer, '\n')) {
         stringstream line(buffer);
-        string buf;
-        classes_per_uc p;
-        getline(line, buf, ',');
-        p.UcCode = buf;
-        getline(line, buf, '\r');
-        p.ClassCode = buf;
-        v.push_back(p);
+        string newBuffer;
+        classes_per_uc newClassPerUc;
+        getline(line, newBuffer, ',');
+        newClassPerUc.UcCode = newBuffer;
+        getline(line, newBuffer, '\r');
+        newClassPerUc.ClassCode = newBuffer;
+        classesPerUc.push_back(newClassPerUc);
     }
 
-    fi.close();
-    return v;
+    fileClassesPerUc.close();
+    return classesPerUc;
 }
 
-vector<classes> Reader::read_classes()
-{
-    vector<classes> v;
-    ifstream fi;
-    fi.open("../classes.csv");
-    if (!fi.is_open())
-    {
-        return v;
+vector<classes> Reader::read_classes() {
+    vector<classes> readClasses;
+
+    ifstream fileClasses;
+
+    fileClasses.open("../classes.csv");
+    if (!fileClasses.is_open()) {
+        return readClasses;
     }
 
     string buffer;
-    getline(fi, buffer);
-    while (getline(fi, buffer))
-    {
+    getline(fileClasses, buffer);
+    while (getline(fileClasses, buffer)) {
         stringstream line(buffer);
-        string buf;
-        classes p;
-        getline(line, buf, ',');
-        p.ClassCode = buf;
-        getline(line, buf, ',');
-        p.UcCode = buf;
-        getline(line, buf, ',');
-        p.Weekday = buf;
-        getline(line, buf, ',');
-        p.StartHour = buf;
-        getline(line, buf, ',');
-        p.Duration = buf;
-        getline(line, buf, '\r');
-        p.Type = buf;
-        v.push_back(p);
+        string newBuffer;
+        classes newClass;
+        getline(line, newBuffer, ',');
+        newClass.ClassCode = newBuffer;
+        getline(line, newBuffer, ',');
+        newClass.UcCode = newBuffer;
+        getline(line, newBuffer, ',');
+        newClass.Weekday = newBuffer;
+        getline(line, newBuffer, ',');
+        newClass.StartHour = newBuffer;
+        getline(line, newBuffer, ',');
+        newClass.Duration = newBuffer;
+        getline(line, newBuffer, '\r');
+        newClass.Type = newBuffer;
+        readClasses.push_back(newClass);
     }
 
-    fi.close();
-    return v;
+    fileClasses.close();
+    return readClasses;
 }
 
-vector<students_classes> Reader::read_students_classes()
-{
-    vector<students_classes> v;
-    ifstream fi;
-    fi.open("../students_classes.csv");
-    if (!fi.is_open())
-    {
-        return v;
+vector<students_classes> Reader::read_students_classes() {
+    vector<students_classes> studentClasses;
+
+    ifstream fileStudentClasses;
+
+    fileStudentClasses.open("../students_classes.csv");
+    if (!fileStudentClasses.is_open()) {
+        return studentClasses;
     }
 
     string buffer;
-    getline(fi, buffer, '\n');
-    while (getline(fi, buffer, '\n'))
-    {
+    getline(fileStudentClasses, buffer, '\n');
+    while (getline(fileStudentClasses, buffer, '\n')) {
         stringstream line(buffer);
-        string buf;
-        students_classes p;
-        getline(line, buf, ',');
-        p.StudentCode = buf;
-        getline(line, buf, ',');
-        p.StudentName = buf;
-        getline(line, buf, ',');
-        p.UcCode = buf;
-        getline(line, buf, '\r');
-        p.ClassCode = buf;
-        v.push_back(p);
+        string newBuffer;
+        students_classes newStudentClass;
+        getline(line, newBuffer, ',');
+        newStudentClass.StudentCode = newBuffer;
+        getline(line, newBuffer, ',');
+        newStudentClass.StudentName = newBuffer;
+        getline(line, newBuffer, ',');
+        newStudentClass.UcCode = newBuffer;
+        getline(line, newBuffer, '\r');
+        newStudentClass.ClassCode = newBuffer;
+        studentClasses.push_back(newStudentClass);
     }
 
-    fi.close();
-    return v;
+    fileStudentClasses.close();
+    return studentClasses;
 }

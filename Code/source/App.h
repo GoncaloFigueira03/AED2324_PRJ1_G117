@@ -5,10 +5,12 @@
 #include "Reader.h"
 #include "Menu.h"
 
-class App
-{
+class App {
 public:
+    // Initializes the App with a Reader
     explicit App(Reader reader);
+
+    // Runs the App
     int run();
 
 };

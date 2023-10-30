@@ -48,9 +48,23 @@ vector<classes> Class::getClassSchedule(string classCode) {
 void Class::printStudentsPerClassOfAGivenUc(std::string classCode, std::string ucCode) {
     vector<students_classes> readStudentsClasses = classReader.read_students_classes();
 
+    stack<students_classes> studentsClassesStack;
+
     for (auto it_readStudentsClasses:readStudentsClasses) {
         if (classCode == it_readStudentsClasses.ClassCode && ucCode == it_readStudentsClasses.UcCode) {
-            cout << it_readStudentsClasses.StudentName + ' ' + it_readStudentsClasses.StudentCode << endl;
+            if (studentsClassesStack.empty())
+                studentsClassesStack.push(it_readStudentsClasses);
+
+            else if (studentsClassesStack.top().StudentCode != it_readStudentsClasses.StudentCode ) {
+                studentsClassesStack.push(it_readStudentsClasses);
+            }
         }
+    }
+
+    cout << endl;
+
+    while (!studentsClassesStack.empty()) {
+        cout << studentsClassesStack.top().StudentName + ' ' + studentsClassesStack.top().StudentCode << endl;
+        studentsClassesStack.pop();
     }
 }

@@ -9,13 +9,15 @@
 #include <stdio.h>
 #include <iostream>
 
-class Menu
-{
+class Menu {
 public:
+    // Menu options (Work in progress)
     static void viewStudentSchedule(string studentNameOrCode);
 
+    // Menu options (Work in progress)
     static void viewClassSchedule(string classCode);
 
+    // Menu options (Work in progress)
     static void viewUcSchedule(string ucCode);
 };
 

@@ -45,7 +45,8 @@ vector<vector<string>> SchedulePrinter::scheduleBuilder(vector<classes> classesS
                 printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 2] = ' ' + it_classesSchedule.Type + "        ";
             else
                 printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 2] = ' ' + it_classesSchedule.Type + "         ";
-        } else if (classTimes.durationIndex == "1.5") {
+        }
+        else if (classTimes.durationIndex == "1.5") {
             printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex] = "           ";
             if (it_classesSchedule.UcCode == "UP001")
                 printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 1] = ' ' + it_classesSchedule.UcCode + "     ";
@@ -57,7 +58,8 @@ vector<vector<string>> SchedulePrinter::scheduleBuilder(vector<classes> classesS
             else
                 printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 3] = ' ' + it_classesSchedule.Type + "         ";
             printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 4] = "           ";
-        } else if (classTimes.durationIndex == "2") {
+        }
+        else if (classTimes.durationIndex == "2") {
             printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex] = "           ";
             printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 1] = "           ";
             printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 2] = ' ' + it_classesSchedule.UcCode + "  ";
@@ -90,16 +92,16 @@ void SchedulePrinter::printSchedule(vector<vector<string>> schedule) {
         int hour = (startTime[0] - '0') * 10 + (startTime[1] - '0');
         int minute = (startTime[3] - '0') * 10 + (startTime[4] - '0');
 
-        std::stringstream start;
-        start << std::setw(2) << std::setfill('0') << hour << ":";
-        start << std::setw(2) << std::setfill('0') << minute;
+        stringstream start;
+        start << setw(2) << setfill('0') << hour << ":";
+        start << setw(2) << setfill('0') << minute;
 
         minute += 30;
         if (minute >= 60) {hour++;minute -= 60;}
 
-        std::stringstream end;
-        end << std::setw(2) << std::setfill('0') << hour << ":";
-        end << std::setw(2) << std::setfill('0') << minute;
+        stringstream end;
+        end << setw(2) << setfill('0') << hour << ":";
+        end << setw(2) << setfill('0') << minute;
 
         schedule[0][i] = " " + start.str() + " - " + end.str() + " |";
 
@@ -109,7 +111,7 @@ void SchedulePrinter::printSchedule(vector<vector<string>> schedule) {
     // Print the Schedule
     cout << endl;
     cout << "///////////////|  Monday   |  Tuesday  | Wednesday | Thursday  |  Friday" << endl;
-    cout << "---------------|-----------|-----------|-----------|-----------|-----------|" << std::endl;
+    cout << "---------------|-----------|-----------|-----------|-----------|-----------|" << endl;
 
     for (int i = 1; i <= 46; i++) {
         cout << schedule[0][i];
@@ -139,7 +141,7 @@ void SchedulePrinter::printClassSchedule(string classCode) {
     printSchedule(scheduleBuilder(classSchedule));
 }
 
-void SchedulePrinter::printUcSchedule(std::string ucCode) {
+void SchedulePrinter::printUcSchedule(string ucCode) {
     vector<classes> ucSchedule = Uc::getUcSchedule(ucCode);
 
     printSchedule(scheduleBuilder(ucSchedule));

@@ -64,6 +64,7 @@ bool StudentSchedule::isTClassOverTPOrPL(classes tClass, classes secondClass) {
 
     return false;
 }
+
 vector<classes> StudentSchedule::getStudentClasses(list<std::string> studentUcCodesWithClassCodes) {
     vector<classes> studentClasses;
     vector<classes> studentClassesFixed;

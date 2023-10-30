@@ -7,8 +7,7 @@
 #include "Uc.h"
 #include "SchedulePrinter.h"
 
-int main()
-{
+int main() {
     //Menu CLI
     cout << endl;
 
@@ -26,7 +25,7 @@ int main()
 
         int option;
 
-        string txtOption;
+        string txtOption1;
         string txtOption2;
 
         cout << endl << "Please type the number corresponding to de wanted option:";
@@ -36,42 +35,42 @@ int main()
         switch (option) {
             case 1: //View the Schedule of a Student
                 cout << "Insert the Name or Code of the Desired Student:";
-                cin >> txtOption;
+                cin >> txtOption1;
 
-                SchedulePrinter::printStudentSchedule(txtOption);
+                SchedulePrinter::printStudentSchedule(txtOption1);
                 cout << endl;
                 break;
 
             case 2: //View the Schedule of a Class
                 cout << "Insert the Code of the Desired Class:";
-                cin >> txtOption;
+                cin >> txtOption1;
 
-                SchedulePrinter::printClassSchedule(txtOption);
+                SchedulePrinter::printClassSchedule(txtOption1);
                 break;
 
             case 3: //View the Schedule of an Uc
                 cout << "Insert the Code of the Desired Uc:";
-                cin >> txtOption;
+                cin >> txtOption1;
 
-                SchedulePrinter::printUcSchedule(txtOption);
+                SchedulePrinter::printUcSchedule(txtOption1);
                 break;
 
             case 4: //View the Students Enrolled in a Class of a given Uc
                 cout << "Insert the Code of the Desired Class:";
-                cin >> txtOption;
+                cin >> txtOption1;
 
                 cout << "Insert the Code of the Desired Uc:";
                 cin >> txtOption2;
 
-                Class::printStudentsPerClassOfAGivenUc(txtOption, txtOption2);
+                Class::printStudentsPerClassOfAGivenUc(txtOption1, txtOption2);
                 cout << endl;
                 break;
 
             case 5: //View the Students Enrolled in an Uc
                 cout << "Insert the Code of the Desired Uc:";
-                cin >> txtOption;
+                cin >> txtOption1;
 
-                Uc::printStudentsInAUc(txtOption);
+                Uc::printStudentsInAUc(txtOption1);
                 cout << endl;
                 break;
 
@@ -79,8 +78,7 @@ int main()
                 break;
 
             case 7: //Request a Student Schedule Change
-                while (true)
-                {
+                while (true) {
                     cout << "========================[OPTIONS]========================" << endl << endl
                          << "1 - Request a Class Schedule Change;" << endl
                          << "2 - Request an Uc Change;" << endl
@@ -91,22 +89,18 @@ int main()
                     cin >> option;
                     cout << endl;
 
-                    if (option == 1)
-                    {
+                    if (option == 1) {
                         //Request a Class Schedule Change
                         break;
                     }
-                    else if (option == 2)
-                    {
+                    else if (option == 2) {
                         //Request an Uc Change
                         break;
                     }
-                    else if (option == 0)
-                    {
+                    else if (option == 0) {
                         break;
                     }
-                    else
-                    {
+                    else {
                         cout << "Invalid Option!" << endl << endl;
                         continue;
                     }
