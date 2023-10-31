@@ -53,6 +53,34 @@ vector<string> Class::getClassUcCodes(string classCode) {
     return classUcCodes;
 }
 
+stack<int> Class::getClassStudentsNumbers(char classYear) {
+    stack<int> classStudentsNumbers;
+
+    vector<string> classCodes;
+
+    vector<students_classes> readStudentClasses = classReader.read_students_classes();
+
+    for (auto it_readStudentClasses:readStudentClasses) {
+        if (classYear == it_readStudentClasses.ClassCode[0]) {
+            classCodes.push_back(it_readStudentClasses.ClassCode);
+        }
+    }
+
+    for (auto it_classCodes:classCodes) {
+        int classStudentsNumber = 0;
+
+        for (auto it_readStudentClasses:readStudentClasses) {
+            if (it_classCodes == it_readStudentClasses.ClassCode) {
+                classStudentsNumber++;
+            }
+        }
+
+        classStudentsNumbers.push(classStudentsNumber);
+    }
+
+    return classStudentsNumbers;
+}
+
 classes Class::getClassSchedulePerUc(string classUcCode) {
     classes classSchedulePerUc;
 
