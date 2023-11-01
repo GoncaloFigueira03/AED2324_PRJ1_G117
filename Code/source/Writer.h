@@ -10,7 +10,7 @@ using namespace std;
 
 class ScheduleWriter {
 private:
-    // The Schedule
+    // The Reader
     Reader reader;
 
 public:
@@ -18,7 +18,7 @@ public:
     ScheduleWriter(Reader &reader);
 
     // Writes the Schedule Changes to the students_classes.csv File
-    bool write(studentClassChange studentClassChange);
+    bool write();
 };
 
 #endif //CODE_WRITER_H

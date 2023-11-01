@@ -13,8 +13,14 @@ public:
     // Is Student a Real Student
     static bool isStudent(string studentCode);
 
+    // Does Class Belong to Student
+    static bool doesClassBelongToStudent(string studentCode, string classCode, string ucCode);
+
     // Gets Student Code
     static string getStudentCode(string studentNameOrCode);
+
+    // Get Student Name
+    static string getStudentName(string studentCode);
 
     // Gets the Class Codes of a Student
     static vector<string> getStudentClassCodes(string studentCode);

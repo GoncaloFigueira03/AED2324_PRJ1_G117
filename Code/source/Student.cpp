@@ -15,14 +15,36 @@ bool StudentSchedule::isStudent(string studentNameOrCode) {
     return false;
 }
 
-string StudentSchedule::getStudentCode(string studentNameOrCode) {
+bool StudentSchedule::doesClassBelongToStudent(string studentCode, string classCode, string ucCode) {
     vector<students_classes> readStudents = studentReader.read_students_classes();
 
-    vector<string> studentCode;
+    for (auto it_Students:readStudents) {
+        if (studentCode == it_Students.StudentCode && classCode == it_Students.ClassCode && ucCode == it_Students.UcCode) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+string StudentSchedule::getStudentCode(string studentNameOrCode) {
+    vector<students_classes> readStudents = studentReader.read_students_classes();
 
     for (auto it_Students:readStudents) {
         if (studentNameOrCode == it_Students.StudentName || studentNameOrCode == it_Students.StudentCode) {
             return it_Students.StudentCode;
+        }
+    }
+
+    return "Student not found";
+}
+
+string StudentSchedule::getStudentName(string studentCode) {
+    vector<students_classes> readStudents = studentReader.read_students_classes();
+
+    for (auto it_Students:readStudents) {
+        if (studentCode == it_Students.StudentCode) {
+            return it_Students.StudentName;
         }
     }
 
@@ -37,7 +59,6 @@ vector<string> StudentSchedule::getStudentClassCodes(string studentCode) {
     for (auto it_StudentsClasses:readStudentsClasses) {
         if (studentCode == it_StudentsClasses.StudentCode) {
             studentClassCodes.push_back(it_StudentsClasses.ClassCode);
-
         }
     }
 
