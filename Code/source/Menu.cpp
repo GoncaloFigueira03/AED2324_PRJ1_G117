@@ -89,7 +89,7 @@ void Menu::addMenu() {
     while (true) {
         cout << "Insert the Code of the Desired Class:";
         cin >> txtOption3;
-        if (Class::isClass(txtOption2)) {
+        if (Class::isClass(txtOption3)) {
             break;
         }
         cout << "Class " + txtOption3 + " does not exist!" << endl;
@@ -103,10 +103,11 @@ void Menu::addMenu() {
     while (true) {
         cout << "Insert the Name or Code of the Desired Student:";
         cin >> txtOption1;
-        if (!StudentSchedule::isStudent(txtOption1)) {
+        if (StudentSchedule::isStudent(StudentSchedule::getStudentCode(txtOption1))) {
             break;
         }
-        cout << "Student " + txtOption1 + " does not exist!" << endl;
+        else
+            cout << "Student " + txtOption1 + " does not exist!" << endl;
     }
 
     studentInfo.push(StudentSchedule::getStudentCode(txtOption1));
@@ -238,35 +239,37 @@ void Menu::requestsMenu() {
     cin >> option;
     cout << endl;
 
-    switch (option) {
-        case 1: // View Requests
-            Scheduler::printRequests();
-            requestsMenu();
+    while (true) {
+        switch (option) {
+            case 1: // View Requests
+                Scheduler::printRequests();
+                requestsMenu();
 
-        case 2: // Process Requests
-            Scheduler::processRequest();
-            cout << "Requests Processed!" << endl;
-            requestsMenu();
+            case 2: // Process Requests
+                Scheduler::processRequest();
+                cout << "Requests Processed!" << endl;
+                requestsMenu();
 
-        case 3: // View Successful Requests
-            //Scheduler::printRequestSuccessLogs();
-            requestsMenu();
+            case 3: // View Successful Requests
+                Scheduler::printRequestSuccessLogs();
+                requestsMenu();
 
-        case 4: // View Failed Requests
-            Scheduler::printRequestFailLogs();
-            requestsMenu();
+            case 4: // View Failed Requests
+                Scheduler::printRequestFailLogs();
+                requestsMenu();
 
-        case 5: // Revert Last Request
-            Scheduler::revertLastChange();
-            cout << "Last Request Reverted!" << endl;
-            requestsMenu();
+            case 5: // Revert Last Request
+                Scheduler::revertLastChange();
+                cout << "Last Request Reverted!" << endl;
+                requestsMenu();
 
-        case 0: // Go Back
-            initMenu();
+            case 0: // Go Back
+                initMenu();
 
-        default:
-            cout << "Invalid Option!" << endl;
-            requestsMenu();
+            default:
+                cout << "Invalid Option!" << endl;
+                requestsMenu();
+        }
     }
 }
 

@@ -176,29 +176,37 @@ void Scheduler::processRequest() {
     scheduler.requestQueue.pop();
 
     if (!(scheduler.getStudentUcsNumber(scheduler.lastChange.studentCode) <= scheduler.getMaxUcsPerStudent())) {
+        cout << "The Processing Request Failed" << endl;
         scheduler.processRequestFailedMessages.push_back("UP" + scheduler.lastChange.studentName + ", " + scheduler.lastChange.studentCode + ", [" + scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" + scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" + "The Error Message: " + scheduler.lastChange.studentName + " already has the Maximum Number of Ucs");
+
         return;
     }
     else if (isClassFull(scheduler.lastChange.newClassCode)) {
+        cout << "The Processing Request Failed" << endl;
         scheduler.processRequestFailedMessages.push_back("UP" + scheduler.lastChange.studentCode + ", " + scheduler.lastChange.studentName + ", [" + scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" + scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" + "The Error Message: Class " + scheduler.lastChange.newClassCode + " is Full");
+
         return;
     }
     else if (!isChangeGapRespected(scheduler.lastChange.newClassCode)) {
+        cout << "The Processing Request Failed" << endl;
         scheduler.processRequestFailedMessages.push_back("UP" + scheduler.lastChange.studentCode + ", " + scheduler.lastChange.studentName + ", [" + scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" + scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" + "The Error Message: The Class Change Gap is not Respected");
+
         return;
     }
     else if (!isScheduleChangeValid(scheduler.lastChange)) {
+        cout << "The Processing Request Failed" << endl;
         scheduler.processRequestFailedMessages.push_back("UP" + scheduler.lastChange.studentCode + ", " + scheduler.lastChange.studentName + ", [" + scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" + scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" + "The Error Message: The Schedule enters in Conflict therefore is not Valid");
+
         return;
     }
 
     if(scheduleWriter.write()) {
-        cout << "The Uc was added to the Student Successfully" << endl;
+        cout << "The Request was Processed Successfully" << endl;
         scheduler.studentsClassesChangesStack.push(scheduler.lastChange);
-        return;
     }
-
-    scheduler.processRequestFailedMessages.push_back("UP" + scheduler.lastChange.studentCode + ", " + scheduler.lastChange.studentName + ", [" + scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" + scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" + "The Error Message: The Uc was not added to the Student Successfully (Unknown Error)");
+    else
+        cout << "The Processing Request Failed" << endl;
+        scheduler.processRequestFailedMessages.push_back("UP" + scheduler.lastChange.studentCode + ", " + scheduler.lastChange.studentName + ", [" + scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" + scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" + "The Error Message: The Uc was not added to the Student Successfully (Unknown Error)");
 }
 
 void Scheduler::revertLastChange() {
@@ -215,10 +223,12 @@ void Scheduler::revertLastChange() {
 
     if(scheduleWriter.write()) {
         cout << "The Reversion was Successful" << endl;
+
         return;
     }
 
     cout << "The Reversion was Not Successful" << endl;
+
     return;
 }
 
@@ -228,6 +238,15 @@ void Scheduler::printRequests() {
         cout << "UP" << scheduler.requestQueue.front().studentCode << ", " << scheduler.requestQueue.front().studentName << ", [" << scheduler.requestQueue.front().oldUcCode << ", " << scheduler.requestQueue.front().oldClassCode << "] -> [" << scheduler.requestQueue.front().newUcCode << ", " << scheduler.requestQueue.front().newClassCode << "]" << endl;
         scheduler.requestQueue.push(scheduler.requestQueue.front());
         scheduler.requestQueue.pop();
+    }
+}
+
+void Scheduler::printRequestSuccessLogs() {
+    cout << "The Following Requests were Successful:" << endl;
+    for (int i=0; i < scheduler.studentsClassesChangesStack.size(); i++) {
+        cout << "UP" << scheduler.studentsClassesChangesStack.top().studentCode << ", " << scheduler.studentsClassesChangesStack.top().studentName << ", [" << scheduler.studentsClassesChangesStack.top().oldUcCode << ", " << scheduler.studentsClassesChangesStack.top().oldClassCode << "] -> [" << scheduler.studentsClassesChangesStack.top().newUcCode << ", " << scheduler.studentsClassesChangesStack.top().newClassCode << "]" << endl;
+        scheduler.studentsClassesChangesStack.push(scheduler.studentsClassesChangesStack.top());
+        scheduler.studentsClassesChangesStack.pop();
     }
 }
 

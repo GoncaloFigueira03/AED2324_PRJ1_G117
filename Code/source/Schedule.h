@@ -62,6 +62,8 @@ public:
 
     static void revertLastChange();
 
+    static void printRequestSuccessLogs();
+
     static void printRequestFailLogs();
 
     static int getStudentUcsNumber(string studentNameOrCode);

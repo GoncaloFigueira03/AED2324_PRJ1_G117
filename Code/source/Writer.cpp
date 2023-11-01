@@ -15,17 +15,23 @@ bool ScheduleWriter::write() {
         return false;
     }
 
-    outputFile << "StudentCode,StudentName,UcCode,ClassCode\n";
+    outputFile << "StudentCode,StudentName,UcCode,ClassCode\r\n";
 
-    vector<students_classes> readStudentsClasses = reader.read_students_classes();
+    vector<students_classes> readStudentsClasses = reader.v_students_classes;
 
-    for (auto it_readStudentClasses:readStudentsClasses) {
-        if (!(it_readStudentClasses.StudentCode == writeScheduler.lastChange.studentCode && it_readStudentClasses.UcCode == writeScheduler.lastChange.oldUcCode && it_readStudentClasses.ClassCode == writeScheduler.lastChange.oldClassCode)) {
-            outputFile << it_readStudentClasses.StudentCode << "," << it_readStudentClasses.StudentName << "," << it_readStudentClasses.UcCode << "," << it_readStudentClasses.ClassCode << "\n";
+    for (auto it_readStudentClasses: readStudentsClasses) {
+        if (!(it_readStudentClasses.StudentCode == writeScheduler.lastChange.studentCode &&
+              it_readStudentClasses.UcCode == writeScheduler.lastChange.oldUcCode &&
+              it_readStudentClasses.ClassCode == writeScheduler.lastChange.oldClassCode)) {
+            outputFile << it_readStudentClasses.StudentCode << "," << it_readStudentClasses.StudentName << ","
+                       << it_readStudentClasses.UcCode << "," << it_readStudentClasses.ClassCode << "\r\n";
         }
     }
 
-    outputFile << writeScheduler.lastChange.studentCode << "," << writeScheduler.lastChange.studentName << "," << writeScheduler.lastChange.newUcCode << "," << writeScheduler.lastChange.newClassCode << "\n";
+    if (writeScheduler.lastChange.newClassCode != "") {
+        outputFile << writeScheduler.lastChange.studentCode << "," << writeScheduler.lastChange.studentName << ","
+                   << writeScheduler.lastChange.newUcCode << "," << writeScheduler.lastChange.newClassCode << "\r\n";
+    }
 
     outputFile.close();
 
