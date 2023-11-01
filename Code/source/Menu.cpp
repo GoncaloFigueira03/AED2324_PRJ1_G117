@@ -90,8 +90,8 @@ void Menu::addMenu() {
         addMenu();
     }
     else if (Class::isClass(txtOption1)) {
-       cout << "Class " + txtOption2 + " does not exist!" << endl;
-       addMenu();
+        cout << "Class " + txtOption2 + " does not exist!" << endl;
+        addMenu();
     }
     else if (StudentSchedule::isStudent(txtOption3)) {
         cout << "Student " + txtOption3 + " does not exist!" << endl;
@@ -126,7 +126,7 @@ void Menu::studentMenu() {
 
                 if (StudentSchedule::isStudent(txtOption1)) {
                     cout << "Student " + txtOption1 + " Schedule is:" << endl;
-                    SchedulePrinter::printStudentSchedule(txtOption1);
+                    SchedulePrinter::printStudentSchedule(StudentSchedule::getStudentCode(txtOption1));
                     cout << endl;
                     break;
                 }
@@ -144,7 +144,7 @@ void Menu::studentMenu() {
 
                 if (StudentSchedule::isStudent(txtOption1)) {
                     cout << "Student " + txtOption1 + " Classes are:" << endl;
-                    StudentSchedule::printStudentClasses(txtOption1);
+                    StudentSchedule::printStudentClasses(StudentSchedule::getStudentCode(txtOption1));
                     cout << endl;
                     break;
                 } else {
@@ -161,7 +161,7 @@ void Menu::studentMenu() {
 
                 if (StudentSchedule::isStudent(txtOption1)) {
                     cout << "Student " + txtOption1 + " Ucs are:" << endl;
-                    StudentSchedule::printStudentUcs(txtOption1);
+                    StudentSchedule::printStudentUcs(StudentSchedule::getStudentCode(txtOption1));
                     cout << endl;
                     break;
                 }

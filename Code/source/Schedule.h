@@ -46,8 +46,6 @@ public:
 
     static void requestChangeInStudentClass(studentClassChange studentClassChange);
 
-    static string getStudentFullName(string studentCode);
-
     static int getStudentUcsNumber(string studentNameOrCode);
 
     static int getClassStudentsNumber(string classCode);

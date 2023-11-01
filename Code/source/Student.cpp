@@ -3,11 +3,11 @@
 
 Reader studentReader;
 
-bool StudentSchedule::isStudent(std::string studentNameOrCode) {
+bool StudentSchedule::isStudent(string studentNameOrCode) {
     vector<students_classes> readStudents = studentReader.read_students_classes();
 
     for (auto it_Students:readStudents) {
-        if (studentNameOrCode == it_Students.StudentName || studentNameOrCode == it_Students.StudentCode) {
+        if (studentNameOrCode == it_Students.StudentCode || studentNameOrCode == it_Students.StudentName) {
             return true;
         }
     }
@@ -15,13 +15,57 @@ bool StudentSchedule::isStudent(std::string studentNameOrCode) {
     return false;
 }
 
-vector<string> StudentSchedule::getStudentClassCodes(std::string studentNameOrCode) {
+string StudentSchedule::getStudentCode(string studentFullName) {
+    vector<students_classes> readStudents = studentReader.read_students_classes();
+
+    for (auto it_Students:readStudents) {
+        if (studentFullName == it_Students.StudentName) {
+            return it_Students.StudentCode;
+        }
+    }
+}
+
+string StudentSchedule::getStudentFullName(string studentNameOrCode) {
+    vector<students_classes> readStudents = studentReader.read_students_classes();
+
+    vector<string> studentNames;
+
+    string studentFullName;
+
+    for (auto it_Students:readStudents) {
+        if (studentNameOrCode == it_Students.StudentCode) {
+            return it_Students.StudentName;
+        }
+
+        else if (studentNameOrCode == it_Students.StudentName) {
+            studentNames.push_back(it_Students.StudentName);
+        }
+    }
+
+    cout << "There are multiple students with the same name, please choose one:" << endl;
+    for (auto it_studentNames: studentNames) {
+        cout << it_studentNames << endl;
+    }
+    while (true) {
+        cin >> studentFullName;
+        for (auto it_studentNames: studentNames) {
+            if (studentFullName == it_studentNames) {
+                return it_studentNames;
+            }
+            else {
+                cout << "Please choose a valid student name" << endl;
+            }
+        }
+    }
+}
+
+vector<string> StudentSchedule::getStudentClassCodes(string studentCode) {
     vector<string> studentClassCodes;
 
     vector<students_classes> readStudentsClasses = studentReader.read_students_classes();
 
     for (auto it_StudentsClasses:readStudentsClasses) {
-        if (studentNameOrCode == it_StudentsClasses.StudentName || studentNameOrCode == it_StudentsClasses.StudentCode) {
+        if (studentCode == it_StudentsClasses.StudentCode) {
             studentClassCodes.push_back(it_StudentsClasses.ClassCode);
 
         }
@@ -30,13 +74,13 @@ vector<string> StudentSchedule::getStudentClassCodes(std::string studentNameOrCo
     return studentClassCodes;
 }
 
-vector<string> StudentSchedule::getStudentUcCodes(std::string studentNameOrCode) {
+vector<string> StudentSchedule::getStudentUcCodes(string studentCode) {
     vector<string> studentUcCodes;
 
     vector<students_classes> readStudentsClasses = studentReader.read_students_classes();
 
     for (auto it_StudentsClasses:readStudentsClasses) {
-        if (studentNameOrCode == it_StudentsClasses.StudentName || studentNameOrCode == it_StudentsClasses.StudentCode) {
+        if (studentCode == it_StudentsClasses.StudentCode) {
             studentUcCodes.push_back(it_StudentsClasses.UcCode);
         }
     }
@@ -44,7 +88,7 @@ vector<string> StudentSchedule::getStudentUcCodes(std::string studentNameOrCode)
     return studentUcCodes;
 }
 
-list<string> StudentSchedule::pairStudentUcCodesWithClassCodes(vector<std::string> ucCodes, vector<std::string> classCodes) {
+list<string> StudentSchedule::pairStudentUcCodesWithClassCodes(vector<string> ucCodes, vector<string> classCodes) {
     list<string> studentUcCodesWithClassCodes;
 
     for (auto it_ucCodes:ucCodes) {
@@ -76,7 +120,7 @@ bool StudentSchedule::isTClassOverTPOrPL(classes tClass, classes secondClass) {
     return false;
 }
 
-vector<classes> StudentSchedule::getStudentClasses(list<std::string> studentUcCodesWithClassCodes) {
+vector<classes> StudentSchedule::getStudentClasses(list<string> studentUcCodesWithClassCodes) {
     vector<classes> studentClasses;
     vector<classes> studentClassesFixed;
 
@@ -121,9 +165,9 @@ vector<classes> StudentSchedule::getStudentClasses(list<std::string> studentUcCo
     return studentClassesFixed;
 }
 
-vector<classes> StudentSchedule::getStudentSchedule(string studentNameOrCode) {
-    vector<string> studentClassCodes = getStudentClassCodes(studentNameOrCode);
-    vector<string> studentUcCodes = getStudentUcCodes(studentNameOrCode);
+vector<classes> StudentSchedule::getStudentSchedule(string studentCode) {
+    vector<string> studentClassCodes = getStudentClassCodes(studentCode);
+    vector<string> studentUcCodes = getStudentUcCodes(studentCode);
 
     list<string> studentUcCodesWithClassCodes = pairStudentUcCodesWithClassCodes(studentUcCodes, studentClassCodes);
 
@@ -132,16 +176,16 @@ vector<classes> StudentSchedule::getStudentSchedule(string studentNameOrCode) {
     return studentClasses;
 }
 
-void StudentSchedule::printStudentClasses(std::string studentNameOrCode) {
-    vector<string> studentClassCodes = getStudentClassCodes(studentNameOrCode);
+void StudentSchedule::printStudentClasses(string studentCode) {
+    vector<string> studentClassCodes = getStudentClassCodes(studentCode);
 
     for (auto it_studentClassCodes:studentClassCodes) {
         cout << it_studentClassCodes << endl;
     }
 }
 
-void StudentSchedule::printStudentUcs(std::string studentNameOrCode) {
-    vector<string> studentUcCodes = getStudentUcCodes(studentNameOrCode);
+void StudentSchedule::printStudentUcs(string studentCode) {
+    vector<string> studentUcCodes = getStudentUcCodes(studentCode);
 
     for (auto it_studentUcCodes:studentUcCodes) {
         cout << it_studentUcCodes << endl;

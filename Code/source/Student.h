@@ -6,16 +6,24 @@
 #include "App.h"
 #include "Menu.h"
 
+using namespace std;
+
 class StudentSchedule {
 public:
     // Is Student a Real Student
-    static bool isStudent(string studentNameOrCode);
+    static bool isStudent(string studentCode);
+
+    // Gets Student Code
+    static string getStudentCode(string studentFullName);
+
+    // Gets Student Full Name even if there are Multiple Students with the Same Name
+    static string getStudentFullName(string studentNameOrCode);
 
     // Gets the Class Codes of a Student
-    static vector<string> getStudentClassCodes(string studentNameOrCode);
+    static vector<string> getStudentClassCodes(string studentCode);
 
     // Gets the Uc Codes of a Student
-    static vector<string> getStudentUcCodes(string studentNameOrCode);
+    static vector<string> getStudentUcCodes(string studentCode);
 
     // Pairs the Uc Codes with the Class Codes
     static list<string> pairStudentUcCodesWithClassCodes(vector<string> ucCodes, vector<string> classCodes);
@@ -24,13 +32,13 @@ public:
     static vector<classes> getStudentClasses(list<string> studentUcCodesWithClassCodes);
 
     // Outputs a Vector with the Final Schedule of a Student (without overlapping classes)
-    static vector<classes> getStudentSchedule(string studentNameOrCode);
+    static vector<classes> getStudentSchedule(string studentCode);
 
     // Prints the Student Classes
-    static void printStudentClasses(string studentNameOrCode);
+    static void printStudentClasses(string studentCode);
 
     // Prints the Student Ucs
-    static void printStudentUcs(string studentNameOrCode);
+    static void printStudentUcs(string studentCode);
 
     // Checks if there are Overlapping T Classes with PL or TP Classes
     static bool isTClassOverTPOrPL(classes tClass, classes secondClass);

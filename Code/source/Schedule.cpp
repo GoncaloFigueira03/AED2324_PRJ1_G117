@@ -152,7 +152,7 @@ void Scheduler::addUcToStudent(queue <string> studentInfo) {
         return;
     }
 
-    studentClassChange.studentFullName = scheduler.getStudentFullName(studentClassChange.studentCode);
+    studentClassChange.studentFullName = StudentSchedule::getStudentFullName(studentClassChange.studentCode);
 
     scheduler.studentsClassesChangesStack.push(studentClassChange);
 
