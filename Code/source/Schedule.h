@@ -10,7 +10,8 @@
 using namespace std;
 
 struct studentClassChange {
-    string studentNameOrCode;
+    string studentFullName;
+    string studentCode;
     string newClassCode;
     string oldClassCode;
     string newUcCode;
@@ -45,6 +46,8 @@ public:
 
     static void requestChangeInStudentClass(studentClassChange studentClassChange);
 
+    static string getStudentFullName(string studentCode);
+
     static int getStudentUcsNumber(string studentNameOrCode);
 
     static int getClassStudentsNumber(string classCode);
@@ -55,7 +58,7 @@ public:
 
     static bool isChangeGapRespected(string classCode);
 
-    static bool isScheduleChangeValid(string studentNameOrCode, string newClassCode, string newUcCode, string oldClassCode, string oldUcCode);
+    static bool isScheduleChangeValid(studentClassChange studentClassChange);
 };
 
 #endif //CODE_SCHEDULE_H

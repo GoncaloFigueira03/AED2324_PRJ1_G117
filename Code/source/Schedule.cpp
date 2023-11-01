@@ -43,8 +43,8 @@ int Scheduler::getClassStudentsNumberAvg(char classYear) {
     return avgStudentNumbers / count;
 }
 
-int Scheduler::getStudentUcsNumber(string studentNameOrCode) {
-    vector<string> studentUcCodes = StudentSchedule::getStudentUcCodes(studentNameOrCode);
+int Scheduler::getStudentUcsNumber(string studentCode) {
+    vector<string> studentUcCodes = StudentSchedule::getStudentUcCodes(studentCode);
 
     return studentUcCodes.size();
 }
@@ -77,16 +77,16 @@ bool Scheduler::isChangeGapRespected(string classCode) {
     return false;
 }
 
-bool Scheduler::isScheduleChangeValid(string studentNameOrCode, string newClassCode, string newUcCode, string oldClassCode, string oldUcCode) {
-    vector<classes> studentClasses = StudentSchedule::getStudentSchedule(studentNameOrCode);
+bool Scheduler::isScheduleChangeValid(studentClassChange studentClassChange) {
+    vector<classes> studentClasses = StudentSchedule::getStudentSchedule(studentClassChange.studentCode);
 
     vector<classes> readClasses = studentClassesReader.read_classes();
 
     classes newStudentClass;
 
-    if (oldClassCode == "" && oldUcCode == "") {
+    if (studentClassChange.oldClassCode == "" && studentClassChange.oldUcCode == "") {
         for (auto it_readClasses: readClasses) {
-            if (newClassCode == it_readClasses.ClassCode && newUcCode == it_readClasses.UcCode) {
+            if (studentClassChange.newClassCode == it_readClasses.ClassCode && studentClassChange.newUcCode == it_readClasses.UcCode) {
                 newStudentClass = it_readClasses;
             }
         }
@@ -103,14 +103,14 @@ bool Scheduler::isScheduleChangeValid(string studentNameOrCode, string newClassC
 
     else {
         for (auto it_readClasses: readClasses) {
-            if (newClassCode == it_readClasses.ClassCode && newUcCode == it_readClasses.UcCode) {
+            if (studentClassChange.newClassCode == it_readClasses.ClassCode && studentClassChange.newUcCode == it_readClasses.UcCode) {
                 newStudentClass = it_readClasses;
             }
         }
 
         for (auto it_studentClasses: studentClasses) {
             if (it_studentClasses.Weekday == newStudentClass.Weekday && it_studentClasses.StartHour == newStudentClass.StartHour && (it_studentClasses.Type == "TP" || it_studentClasses.Type == "PL") &&
-                (newStudentClass.Type == "TP" || newStudentClass.Type == "PL") && it_studentClasses.ClassCode != oldClassCode && it_studentClasses.UcCode != oldUcCode) {
+                (newStudentClass.Type == "TP" || newStudentClass.Type == "PL") && it_studentClasses.ClassCode != studentClassChange.oldClassCode && it_studentClasses.UcCode != studentClassChange.oldUcCode) {
                 return false;
             }
         }
@@ -120,41 +120,39 @@ bool Scheduler::isScheduleChangeValid(string studentNameOrCode, string newClassC
 }
 
 void Scheduler::addUcToStudent(queue <string> studentInfo) {
-    string studentNameOrCode = studentInfo.front();
+    studentClassChange studentClassChange;
+
+    studentClassChange.studentCode = studentInfo.front();
     studentInfo.pop();
 
-    string ucCode = studentInfo.front();
+    studentClassChange.newUcCode = studentInfo.front();
     studentInfo.pop();
 
-    string classCode = studentInfo.front();
+    studentClassChange.newClassCode = studentInfo.front();
     studentInfo.pop();
 
-    if (!scheduler.getStudentUcsNumber(studentNameOrCode) <= scheduler.getMaxUcsPerStudent()) {
+    if (!scheduler.getStudentUcsNumber(studentClassChange.studentCode) <= scheduler.getMaxUcsPerStudent()) {
         cout << "The Student already has the Maximum Number of Ucs" << endl;
         return;
     }
-    else if (!scheduler.doesUcBelongToClass(ucCode, classCode)) {
+    else if (!scheduler.doesUcBelongToClass(studentClassChange.newUcCode, studentClassChange.newClassCode)) {
         cout << "The Uc does not belong to the Class" << endl;
         return;
     }
-    else if (!isClassFull(classCode)) {
+    else if (!isClassFull(studentClassChange.newClassCode)) {
         cout << "The Class is Full" << endl;
         return;
     }
-    else if (!isChangeGapRespected(classCode)) {
+    else if (!isChangeGapRespected(studentClassChange.newClassCode)) {
         cout << "The Class Change Gap is not Respected" << endl;
         return;
     }
-    else if (!isScheduleChangeValid(studentNameOrCode, classCode, ucCode, "", "")) {
+    else if (!isScheduleChangeValid(studentClassChange)) {
         cout << "The Schedule enters in Conflict therefore is not Valid" << endl;
         return;
     }
 
-    studentClassChange studentClassChange;
-
-    studentClassChange.studentNameOrCode = studentNameOrCode;
-    studentClassChange.newClassCode = classCode;
-    studentClassChange.newUcCode = ucCode;
+    studentClassChange.studentFullName = scheduler.getStudentFullName(studentClassChange.studentCode);
 
     scheduler.studentsClassesChangesStack.push(studentClassChange);
 
@@ -171,8 +169,7 @@ void Scheduler::requestChangeInStudentClass(studentClassChange studentClassChang
         cout << "The Class Change Gap is not Respected" << endl;
         return;
     }
-    else if (!scheduler.isScheduleChangeValid(studentClassChange.studentNameOrCode, studentClassChange.newClassCode, studentClassChange.newUcCode,
-                                              studentClassChange.oldClassCode, studentClassChange.oldUcCode)) {
+    else if (!scheduler.isScheduleChangeValid(studentClassChange)) {
         cout << "The Schedule enters in Conflict therefore is not Valid" << endl;
         return;
     }

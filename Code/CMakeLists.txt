@@ -19,4 +19,5 @@ add_executable(Code
         source/Student.cpp
         source/Uc.cpp
         source/SchedulePrinter.cpp
+        source/Writer.cpp
 )
