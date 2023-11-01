@@ -14,10 +14,7 @@ public:
     static bool isStudent(string studentCode);
 
     // Gets Student Code
-    static string getStudentCode(string studentFullName);
-
-    // Gets Student Full Name even if there are Multiple Students with the Same Name
-    static string getStudentFullName(string studentNameOrCode);
+    static string getStudentCode(string studentNameOrCode);
 
     // Gets the Class Codes of a Student
     static vector<string> getStudentClassCodes(string studentCode);

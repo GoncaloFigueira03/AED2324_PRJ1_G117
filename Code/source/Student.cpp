@@ -15,48 +15,18 @@ bool StudentSchedule::isStudent(string studentNameOrCode) {
     return false;
 }
 
-string StudentSchedule::getStudentCode(string studentFullName) {
+string StudentSchedule::getStudentCode(string studentNameOrCode) {
     vector<students_classes> readStudents = studentReader.read_students_classes();
 
+    vector<string> studentCode;
+
     for (auto it_Students:readStudents) {
-        if (studentFullName == it_Students.StudentName) {
+        if (studentNameOrCode == it_Students.StudentName || studentNameOrCode == it_Students.StudentCode) {
             return it_Students.StudentCode;
         }
     }
-}
 
-string StudentSchedule::getStudentFullName(string studentNameOrCode) {
-    vector<students_classes> readStudents = studentReader.read_students_classes();
-
-    vector<string> studentNames;
-
-    string studentFullName;
-
-    for (auto it_Students:readStudents) {
-        if (studentNameOrCode == it_Students.StudentCode) {
-            return it_Students.StudentName;
-        }
-
-        else if (studentNameOrCode == it_Students.StudentName) {
-            studentNames.push_back(it_Students.StudentName);
-        }
-    }
-
-    cout << "There are multiple students with the same name, please choose one:" << endl;
-    for (auto it_studentNames: studentNames) {
-        cout << it_studentNames << endl;
-    }
-    while (true) {
-        cin >> studentFullName;
-        for (auto it_studentNames: studentNames) {
-            if (studentFullName == it_studentNames) {
-                return it_studentNames;
-            }
-            else {
-                cout << "Please choose a valid student name" << endl;
-            }
-        }
-    }
+    return "Student not found";
 }
 
 vector<string> StudentSchedule::getStudentClassCodes(string studentCode) {
