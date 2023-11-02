@@ -13,7 +13,7 @@ public:
     static bool isClass(string classCode);
 
     // Gets Students in a Given Class
-    static void printStudentsInAClass(string classCode);
+    static void printStudentsInAClass(string classCode, char sortOption);
 
     // Gets the Uc Codes of a Given Class
     static vector<string> getClassUcCodes(string classCode);

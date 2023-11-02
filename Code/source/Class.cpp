@@ -15,10 +15,11 @@ bool Class::isClass(std::string classCode) {
     return false;
 }
 
-void Class::printStudentsInAClass(std::string classCode) {
+void Class::printStudentsInAClass(string classCode, char sortOption) {
     vector<students_classes> readStudentsClasses = classReader.read_students_classes();
 
     stack<students_classes> studentsClassesStack;
+    stack<students_classes> studentsClassesStackTmp;
 
     for (auto it_readStudentsClasses:readStudentsClasses) {
         if (classCode == it_readStudentsClasses.ClassCode) {
@@ -33,9 +34,36 @@ void Class::printStudentsInAClass(std::string classCode) {
 
     cout << endl;
 
-    while (!studentsClassesStack.empty()) {
-        cout << studentsClassesStack.top().StudentName + ' ' + studentsClassesStack.top().StudentCode << endl;
-        studentsClassesStack.pop();
+    if (sortOption == 'C' || sortOption == 'c') {
+        while (!studentsClassesStack.empty()){
+            students_classes studentsClassesTmp = studentsClassesStack.top();
+            studentsClassesStack.pop();
+
+            while (!studentsClassesStackTmp.empty() && studentsClassesStackTmp.top().StudentCode < studentsClassesTmp.StudentCode) {
+                studentsClassesStack.push(studentsClassesStackTmp.top());
+                studentsClassesStackTmp.pop();
+            }
+
+            studentsClassesStackTmp.push(studentsClassesTmp);
+        }
+    }
+    else if (sortOption == 'N' || sortOption == 'n') {
+        while (!studentsClassesStack.empty()){
+            students_classes studentsClassesTmp = studentsClassesStack.top();
+            studentsClassesStack.pop();
+
+            while (!studentsClassesStackTmp.empty() && studentsClassesTmp.StudentName > studentsClassesStackTmp.top().StudentName) {
+                studentsClassesStack.push(studentsClassesStackTmp.top());
+                studentsClassesStackTmp.pop();
+            }
+
+            studentsClassesStackTmp.push(studentsClassesTmp);
+        }
+    }
+
+    while (!studentsClassesStackTmp.empty()) {
+        cout << studentsClassesStackTmp.top().StudentCode + ' ' + studentsClassesStackTmp.top().StudentName << endl;
+        studentsClassesStackTmp.pop();
     }
 }
 

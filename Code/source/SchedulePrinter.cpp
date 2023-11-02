@@ -1,6 +1,9 @@
 
 #include "SchedulePrinter.h"
 
+#define RESET "\033[0m"
+#define DEFAULTBOLD "\033[1m\033[90m"
+
 classTimeIndexes SchedulePrinter::getClassTimes(classes classTimes) {
     list<string> classTimeStamp = {"8", " ", "8.5", " ", "9", " ", "9.5", " ", "10", " ", "10.5", " ",
                                    "11", " ", "11.5", " ", "12", " ", "12.5", " ", "13", " ", "13.5", " ",
@@ -39,7 +42,7 @@ vector<vector<string>> SchedulePrinter::scheduleBuilder(vector<classes> classesS
         classTimeIndexes classTimes = getClassTimes(it_classesSchedule);
 
         if (classTimes.durationIndex == "1") {
-            printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex] = ' ' + it_classesSchedule.UcCode + "  ";
+            printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex] = " " + it_classesSchedule.UcCode + RESET + "  ";
             printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 1] = ' ' + it_classesSchedule.ClassCode + "   ";
             if (it_classesSchedule.Type == "PL" || it_classesSchedule.Type == "TP")
                 printableSchedule[classTimes.weekdayIndex][classTimes.startHourIndex + 2] = ' ' + it_classesSchedule.Type + "        ";
@@ -84,7 +87,7 @@ void SchedulePrinter::printSchedule(vector<vector<string>> schedule) {
     for (int i = 1; i <= 46; ++i) {
 
         if (i%2 == 0) {
-            schedule[0][i] = "---------------|";
+            schedule[0][i] = DEFAULTBOLD "---------------|" RESET;
             continue;
         }
 
@@ -93,25 +96,25 @@ void SchedulePrinter::printSchedule(vector<vector<string>> schedule) {
         int minute = (startTime[3] - '0') * 10 + (startTime[4] - '0');
 
         stringstream start;
-        start << setw(2) << setfill('0') << hour << ":";
+        start << setw(2) << setfill('0') << hour <<  ":";
         start << setw(2) << setfill('0') << minute;
 
         minute += 30;
         if (minute >= 60) {hour++;minute -= 60;}
 
         stringstream end;
-        end << setw(2) << setfill('0') << hour << ":";
+        end << setw(2) << setfill('0') << hour <<  ":";
         end << setw(2) << setfill('0') << minute;
 
-        schedule[0][i] = " " + start.str() + " - " + end.str() + " |";
+        schedule[0][i] = " " + start.str() + " - " + end.str() + DEFAULTBOLD " |" RESET;
 
         startTime = end.str();
     }
 
     // Print the Schedule
     cout << endl;
-    cout << "///////////////|  Monday   |  Tuesday  | Wednesday | Thursday  |  Friday" << endl;
-    cout << "---------------|-----------|-----------|-----------|-----------|-----------|" << endl;
+    cout << DEFAULTBOLD << "///////////////|  " << RESET << "Monday   " << DEFAULTBOLD << "|  " << RESET << "Tuesday  " << DEFAULTBOLD << "| " << RESET << "Wednesday " << DEFAULTBOLD << "| " << RESET << "Thursday  " << DEFAULTBOLD << "|  " << RESET << "Friday   " << DEFAULTBOLD << "|  " << RESET << endl;
+    cout << DEFAULTBOLD << "---------------|-----------|-----------|-----------|-----------|-----------|" << RESET << endl;
 
     for (int i = 1; i <= 46; i++) {
         cout << schedule[0][i];
@@ -120,9 +123,9 @@ void SchedulePrinter::printSchedule(vector<vector<string>> schedule) {
             if (schedule[j][i] == "" && i%2 != 0) {
                 schedule[j][i] = "           ";
             }else if (schedule[j][i] == "" && i%2 == 0) {
-                schedule[j][i] = "-----------";
+                schedule[j][i] = DEFAULTBOLD "-----------" RESET;
             }
-            cout << schedule[j][i] << "|";
+            cout << schedule[j][i] << DEFAULTBOLD "|" RESET;
         }
         cout << endl;
     }

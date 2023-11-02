@@ -1,9 +1,13 @@
 
 #include "Menu.h"
 
+#define RESET "\033[0m"
+#define BOLDWHITE "\033[1m\033[37m"
+
 int main() {
-    cout << endl << "---WELCOME TO THE SCHEDULER---" << endl << endl;
-    cout << "This program was developed by:" << endl;
+    system("CLS");
+    cout << endl << BOLDWHITE << "---WELCOME TO THE SCHEDULER---" << endl << endl;
+    cout << RESET << "This program was developed by:" << endl;
     cout << "Goncalo Figueira - UP202108804" << endl << endl;
 
     system("PAUSE");
