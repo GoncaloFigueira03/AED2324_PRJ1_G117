@@ -1,17 +1,13 @@
 
 #include "Menu.h"
 
-Scheduler mainScheduler;
-
 int main() {
-    cout << "Welcome to the Scheduler" << endl;
-    if (mainScheduler.lastChange.studentCode != "") {
-        cout << mainScheduler.lastChange.studentCode << mainScheduler.lastChange.studentName
-             << mainScheduler.lastChange.newUcCode << mainScheduler.lastChange.newClassCode << endl;
-    }
-    else {
-        cout << "No last change" << endl;
-    }
+    cout << endl << "---WELCOME TO THE SCHEDULER---" << endl << endl;
+    cout << "This program was developed by:" << endl;
+    cout << "Goncalo Figueira - UP202108804" << endl << endl;
+
+    system("PAUSE");
+    system("CLS");
 
     Menu::initMenu();
 

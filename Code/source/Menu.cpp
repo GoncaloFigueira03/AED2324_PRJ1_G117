@@ -18,31 +18,38 @@ void Menu::initMenu() {
 
     switch (option) {
         case 1:
+            system("CLS");
             displayMenu();
             break;
         case 2:
+            system("CLS");
             addMenu();
             break;
         case 3:
+            system("CLS");
             removeMenu();
             break;
         case 4:
+            system("CLS");
             changeMenu();
             break;
         case 5:
+            system("CLS");
             requestsMenu();
             break;
         case 0:
             cout << "Exiting..." << endl;
-            break;
+            return;
         default:
-            cout << "Invalid Option!" << endl;
+            cout << "Invalid Option!" << endl << flush;
+            system("PAUSE");
+            system("CLS");
             initMenu();
     }
 }
 
 void Menu::displayMenu() {
-    cout << "====================[OPTIONS]====================" << endl << endl;
+    cout << endl << "====================[OPTIONS]====================" << endl << endl;
     cout << "1 - Student;" << endl;
     cout << "2 - Class;" << endl;
     cout << "3 - Uc;" << endl;
@@ -55,18 +62,24 @@ void Menu::displayMenu() {
 
     switch (option) {
         case 1:
+            system("CLS");
             studentMenu();
             break;
         case 2:
+            system("CLS");
             classMenu();
             break;
         case 3:
+            system("CLS");
             ucMenu();
             break;
         case 0:
+            system("CLS");
             initMenu();
         default:
             cout << "Invalid Option!" << endl;
+            system("PAUSE");
+            system("CLS");
             displayMenu();
     }
 }
@@ -104,6 +117,9 @@ void Menu::addMenu() {
         cout << "Insert the Name or Code of the Desired Student:";
         cin >> txtOption1;
         if (StudentSchedule::isStudent(StudentSchedule::getStudentCode(txtOption1))) {
+            cout << "Add Request Added Successfully!" << endl << endl;
+            system("PAUSE");
+            system("CLS");
             break;
         }
         else
@@ -144,13 +160,16 @@ void Menu::removeMenu() {
 
     if (!Scheduler::doesUcBelongToClass(txtOption2, txtOption3)) {
         cout << "Uc " + txtOption2 + " does not belong to Class " + txtOption3 + "!" << endl;
-        addMenu();
+        removeMenu();
     }
 
     while (true) {
         cout << "Insert the Name or Code of the Desired Student:";
         cin >> txtOption1;
         if (StudentSchedule::isStudent(txtOption1)) {
+            cout << "Remove Request Added Successfully!" << endl << endl;
+            system("PAUSE");
+            system("CLS");
             break;
         }
         cout << endl << "Student " + txtOption1 + " does not exist!" << endl;
@@ -209,6 +228,9 @@ void Menu::changeMenu() {
         cin >> txtOption2 >> txtOption3;
 
         if (Scheduler::doesUcBelongToClass(txtOption2, txtOption3)) {
+            cout << "Change Request Added Successfully!" << endl << endl;
+            system("PAUSE");
+            system("CLS");
             break;
         }
 
@@ -264,10 +286,13 @@ void Menu::requestsMenu() {
                 requestsMenu();
 
             case 0: // Go Back
+                system("CLS");
                 initMenu();
 
             default:
                 cout << "Invalid Option!" << endl;
+                system("PAUSE");
+                system("CLS");
                 requestsMenu();
         }
     }
@@ -296,9 +321,12 @@ void Menu::studentMenu() {
                 cout << endl;
 
                 if (StudentSchedule::isStudent(txtOption1)) {
+                    system("CLS");
                     cout << "Student " + txtOption1 + " Schedule is:" << endl;
                     SchedulePrinter::printStudentSchedule(StudentSchedule::getStudentCode(txtOption1));
                     cout << endl;
+                    system("PAUSE");
+                    system("CLS");
                     break;
                 }
                 else {
@@ -317,8 +345,11 @@ void Menu::studentMenu() {
                     cout << "Student " + txtOption1 + " Classes are:" << endl;
                     StudentSchedule::printStudentClasses(StudentSchedule::getStudentCode(txtOption1));
                     cout << endl;
+                    system("PAUSE");
+                    system("CLS");
                     break;
-                } else {
+                }
+                else {
                     cout << "Student " + txtOption1 + " does not exist!" << endl;
                 }
             }
@@ -334,6 +365,8 @@ void Menu::studentMenu() {
                     cout << "Student " + txtOption1 + " Ucs are:" << endl;
                     StudentSchedule::printStudentUcs(StudentSchedule::getStudentCode(txtOption1));
                     cout << endl;
+                    system("PAUSE");
+                    system("CLS");
                     break;
                 }
                 else {
@@ -343,9 +376,12 @@ void Menu::studentMenu() {
 
             initMenu();
         case 0:
+            system("CLS");
             displayMenu();
         default:
             cout << "Invalid Option!" << endl;
+            system("PAUSE");
+            system("CLS");
             studentMenu();
     }
 }
@@ -376,6 +412,8 @@ void Menu::classMenu() {
                     cout << "Class " + txtOption1 + " Schedule is:" << endl;
                     SchedulePrinter::printClassSchedule(txtOption1);
                     cout << endl;
+                    system("PAUSE");
+                    system("CLS");
                     break;
                 }
                 else {
@@ -394,6 +432,8 @@ void Menu::classMenu() {
                     cout << "Class " + txtOption1 + " Students are:" << endl;
                     Class::printStudentsInAClass(txtOption1);
                     cout << endl;
+                    system("PAUSE");
+                    system("CLS");
                     break;
                 } else {
                     cout << "Class " + txtOption1 + " does not exist!" << endl;
@@ -416,6 +456,8 @@ void Menu::classMenu() {
                         cout << "Students of Class " + txtOption1 + " of Uc " + txtOption2 + " are:" << endl;
                         Class::printStudentsPerClassOfAGivenUc(txtOption1, txtOption2);
                         cout << endl;
+                        system("PAUSE");
+                        system("CLS");
                         break;
                     }
                     else {
@@ -429,9 +471,12 @@ void Menu::classMenu() {
 
             classMenu();
         case 0:
+            system("CLS");
             displayMenu();
         default:
             cout << "Invalid Option!" << endl;
+            system("PAUSE");
+            system("CLS");
             classMenu();
     }
 
@@ -462,6 +507,8 @@ void Menu::ucMenu() {
                     cout << "Uc " + txtOption1 + " Schedule is:" << endl;
                     SchedulePrinter::printUcSchedule(txtOption1);
                     cout << endl;
+                    system("PAUSE");
+                    system("CLS");
                     break;
                 }
                 else {
@@ -480,6 +527,8 @@ void Menu::ucMenu() {
                     cout << "Students of Uc " + txtOption1 + " are:" << endl;
                     Uc::printStudentsInAUc(txtOption1);
                     cout << endl;
+                    system("PAUSE");
+                    system("CLS");
                     break;
                 }
                 else {
@@ -489,9 +538,12 @@ void Menu::ucMenu() {
 
             ucMenu();
         case 0:
+            system("CLS");
             displayMenu();
         default:
             cout << "Invalid Option!" << endl;
+            system("PAUSE");
+            system("CLS");
             ucMenu();
     }
 }

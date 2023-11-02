@@ -7,4 +7,5 @@ int App::run() {
     classes_per_uc();
     classes();
     students_classes();
+    return 0;
 }
