@@ -17,7 +17,7 @@ bool ScheduleWriter::write() {
 
     outputFile << "StudentCode,StudentName,UcCode,ClassCode\r\n";
 
-    vector<students_classes> readStudentsClasses = reader.v_students_classes;
+    vector<students_classes> readStudentsClasses = reader.read_students_classes();
 
     for (auto it_readStudentClasses: readStudentsClasses) {
         if (!(it_readStudentClasses.StudentCode == writeScheduler.lastChange.studentCode &&
@@ -34,9 +34,9 @@ bool ScheduleWriter::write() {
     }
 
     outputFile.close();
-
+    /*
     remove("../students_classes.csv");
     rename("../students_classes_output.csv", "../students_classes.csv");
-
+    */
     return true;
 }
