@@ -1,11 +1,9 @@
 
 #include "Writer.h"
 
-Scheduler writeScheduler;
-
 ScheduleWriter::ScheduleWriter(Reader &reader) { }
 
-bool ScheduleWriter::write() {
+bool ScheduleWriter::write(studentClassChange lastChange) {
 
     ofstream outputFile;
     outputFile.open("../students_classes_output.csv");
@@ -15,28 +13,27 @@ bool ScheduleWriter::write() {
         return false;
     }
 
-    outputFile << "StudentCode,StudentName,UcCode,ClassCode\r\n";
+    outputFile << "StudentCode,StudentName,UcCode,ClassCode\n";
 
     vector<students_classes> readStudentsClasses = reader.read_students_classes();
 
     for (auto it_readStudentClasses: readStudentsClasses) {
-        if (!(it_readStudentClasses.StudentCode == writeScheduler.lastChange.studentCode &&
-              it_readStudentClasses.UcCode == writeScheduler.lastChange.oldUcCode &&
-              it_readStudentClasses.ClassCode == writeScheduler.lastChange.oldClassCode)) {
-            outputFile << it_readStudentClasses.StudentCode << "," << it_readStudentClasses.StudentName << ","
-                       << it_readStudentClasses.UcCode << "," << it_readStudentClasses.ClassCode << "\r\n";
+        if (it_readStudentClasses.StudentCode == lastChange.studentCode && it_readStudentClasses.StudentName == lastChange.studentName && it_readStudentClasses.UcCode == lastChange.oldUcCode && it_readStudentClasses.ClassCode == lastChange.oldClassCode) {
+            continue;
+        }
+        else {
+            outputFile << it_readStudentClasses.StudentCode << "," << it_readStudentClasses.StudentName << "," << it_readStudentClasses.UcCode << "," << it_readStudentClasses.ClassCode << "\n";
         }
     }
 
-    if (writeScheduler.lastChange.newClassCode != "") {
-        outputFile << writeScheduler.lastChange.studentCode << "," << writeScheduler.lastChange.studentName << ","
-                   << writeScheduler.lastChange.newUcCode << "," << writeScheduler.lastChange.newClassCode << "\r\n";
+    if (lastChange.newClassCode != "" && lastChange.newUcCode != "") {
+        outputFile << lastChange.studentCode << "," << lastChange.studentName << "," << lastChange.newUcCode << "," << lastChange.newClassCode << "\n";
     }
 
     outputFile.close();
-    /*
+
     remove("../students_classes.csv");
     rename("../students_classes_output.csv", "../students_classes.csv");
-    */
+
     return true;
 }

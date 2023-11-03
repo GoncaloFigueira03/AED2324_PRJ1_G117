@@ -18,7 +18,7 @@ public:
     ScheduleWriter(Reader &reader);
 
     // Writes the Schedule Changes to the students_classes.csv File
-    bool write();
+    bool write(studentClassChange lastChange);
 };
 
 #endif //CODE_WRITER_H

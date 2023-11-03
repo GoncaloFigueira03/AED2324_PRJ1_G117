@@ -19,7 +19,7 @@ public:
     static vector<string> getClassUcCodes(string classCode);
 
     // Gets the Classes Student Numbers of a Year
-    static stack<int> getClassStudentsNumbers(char classYear);
+    static stack<int> getClassStudentsNumbers(char classYear, string ucCode);
 
     // Gets the ClassSchedule of a Given Uc
     static classes getClassSchedulePerUc(string classUcCode);

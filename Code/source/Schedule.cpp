@@ -18,31 +18,34 @@ int Scheduler::getMaxUcsPerStudent() {
     return maxUcsPerStudent;
 }
 
-int Scheduler::getClassStudentsNumber(string classCode) {
+int Scheduler::getClassStudentsNumber(string classCode, string ucCode) {
     vector<students_classes> readStudentsClasses = studentClassesReader.read_students_classes();
 
-    int studentCount = 0;
+    int count = 0;
 
     for (auto it_readStudentsClasses:readStudentsClasses) {
-        if (classCode == it_readStudentsClasses.ClassCode) {
-            studentCount++;
+        if (it_readStudentsClasses.ClassCode == classCode && it_readStudentsClasses.UcCode == ucCode) {
+            count++;
         }
     }
 
-    return studentCount;
+    return count;
 }
 
-int Scheduler::getClassStudentsNumberAvg(char classYear) {
-    int avgStudentNumbers = 0;
-    int count = 0;
+int Scheduler::getClassStudentsNumberAvg(char classYear, string ucCode) {
+    int totalStudentsInClassYear = 0;
+    int numberOfClassesInClassYear = 0;
 
-    while (!Class::getClassStudentsNumbers(classYear).empty()) {
-        avgStudentNumbers += Class::getClassStudentsNumbers(classYear).top();
-        Class::getClassStudentsNumbers(classYear).pop();
-        count++;
+    vector<students_classes> readStudentsClasses = studentClassesReader.read_students_classes();
+
+    for (auto it_readStudentClasses:readStudentsClasses) {
+        if (classYear == it_readStudentClasses.ClassCode[0]) {
+            totalStudentsInClassYear += getClassStudentsNumber(it_readStudentClasses.ClassCode, it_readStudentClasses.UcCode);
+            numberOfClassesInClassYear++;
+        }
     }
 
-    return avgStudentNumbers / count;
+    return totalStudentsInClassYear / numberOfClassesInClassYear;
 }
 
 int Scheduler::getStudentUcsNumber(string studentCode) {
@@ -63,16 +66,19 @@ bool Scheduler::doesUcBelongToClass(string ucCode, string classCode) {
     return false;
 }
 
-bool Scheduler::isClassFull(string classCode) {
-    if (getClassStudentsNumber(classCode) >= scheduler.getMaxStudentsPerClass()) {
+bool Scheduler::isClassFull(string classCode, string ucCode) {
+    if (getClassStudentsNumber(classCode, ucCode) >= scheduler.getMaxStudentsPerClass()) {
         return true;
     }
 
     return false;
 }
 
-bool Scheduler::isChangeGapRespected(string classCode) {
-    if (scheduler.getClassStudentsNumber(classCode) - scheduler.getClassStudentsNumberAvg(classCode[0]) <= scheduler.getMaxStudentsPerClassChangeGap()) {
+bool Scheduler::isChangeGapRespected(string classCode, string ucCode) {
+    cout << classCode[0] << endl;
+    cout << scheduler.getClassStudentsNumberAvg(classCode[0], ucCode) << endl;
+    cout << scheduler.getClassStudentsNumber(classCode, ucCode) << endl;
+    if (abs(scheduler.getClassStudentsNumber(classCode, ucCode) - scheduler.getClassStudentsNumberAvg(classCode[0], ucCode)) <= scheduler.getMaxStudentsPerClassChangeGap()) {
         return true;
     }
 
@@ -172,8 +178,15 @@ void Scheduler::requestChangeInStudentClass(queue <string> studentInfo) {
 }
 
 void Scheduler::processRequest() {
+    if (scheduler.requestQueue.empty()) {
+        cout << "There are no Requests to Process" << endl;
+        return;
+    }
+
     scheduler.lastChange = scheduler.requestQueue.front();
     scheduler.requestQueue.pop();
+
+    cout << scheduler.lastChange.studentName << " " << scheduler.lastChange.studentCode << " " << scheduler.lastChange.newClassCode << " " << scheduler.lastChange.newUcCode << " " << scheduler.lastChange.oldClassCode << " " << scheduler.lastChange.oldUcCode << endl;
 
     if (!(scheduler.getStudentUcsNumber(scheduler.lastChange.studentCode) <= scheduler.getMaxUcsPerStudent())) {
         cout << "The Processing Request Failed" << endl;
@@ -181,32 +194,39 @@ void Scheduler::processRequest() {
 
         return;
     }
-    else if (isClassFull(scheduler.lastChange.newClassCode)) {
+    else if (isClassFull(scheduler.lastChange.oldClassCode, scheduler.lastChange.oldUcCode)) {
         cout << "The Processing Request Failed" << endl;
         scheduler.processRequestFailedMessages.push_back("UP" + scheduler.lastChange.studentCode + ", " + scheduler.lastChange.studentName + ", [" + scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" + scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" + "The Error Message: Class " + scheduler.lastChange.newClassCode + " is Full");
 
         return;
-    }
-    else if (!isChangeGapRespected(scheduler.lastChange.newClassCode)) {
+    }/*
+    else if (!isChangeGapRespected(scheduler.lastChange.oldClassCode, scheduler.lastChange.oldUcCode)) {
         cout << "The Processing Request Failed" << endl;
         scheduler.processRequestFailedMessages.push_back("UP" + scheduler.lastChange.studentCode + ", " + scheduler.lastChange.studentName + ", [" + scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" + scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" + "The Error Message: The Class Change Gap is not Respected");
 
         return;
-    }
+    }*/
     else if (!isScheduleChangeValid(scheduler.lastChange)) {
         cout << "The Processing Request Failed" << endl;
         scheduler.processRequestFailedMessages.push_back("UP" + scheduler.lastChange.studentCode + ", " + scheduler.lastChange.studentName + ", [" + scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" + scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" + "The Error Message: The Schedule enters in Conflict therefore is not Valid");
 
         return;
     }
-
-    if(scheduleWriter.write()) {
+    else if(scheduleWriter.write(scheduler.lastChange)) {
         cout << "The Request was Processed Successfully" << endl;
         scheduler.studentsClassesChangesStack.push(scheduler.lastChange);
+
+        return;
     }
-    else
+    else {
         cout << "The Processing Request Failed" << endl;
-        scheduler.processRequestFailedMessages.push_back("UP" + scheduler.lastChange.studentCode + ", " + scheduler.lastChange.studentName + ", [" + scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" + scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" + "The Error Message: The Uc was not added to the Student Successfully (Unknown Error)");
+        scheduler.processRequestFailedMessages.push_back(
+                "UP" + scheduler.lastChange.studentCode + ", " + scheduler.lastChange.studentName + ", [" +
+                scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" +
+                scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" +
+                "The Error Message: The Uc was not added to the Student Successfully (Unknown Error)");
+        return;
+    }
 }
 
 void Scheduler::revertLastChange() {
@@ -221,7 +241,7 @@ void Scheduler::revertLastChange() {
     scheduler.lastChange.oldUcCode = newUcCodeBuffer;
     scheduler.lastChange.oldClassCode = newClassCodeBuffer;
 
-    if(scheduleWriter.write()) {
+    if(scheduleWriter.write(scheduler.lastChange)) {
         cout << "The Reversion was Successful" << endl;
 
         return;

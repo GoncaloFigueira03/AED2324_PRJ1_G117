@@ -11,15 +11,6 @@
 
 using namespace std;
 
-struct studentClassChange {
-    string studentName;
-    string studentCode;
-    string newClassCode;
-    string oldClassCode;
-    string newUcCode;
-    string oldUcCode;
-};
-
 class Scheduler {
 private:
     // The Maximum Number of Ucs a Student can have
@@ -48,7 +39,7 @@ public:
 
     int getMaxStudentsPerClassChangeGap();
 
-    int getClassStudentsNumberAvg(char classYear);
+    int getClassStudentsNumberAvg(char classYear, string ucCode);
 
     static void addUcToStudent(queue <string> studentInfo);
 
@@ -68,13 +59,13 @@ public:
 
     static int getStudentUcsNumber(string studentNameOrCode);
 
-    static int getClassStudentsNumber(string classCode);
+    static int getClassStudentsNumber(string classCode, string ucCode);
 
     static bool doesUcBelongToClass(string ucCode, string classCode);
 
-    static bool isClassFull(string classCode);
+    static bool isClassFull(string classCode, string ucCode);
 
-    static bool isChangeGapRespected(string classCode);
+    static bool isChangeGapRespected(string classCode, string ucCode);
 
     static bool isScheduleChangeValid(studentClassChange studentClassChange);
 };

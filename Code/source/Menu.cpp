@@ -6,6 +6,8 @@
 #define GREEN "\033[32m"
 #define YELLOW "\033[93m"
 
+Scheduler menuScheduler;
+
 void Menu::initMenu() {
     cout << endl << YELLOW << "=================[OPTIONS]=================" << RESET << endl << endl;
     cout << BOLDWHITE << "   1 - Display" << endl;
@@ -45,7 +47,7 @@ void Menu::initMenu() {
             break;
         case 0:
             cout << "Exiting..." << endl;
-            break;
+            exit(0);
         default:
             cout << "Invalid Option!" << endl << flush;
             system("PAUSE");
@@ -82,6 +84,7 @@ void Menu::displayMenu() {
         case 0:
             system("CLS");
             initMenu();
+            break;
         default:
             cout << RED << "Invalid Option!" << RESET << endl;
             system("PAUSE");
@@ -186,7 +189,6 @@ void Menu::removeMenu() {
     studentInfo.push(txtOption3);
 
     Scheduler::removeUcFromStudent(studentInfo);
-
     initMenu();
 }
 
@@ -263,7 +265,7 @@ void Menu::requestsMenu() {
     cout << endl << YELLOW << "=================[OPTIONS]=================" << RESET << endl << endl;
 
     int option;
-    cout << "Please type the number corresponding to de wanted option:";
+    cout << "Please type the number corresponding to the wanted option:";
     cin >> option;
     cout << endl;
 
@@ -274,6 +276,7 @@ void Menu::requestsMenu() {
                 system("PAUSE");
                 system("CLS");
                 requestsMenu();
+                break;
 
             case 2: // Process Requests
                 Scheduler::processRequest();
@@ -281,28 +284,33 @@ void Menu::requestsMenu() {
                 system("PAUSE");
                 system("CLS");
                 requestsMenu();
+                break;
 
             case 3: // View Successful Requests
                 Scheduler::printRequestSuccessLogs();
                 system("PAUSE");
                 system("CLS");
                 requestsMenu();
+                break;
 
             case 4: // View Failed Requests
                 Scheduler::printRequestFailLogs();
                 system("PAUSE");
                 system("CLS");
                 requestsMenu();
+                break;
 
             case 5: // Revert Last Request
                 Scheduler::revertLastChange();
                 system("PAUSE");
                 system("CLS");
                 requestsMenu();
+                break;
 
             case 0: // Go Back
                 system("CLS");
                 initMenu();
+                break;
 
             default:
                 cout << RED << "Invalid Option!" << RESET << endl;
@@ -324,7 +332,7 @@ void Menu::studentMenu() {
     int option;
     string txtOption1;
     string txtOption2;
-    cout << "Please type the number corresponding to de wanted option:";
+    cout << "Please type the number corresponding to the wanted option:";
     cin >> option;
     cout << endl;
 
@@ -351,6 +359,7 @@ void Menu::studentMenu() {
             }
 
             initMenu();
+            break;
         case 2:
             while (true) {
                 cout << "Insert the Name or Code of the Desired Student:";
@@ -371,6 +380,7 @@ void Menu::studentMenu() {
             }
 
             initMenu();
+            break;
         case 3:
             while (true) {
                 cout << "Insert the Name or Code of the Desired Student:";
@@ -391,9 +401,11 @@ void Menu::studentMenu() {
             }
 
             initMenu();
+            break;
         case 0:
             system("CLS");
             displayMenu();
+            break;
         default:
             cout << RED << "Invalid Option!" << RESET << endl;
             system("PAUSE");
@@ -440,6 +452,7 @@ void Menu::classMenu() {
             }
 
             classMenu();
+            break;
         case 2:
             while (true) {
                 cout << "Insert the Code of the Desired Class:";
@@ -469,6 +482,7 @@ void Menu::classMenu() {
             }
 
             classMenu();
+            break;
         case 3:
             while (true) {
                 cout << "Insert the Code of the Desired Class:";
@@ -498,6 +512,7 @@ void Menu::classMenu() {
             }
 
             classMenu();
+            break;
         case 0:
             system("CLS");
             displayMenu();
@@ -546,6 +561,7 @@ void Menu::ucMenu() {
             }
 
             ucMenu();
+            break;
         case 2:
             while (true) {
                 cout << "Insert the Code of the Desired Uc:";
@@ -566,9 +582,11 @@ void Menu::ucMenu() {
             }
 
             ucMenu();
+            break;
         case 0:
             system("CLS");
             displayMenu();
+            break;
         default:
             cout << RED << "Invalid Option!" << RESET << endl;
             system("PAUSE");

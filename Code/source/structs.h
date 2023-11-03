@@ -38,4 +38,13 @@ struct classTimeIndexes {
     string durationIndex;
 };
 
+struct studentClassChange {
+    string studentName;
+    string studentCode;
+    string newClassCode;
+    string oldClassCode;
+    string newUcCode;
+    string oldUcCode;
+};
+
 #endif
