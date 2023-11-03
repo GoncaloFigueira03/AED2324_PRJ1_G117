@@ -280,7 +280,6 @@ void Menu::requestsMenu() {
 
             case 2: // Process Requests
                 Scheduler::processRequest();
-                cout << GREEN << "Requests Processed!" << RESET << endl;
                 system("PAUSE");
                 system("CLS");
                 requestsMenu();

@@ -51,6 +51,12 @@ public:
 
     static void processRequest();
 
+    static bool processAddRequest();
+
+    static bool processRemoveRequest();
+
+    static void processChangeRequest();
+
     static void revertLastChange();
 
     static void printRequestSuccessLogs();

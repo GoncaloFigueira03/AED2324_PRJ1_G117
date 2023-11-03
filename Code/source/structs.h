@@ -39,6 +39,7 @@ struct classTimeIndexes {
 };
 
 struct studentClassChange {
+    string type;
     string studentName;
     string studentCode;
     string newClassCode;

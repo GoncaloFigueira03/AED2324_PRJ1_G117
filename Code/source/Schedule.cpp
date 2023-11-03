@@ -1,5 +1,9 @@
 #include "Schedule.h"
 
+#define RESET "\033[0m"
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+
 Scheduler scheduler;
 
 Reader studentClassesReader;
@@ -75,10 +79,7 @@ bool Scheduler::isClassFull(string classCode, string ucCode) {
 }
 
 bool Scheduler::isChangeGapRespected(string classCode, string ucCode) {
-    cout << classCode[0] << endl;
-    cout << scheduler.getClassStudentsNumberAvg(classCode[0], ucCode) << endl;
-    cout << scheduler.getClassStudentsNumber(classCode, ucCode) << endl;
-    if (abs(scheduler.getClassStudentsNumber(classCode, ucCode) - scheduler.getClassStudentsNumberAvg(classCode[0], ucCode)) <= scheduler.getMaxStudentsPerClassChangeGap()) {
+    if (abs(scheduler.getClassStudentsNumber(classCode, ucCode) - scheduler.getClassStudentsNumberAvg(classCode[0], ucCode)) <= scheduler.getMaxStudentsPerClassChangeGap() || scheduler.getClassStudentsNumberAvg(classCode[0], ucCode) <= 1) {
         return true;
     }
 
@@ -137,7 +138,10 @@ void Scheduler::addUcToStudent(queue <string> studentInfo) {
     scheduler.lastChange.newClassCode = studentInfo.front();
     studentInfo.pop();
 
+    scheduler.lastChange.type = "Add";
     scheduler.lastChange.studentName = StudentSchedule::getStudentName(scheduler.lastChange.studentCode);
+    scheduler.lastChange.oldUcCode = "";
+    scheduler.lastChange.oldClassCode = "";
     scheduler.requestQueue.push(scheduler.lastChange);
 }
 
@@ -151,6 +155,7 @@ void Scheduler::removeUcFromStudent(queue <string> studentInfo) {
     scheduler.lastChange.oldClassCode = studentInfo.front();
     studentInfo.pop();
 
+    scheduler.lastChange.type = "Remove";
     scheduler.lastChange.studentName = StudentSchedule::getStudentName(scheduler.lastChange.studentCode);
     scheduler.lastChange.newUcCode = "";
     scheduler.lastChange.newClassCode = "";
@@ -173,6 +178,7 @@ void Scheduler::requestChangeInStudentClass(queue <string> studentInfo) {
     scheduler.lastChange.oldClassCode = studentInfo.front();
     studentInfo.pop();
 
+    scheduler.lastChange.type = "Change";
     scheduler.lastChange.studentName = StudentSchedule::getStudentName(scheduler.lastChange.studentCode);
     scheduler.requestQueue.push(scheduler.lastChange);
 }
@@ -186,46 +192,121 @@ void Scheduler::processRequest() {
     scheduler.lastChange = scheduler.requestQueue.front();
     scheduler.requestQueue.pop();
 
-    cout << scheduler.lastChange.studentName << " " << scheduler.lastChange.studentCode << " " << scheduler.lastChange.newClassCode << " " << scheduler.lastChange.newUcCode << " " << scheduler.lastChange.oldClassCode << " " << scheduler.lastChange.oldUcCode << endl;
-
-    if (!(scheduler.getStudentUcsNumber(scheduler.lastChange.studentCode) <= scheduler.getMaxUcsPerStudent())) {
-        cout << "The Processing Request Failed" << endl;
-        scheduler.processRequestFailedMessages.push_back("UP" + scheduler.lastChange.studentName + ", " + scheduler.lastChange.studentCode + ", [" + scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" + scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" + "The Error Message: " + scheduler.lastChange.studentName + " already has the Maximum Number of Ucs");
-
-        return;
+    if (scheduler.lastChange.type == "Add") {
+        if(processAddRequest()) {
+            cout << GREEN << "The Request was Processed Successfully" << RESET << endl;
+        }
+        else {
+            cout << RED << "The Processing Request Failed" << RESET << endl;
+        }
     }
-    else if (isClassFull(scheduler.lastChange.oldClassCode, scheduler.lastChange.oldUcCode)) {
-        cout << "The Processing Request Failed" << endl;
-        scheduler.processRequestFailedMessages.push_back("UP" + scheduler.lastChange.studentCode + ", " + scheduler.lastChange.studentName + ", [" + scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" + scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" + "The Error Message: Class " + scheduler.lastChange.newClassCode + " is Full");
-
-        return;
-    }/*
-    else if (!isChangeGapRespected(scheduler.lastChange.oldClassCode, scheduler.lastChange.oldUcCode)) {
-        cout << "The Processing Request Failed" << endl;
-        scheduler.processRequestFailedMessages.push_back("UP" + scheduler.lastChange.studentCode + ", " + scheduler.lastChange.studentName + ", [" + scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" + scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" + "The Error Message: The Class Change Gap is not Respected");
-
-        return;
-    }*/
-    else if (!isScheduleChangeValid(scheduler.lastChange)) {
-        cout << "The Processing Request Failed" << endl;
-        scheduler.processRequestFailedMessages.push_back("UP" + scheduler.lastChange.studentCode + ", " + scheduler.lastChange.studentName + ", [" + scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" + scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" + "The Error Message: The Schedule enters in Conflict therefore is not Valid");
-
-        return;
+    else if (scheduler.lastChange.type == "Remove") {
+        if(processRemoveRequest()) {
+            cout << GREEN << "The Request was Processed Successfully" << RESET << endl;
+        }
+        else {
+            cout << RED << "The Processing Request Failed" << RESET << endl;
+        }
     }
-    else if(scheduleWriter.write(scheduler.lastChange)) {
-        cout << "The Request was Processed Successfully" << endl;
-        scheduler.studentsClassesChangesStack.push(scheduler.lastChange);
-
-        return;
+    else if (scheduler.lastChange.type == "Change") {
+        processChangeRequest();
     }
     else {
-        cout << "The Processing Request Failed" << endl;
+        cout << "The Request Type is Invalid" << endl;
+    }
+}
+
+bool Scheduler::processAddRequest() {
+    if (!(scheduler.getStudentUcsNumber(scheduler.lastChange.studentCode) <= scheduler.getMaxUcsPerStudent())) {
+        scheduler.processRequestFailedMessages.push_back("UP" + scheduler.lastChange.studentName + ", " + scheduler.lastChange.studentCode + ", [" + scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" + scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" + "The Error Message: " + scheduler.lastChange.studentName + " already has the Maximum Number of Ucs");
+
+        return false;
+    }
+    else if (isClassFull(scheduler.lastChange.newClassCode, scheduler.lastChange.newUcCode)) {
+        scheduler.processRequestFailedMessages.push_back("UP" + scheduler.lastChange.studentCode + ", " + scheduler.lastChange.studentName + ", [" + scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" + scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" + "The Error Message: Class " + scheduler.lastChange.newClassCode + " is Full");
+
+        return false;
+    }
+    else if (!isChangeGapRespected(scheduler.lastChange.newClassCode, scheduler.lastChange.newUcCode)) {
+        scheduler.processRequestFailedMessages.push_back("UP" + scheduler.lastChange.studentCode + ", " + scheduler.lastChange.studentName + ", [" + scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" + scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" + "The Error Message: The Class Change Gap is not Respected");
+
+        return false;
+    }
+    else if (!isScheduleChangeValid(scheduler.lastChange)) {
+        scheduler.processRequestFailedMessages.push_back("UP" + scheduler.lastChange.studentCode + ", " + scheduler.lastChange.studentName + ", [" + scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" + scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" + "The Error Message: The Schedule enters in Conflict therefore is not Valid");
+
+        return false;
+    }
+    else if(scheduleWriter.write(scheduler.lastChange)) {
+        scheduler.studentsClassesChangesStack.push(scheduler.lastChange);
+
+        return true;
+    }
+    else {
         scheduler.processRequestFailedMessages.push_back(
                 "UP" + scheduler.lastChange.studentCode + ", " + scheduler.lastChange.studentName + ", [" +
                 scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" +
                 scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" +
                 "The Error Message: The Uc was not added to the Student Successfully (Unknown Error)");
-        return;
+        return false;
+    }
+}
+
+bool Scheduler::processRemoveRequest() {
+    if (!(scheduler.getStudentUcsNumber(scheduler.lastChange.studentCode) <= scheduler.getMaxUcsPerStudent())) {
+        scheduler.processRequestFailedMessages.push_back("UP" + scheduler.lastChange.studentName + ", " + scheduler.lastChange.studentCode + ", [" + scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" + scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" + "The Error Message: " + scheduler.lastChange.studentName + " already has the Maximum Number of Ucs");
+
+        return false;
+    }
+    else if (isClassFull(scheduler.lastChange.oldClassCode, scheduler.lastChange.oldUcCode)) {
+        scheduler.processRequestFailedMessages.push_back("UP" + scheduler.lastChange.studentCode + ", " + scheduler.lastChange.studentName + ", [" + scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" + scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" + "The Error Message: Class " + scheduler.lastChange.newClassCode + " is Full");
+
+        return false;
+    }
+    else if (!isScheduleChangeValid(scheduler.lastChange)) {
+        scheduler.processRequestFailedMessages.push_back("UP" + scheduler.lastChange.studentCode + ", " + scheduler.lastChange.studentName + ", [" + scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" + scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" + "The Error Message: The Schedule enters in Conflict therefore is not Valid");
+
+        return false;
+    }
+    else if(scheduleWriter.write(scheduler.lastChange)) {
+        scheduler.studentsClassesChangesStack.push(scheduler.lastChange);
+
+        return true;
+    }
+    else {
+        scheduler.processRequestFailedMessages.push_back(
+                "UP" + scheduler.lastChange.studentCode + ", " + scheduler.lastChange.studentName + ", [" +
+                scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" +
+                scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" +
+                "The Error Message: The Uc was not added to the Student Successfully (Unknown Error)");
+        return false;
+    }
+}
+
+void Scheduler::processChangeRequest() {
+    if (scheduler.processRemoveRequest()) {
+        if (scheduler.processAddRequest()) {
+            cout << GREEN << "The Request was Processed Successfully" << RESET << endl;
+            scheduler.studentsClassesChangesStack.push(scheduler.lastChange);
+            return;
+        }
+        else {
+            cout << RED << "The Processing Request Failed" << RESET << endl;
+            scheduler.processRequestFailedMessages.push_back(
+                    "UP" + scheduler.lastChange.studentCode + ", " + scheduler.lastChange.studentName + ", [" +
+                    scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" +
+                    scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" +
+                    "The Error Message: The Uc was not added to the Student Successfully Do to an Error in the Add Request");
+            revertLastChange();
+        }
+    }
+    else {
+        cout << RED << "The Processing Request Failed" << RESET << endl;
+        scheduler.processRequestFailedMessages.push_back(
+                "UP" + scheduler.lastChange.studentCode + ", " + scheduler.lastChange.studentName + ", [" +
+                scheduler.lastChange.oldUcCode + ", " + scheduler.lastChange.oldClassCode + "] -> [" +
+                scheduler.lastChange.newUcCode + ", " + scheduler.lastChange.newClassCode + "]\n" +
+                "The Error Message: The Uc was not added to the Student Successfully Do to an Error in the Remove Request");
     }
 }
 
