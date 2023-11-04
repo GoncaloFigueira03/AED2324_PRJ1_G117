@@ -1,0 +1,83 @@
+\doxysection{Scheduler Class Reference}
+\hypertarget{class_scheduler}{}\label{class_scheduler}\index{Scheduler@{Scheduler}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_scheduler_aa9e0b8dbe692f17c06d8e764ca46e384}\label{class_scheduler_aa9e0b8dbe692f17c06d8e764ca46e384} 
+int {\bfseries get\+Max\+Ucs\+Per\+Student} ()
+\item 
+\Hypertarget{class_scheduler_a191f5ca773a717593723876ee76936dc}\label{class_scheduler_a191f5ca773a717593723876ee76936dc} 
+int {\bfseries get\+Max\+Students\+Per\+Class} ()
+\item 
+\Hypertarget{class_scheduler_a4b307cd7ae23911e6a671185c483d118}\label{class_scheduler_a4b307cd7ae23911e6a671185c483d118} 
+int {\bfseries get\+Max\+Students\+Per\+Class\+Change\+Gap} ()
+\item 
+\Hypertarget{class_scheduler_a4810c5ab0eafd14554136b5504a14108}\label{class_scheduler_a4810c5ab0eafd14554136b5504a14108} 
+int {\bfseries get\+Class\+Students\+Number\+Avg} (char class\+Year, string uc\+Code)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_scheduler_a1d3b5be3a8253d80711058f84b2a3217}\label{class_scheduler_a1d3b5be3a8253d80711058f84b2a3217} 
+static void {\bfseries add\+Uc\+To\+Student} (queue$<$ string $>$ student\+Info)
+\item 
+\Hypertarget{class_scheduler_a23bd7b8ab2ae21764352d60376c0ffc0}\label{class_scheduler_a23bd7b8ab2ae21764352d60376c0ffc0} 
+static void {\bfseries remove\+Uc\+From\+Student} (queue$<$ string $>$ student\+Info)
+\item 
+\Hypertarget{class_scheduler_a3933535c20591394c5410293abaf2107}\label{class_scheduler_a3933535c20591394c5410293abaf2107} 
+static void {\bfseries request\+Change\+In\+Student\+Class} (queue$<$ string $>$ student\+Info)
+\item 
+\Hypertarget{class_scheduler_ad335063eb37553d8ccd98a811a8f886b}\label{class_scheduler_ad335063eb37553d8ccd98a811a8f886b} 
+static void {\bfseries print\+Requests} ()
+\item 
+\Hypertarget{class_scheduler_ae8dc28a7d48690a53ed1b855bdb3b0a3}\label{class_scheduler_ae8dc28a7d48690a53ed1b855bdb3b0a3} 
+static void {\bfseries process\+Request} ()
+\item 
+\Hypertarget{class_scheduler_af553190cea2a4fa7bd1f0081cad7c595}\label{class_scheduler_af553190cea2a4fa7bd1f0081cad7c595} 
+static bool {\bfseries process\+Add\+Request} ()
+\item 
+\Hypertarget{class_scheduler_ab2825bfd42a1f0c85d7e61835aa081ae}\label{class_scheduler_ab2825bfd42a1f0c85d7e61835aa081ae} 
+static bool {\bfseries process\+Remove\+Request} ()
+\item 
+\Hypertarget{class_scheduler_aa6db716c652c0a9a7bb7f68589853caa}\label{class_scheduler_aa6db716c652c0a9a7bb7f68589853caa} 
+static void {\bfseries process\+Change\+Request} ()
+\item 
+\Hypertarget{class_scheduler_aa53d1b6ab4966cda51606d2ab05554d9}\label{class_scheduler_aa53d1b6ab4966cda51606d2ab05554d9} 
+static void {\bfseries revert\+Last\+Change} ()
+\item 
+\Hypertarget{class_scheduler_ab642c94133e0ba8c70a2e5cdb3bede25}\label{class_scheduler_ab642c94133e0ba8c70a2e5cdb3bede25} 
+static void {\bfseries print\+Request\+Success\+Logs} ()
+\item 
+\Hypertarget{class_scheduler_af1ec6feeaa15ba50346b201138df9733}\label{class_scheduler_af1ec6feeaa15ba50346b201138df9733} 
+static void {\bfseries print\+Request\+Fail\+Logs} ()
+\item 
+\Hypertarget{class_scheduler_abe04dfe42b42ca05805405e593e01fd9}\label{class_scheduler_abe04dfe42b42ca05805405e593e01fd9} 
+static int {\bfseries get\+Student\+Ucs\+Number} (string student\+Name\+Or\+Code)
+\item 
+\Hypertarget{class_scheduler_a9a417de874bdeb5cf40808ce937f8662}\label{class_scheduler_a9a417de874bdeb5cf40808ce937f8662} 
+static int {\bfseries get\+Class\+Students\+Number} (string class\+Code, string uc\+Code)
+\item 
+\Hypertarget{class_scheduler_a9ff4c5378e386fda9498160a1e104629}\label{class_scheduler_a9ff4c5378e386fda9498160a1e104629} 
+static bool {\bfseries does\+Uc\+Belong\+To\+Class} (string uc\+Code, string class\+Code)
+\item 
+\Hypertarget{class_scheduler_ad26b888dd50b1c4535247d7bab9137b8}\label{class_scheduler_ad26b888dd50b1c4535247d7bab9137b8} 
+static bool {\bfseries is\+Class\+Full} (string class\+Code, string uc\+Code)
+\item 
+\Hypertarget{class_scheduler_a53c9e438c67fdbfd80c2c28e477d324e}\label{class_scheduler_a53c9e438c67fdbfd80c2c28e477d324e} 
+static bool {\bfseries is\+Change\+Gap\+Respected} (string class\+Code, string uc\+Code)
+\item 
+\Hypertarget{class_scheduler_a8935a9b2ed974b2c857cb24208cff471}\label{class_scheduler_a8935a9b2ed974b2c857cb24208cff471} 
+static bool {\bfseries is\+Schedule\+Change\+Valid} (\mbox{\hyperlink{structstudent_class_change}{student\+Class\+Change}} \mbox{\hyperlink{structstudent_class_change}{student\+Class\+Change}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_scheduler_ab059c5b242d6bb26d324650fd6fca307}\label{class_scheduler_ab059c5b242d6bb26d324650fd6fca307} 
+\mbox{\hyperlink{structstudent_class_change}{student\+Class\+Change}} {\bfseries last\+Change}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/Schedule.\+h\item 
+source/Schedule.\+cpp\end{DoxyCompactItemize}

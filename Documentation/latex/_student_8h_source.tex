@@ -1,0 +1,59 @@
+\doxysection{Student.\+h}
+\hypertarget{_student_8h_source}{}\label{_student_8h_source}\index{source/Student.h@{source/Student.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ CODE\_STUDENT\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ CODE\_STUDENT\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}structs.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}App.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Menu.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_student_schedule}{StudentSchedule}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//\ Is\ Student\ a\ Real\ Student}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isStudent(\textcolor{keywordtype}{string}\ studentCode);}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ Does\ Class\ Belong\ to\ Student}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ doesClassBelongToStudent(\textcolor{keywordtype}{string}\ studentCode,\ \textcolor{keywordtype}{string}\ classCode,\ \textcolor{keywordtype}{string}\ ucCode);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ Gets\ Student\ Code}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ getStudentCode(\textcolor{keywordtype}{string}\ studentNameOrCode);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ Get\ Student\ Name}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ getStudentName(\textcolor{keywordtype}{string}\ studentCode);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ Gets\ the\ Class\ Codes\ of\ a\ Student}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ vector<string>\ getStudentClassCodes(\textcolor{keywordtype}{string}\ studentCode);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Gets\ the\ Uc\ Codes\ of\ a\ Student}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{static}\ vector<string>\ getStudentUcCodes(\textcolor{keywordtype}{string}\ studentCode);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ Pairs\ the\ Uc\ Codes\ with\ the\ Class\ Codes}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{static}\ list<string>\ pairStudentUcCodesWithClassCodes(vector<string>\ ucCodes,\ vector<string>\ classCodes);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Outputs\ a\ Vector\ with\ the\ Classes\ of\ a\ Student}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{static}\ vector<classes>\ getStudentClasses(list<string>\ studentUcCodesWithClassCodes);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ Outputs\ a\ Vector\ with\ the\ Final\ Schedule\ of\ a\ Student\ (without\ overlapping\ classes)}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static}\ vector<classes>\ getStudentSchedule(\textcolor{keywordtype}{string}\ studentCode);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ Prints\ the\ Student\ Classes}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ printStudentClasses(\textcolor{keywordtype}{string}\ studentCode);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ Prints\ the\ Student\ Ucs}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ printStudentUcs(\textcolor{keywordtype}{string}\ studentCode);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ Checks\ if\ there\ are\ Overlapping\ T\ Classes\ with\ PL\ or\ TP\ Classes}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isTClassOverTPOrPL(\mbox{\hyperlink{structclasses}{classes}}\ tClass,\ \mbox{\hyperlink{structclasses}{classes}}\ secondClass);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ Different\ version\ of\ isTClassOverTPOrPL\ (still\ work\ in\ progress)}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ isTClassOverTPOrPLV2(\mbox{\hyperlink{structclasses}{classes}}\ tClass,\ vector<classes>\ secondClasses,\ vector<classes>\ studentClassesFixed);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//CODE\_STUDENT\_H}}
+
+\end{DoxyCode}
