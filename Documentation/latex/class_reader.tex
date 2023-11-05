@@ -3,18 +3,84 @@
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_reader_acb15bfb41cfe831e8c7e753dbfd256c0}\label{class_reader_acb15bfb41cfe831e8c7e753dbfd256c0} 
-vector$<$ \mbox{\hyperlink{structclasses__per__uc}{classes\+\_\+per\+\_\+uc}} $>$ {\bfseries read\+\_\+classes\+\_\+per\+\_\+uc} ()
-\item 
+vector$<$ \mbox{\hyperlink{structclasses__per__uc}{classes\+\_\+per\+\_\+uc}} $>$ \mbox{\hyperlink{class_reader_acb15bfb41cfe831e8c7e753dbfd256c0}{read\+\_\+classes\+\_\+per\+\_\+uc}} ()
+\begin{DoxyCompactList}\small\item\em Reads classes\+\_\+per\+\_\+uc.\+csv and returns a vector of \doxylink{structclasses__per__uc}{classes\+\_\+per\+\_\+uc}. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{structclasses}{classes}} $>$ \mbox{\hyperlink{class_reader_a788bfa34db823295cf29271f38a02d45}{read\+\_\+classes}} ()
+\begin{DoxyCompactList}\small\item\em Reads classes.\+csv and returns a vector of classes. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{structstudents__classes}{students\+\_\+classes}} $>$ \mbox{\hyperlink{class_reader_a489da425689ff94a980b3eaac4909bf8}{read\+\_\+students\+\_\+classes}} ()
+\begin{DoxyCompactList}\small\item\em Reads students\+\_\+classes.\+csv and returns a vector of \doxylink{structstudents__classes}{students\+\_\+classes}. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{structstudent_class_change}{student\+Class\+Change}} $>$ \mbox{\hyperlink{class_reader_a5c0821240901dcc161b48706a3f4d9a2}{read\+\_\+changes}} ()
+\begin{DoxyCompactList}\small\item\em Reads changes.\+csv and returns a vector of \doxylink{structstudent_class_change}{student\+Class\+Change}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_reader_a5c0821240901dcc161b48706a3f4d9a2}\label{class_reader_a5c0821240901dcc161b48706a3f4d9a2} 
+\index{Reader@{Reader}!read\_changes@{read\_changes}}
+\index{read\_changes@{read\_changes}!Reader@{Reader}}
+\doxysubsubsection{\texorpdfstring{read\_changes()}{read\_changes()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{structstudent_class_change}{student\+Class\+Change}} $>$ Reader\+::read\+\_\+changes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reads changes.\+csv and returns a vector of \doxylink{structstudent_class_change}{student\+Class\+Change}. 
+
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(n) 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+vector$<$student\+Class\+Change$>$ 
+\end{DoxyReturn}
 \Hypertarget{class_reader_a788bfa34db823295cf29271f38a02d45}\label{class_reader_a788bfa34db823295cf29271f38a02d45} 
-vector$<$ \mbox{\hyperlink{structclasses}{classes}} $>$ {\bfseries read\+\_\+classes} ()
-\item 
+\index{Reader@{Reader}!read\_classes@{read\_classes}}
+\index{read\_classes@{read\_classes}!Reader@{Reader}}
+\doxysubsubsection{\texorpdfstring{read\_classes()}{read\_classes()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{structclasses}{classes}} $>$ Reader\+::read\+\_\+classes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reads classes.\+csv and returns a vector of classes. 
+
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(n) 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+vector$<$classes$>$ 
+\end{DoxyReturn}
+\Hypertarget{class_reader_acb15bfb41cfe831e8c7e753dbfd256c0}\label{class_reader_acb15bfb41cfe831e8c7e753dbfd256c0} 
+\index{Reader@{Reader}!read\_classes\_per\_uc@{read\_classes\_per\_uc}}
+\index{read\_classes\_per\_uc@{read\_classes\_per\_uc}!Reader@{Reader}}
+\doxysubsubsection{\texorpdfstring{read\_classes\_per\_uc()}{read\_classes\_per\_uc()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{structclasses__per__uc}{classes\+\_\+per\+\_\+uc}} $>$ Reader\+::read\+\_\+classes\+\_\+per\+\_\+uc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reads classes\+\_\+per\+\_\+uc.\+csv and returns a vector of \doxylink{structclasses__per__uc}{classes\+\_\+per\+\_\+uc}. 
+
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(n) 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+vector$<$classes\+\_\+per\+\_\+uc$>$ 
+\end{DoxyReturn}
 \Hypertarget{class_reader_a489da425689ff94a980b3eaac4909bf8}\label{class_reader_a489da425689ff94a980b3eaac4909bf8} 
-vector$<$ \mbox{\hyperlink{structstudents__classes}{students\+\_\+classes}} $>$ {\bfseries read\+\_\+students\+\_\+classes} ()
-\end{DoxyCompactItemize}
+\index{Reader@{Reader}!read\_students\_classes@{read\_students\_classes}}
+\index{read\_students\_classes@{read\_students\_classes}!Reader@{Reader}}
+\doxysubsubsection{\texorpdfstring{read\_students\_classes()}{read\_students\_classes()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{structstudents__classes}{students\+\_\+classes}} $>$ Reader\+::read\+\_\+students\+\_\+classes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reads students\+\_\+classes.\+csv and returns a vector of \doxylink{structstudents__classes}{students\+\_\+classes}. 
+
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(n) 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+vector$<$students\+\_\+classes$>$ 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-source/Reader.\+h\item 
-source/Reader.\+cpp\end{DoxyCompactItemize}
+D\+:/\+FEUP/\+Informatica/2 ano/\+AED2324\+\_\+\+PRJ1\+\_\+\+G117/source/Reader.\+h\item 
+D\+:/\+FEUP/\+Informatica/2 ano/\+AED2324\+\_\+\+PRJ1\+\_\+\+G117/source/Reader.\+cpp\end{DoxyCompactItemize}

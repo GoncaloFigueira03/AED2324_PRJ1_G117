@@ -3,7 +3,6 @@
 
 #include "structs.h"
 #include "Reader.h"
-#include "App.h"
 #include "SchedulePrinter.h"
 #include "Schedule.h"
 

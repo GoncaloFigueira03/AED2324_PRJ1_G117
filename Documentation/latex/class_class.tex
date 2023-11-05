@@ -3,30 +3,116 @@
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_class_a49492ad4d6f5cb201b765a9ed6031938}\label{class_class_a49492ad4d6f5cb201b765a9ed6031938} 
-static bool {\bfseries is\+Class} (string class\+Code)
-\item 
-\Hypertarget{class_class_aa60d026bdac4016f40fb8753677370e7}\label{class_class_aa60d026bdac4016f40fb8753677370e7} 
-static void {\bfseries print\+Students\+In\+AClass} (string class\+Code, char sort\+Option)
-\item 
-\Hypertarget{class_class_ad5d52a1644a361ab56bb20b2c9a690ee}\label{class_class_ad5d52a1644a361ab56bb20b2c9a690ee} 
-static vector$<$ string $>$ {\bfseries get\+Class\+Uc\+Codes} (string class\+Code)
-\item 
-\Hypertarget{class_class_a49f23d4f0eab7a44f43b3dceb0d3cefb}\label{class_class_a49f23d4f0eab7a44f43b3dceb0d3cefb} 
-static stack$<$ int $>$ {\bfseries get\+Class\+Students\+Numbers} (char class\+Year, string uc\+Code)
-\item 
-\Hypertarget{class_class_a6350bbe0b59670a0c874bd54f15ef243}\label{class_class_a6350bbe0b59670a0c874bd54f15ef243} 
-static \mbox{\hyperlink{structclasses}{classes}} {\bfseries get\+Class\+Schedule\+Per\+Uc} (string class\+Uc\+Code)
-\item 
+static bool \mbox{\hyperlink{class_class_a49492ad4d6f5cb201b765a9ed6031938}{is\+Class}} (string class\+Code)
+\begin{DoxyCompactList}\small\item\em Checks if a class exists in the classes.\+csv file. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_class_aa60d026bdac4016f40fb8753677370e7}{print\+Students\+In\+AClass}} (string class\+Code, char sort\+Option)
+\begin{DoxyCompactList}\small\item\em Prints the Students in a Given \doxylink{class_class}{Class}. \end{DoxyCompactList}\item 
+static vector$<$ string $>$ \mbox{\hyperlink{class_class_ad5d52a1644a361ab56bb20b2c9a690ee}{get\+Class\+Uc\+Codes}} (string class\+Code)
+\begin{DoxyCompactList}\small\item\em Gets the \doxylink{class_uc}{Uc} Codes of a Given \doxylink{class_class}{Class}. \end{DoxyCompactList}\item 
+static vector$<$ \mbox{\hyperlink{structclasses}{classes}} $>$ \mbox{\hyperlink{class_class_a719be07b3b6ab752c7875bf05e48fe75}{get\+Class\+Schedule}} (string class\+Uc\+Codes)
+\begin{DoxyCompactList}\small\item\em Gets the \doxylink{class_class}{Class} Schedule of a Given \doxylink{class_uc}{Uc}. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_class_a6868c66563d8ed3cb5346327cbbb5d9c}{print\+Students\+Per\+Class\+Of\+AGiven\+Uc}} (string class\+Code, string uc\+Code)
+\begin{DoxyCompactList}\small\item\em Prints the Students of a \doxylink{class_class}{Class} of a Given \doxylink{class_uc}{Uc}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
 \Hypertarget{class_class_a719be07b3b6ab752c7875bf05e48fe75}\label{class_class_a719be07b3b6ab752c7875bf05e48fe75} 
-static vector$<$ \mbox{\hyperlink{structclasses}{classes}} $>$ {\bfseries get\+Class\+Schedule} (string class\+Uc\+Codes)
-\item 
+\index{Class@{Class}!getClassSchedule@{getClassSchedule}}
+\index{getClassSchedule@{getClassSchedule}!Class@{Class}}
+\doxysubsubsection{\texorpdfstring{getClassSchedule()}{getClassSchedule()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{structclasses}{classes}} $>$ Class\+::get\+Class\+Schedule (\begin{DoxyParamCaption}\item[{string}]{class\+Uc\+Codes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the \doxylink{class_class}{Class} Schedule of a Given \doxylink{class_uc}{Uc}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Uc\+Codes} & \doxylink{class_class}{Class} \doxylink{class_uc}{Uc} Codes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$classes$>$ \doxylink{class_class}{Class} Schedule of a Given \doxylink{class_uc}{Uc} 
+\end{DoxyReturn}
+\Hypertarget{class_class_ad5d52a1644a361ab56bb20b2c9a690ee}\label{class_class_ad5d52a1644a361ab56bb20b2c9a690ee} 
+\index{Class@{Class}!getClassUcCodes@{getClassUcCodes}}
+\index{getClassUcCodes@{getClassUcCodes}!Class@{Class}}
+\doxysubsubsection{\texorpdfstring{getClassUcCodes()}{getClassUcCodes()}}
+{\footnotesize\ttfamily vector$<$ string $>$ Class\+::get\+Class\+Uc\+Codes (\begin{DoxyParamCaption}\item[{string}]{class\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the \doxylink{class_uc}{Uc} Codes of a Given \doxylink{class_class}{Class}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Code} & \doxylink{class_class}{Class} Code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$string$>$ \doxylink{class_uc}{Uc} Codes of a Given \doxylink{class_class}{Class} 
+\end{DoxyReturn}
+\Hypertarget{class_class_a49492ad4d6f5cb201b765a9ed6031938}\label{class_class_a49492ad4d6f5cb201b765a9ed6031938} 
+\index{Class@{Class}!isClass@{isClass}}
+\index{isClass@{isClass}!Class@{Class}}
+\doxysubsubsection{\texorpdfstring{isClass()}{isClass()}}
+{\footnotesize\ttfamily bool Class\+::is\+Class (\begin{DoxyParamCaption}\item[{string}]{class\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if a class exists in the classes.\+csv file. 
+
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(n) 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Code} & \doxylink{class_class}{Class} Code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If the return is true, the class exists 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{class_class_aa60d026bdac4016f40fb8753677370e7}\label{class_class_aa60d026bdac4016f40fb8753677370e7} 
+\index{Class@{Class}!printStudentsInAClass@{printStudentsInAClass}}
+\index{printStudentsInAClass@{printStudentsInAClass}!Class@{Class}}
+\doxysubsubsection{\texorpdfstring{printStudentsInAClass()}{printStudentsInAClass()}}
+{\footnotesize\ttfamily void Class\+::print\+Students\+In\+AClass (\begin{DoxyParamCaption}\item[{string}]{class\+Code,  }\item[{char}]{sort\+Option }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints the Students in a Given \doxylink{class_class}{Class}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Code} & \doxylink{class_class}{Class} Code \\
+\hline
+{\em sort\+Option} & Sorted by Student Name or Student Number \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_class_a6868c66563d8ed3cb5346327cbbb5d9c}\label{class_class_a6868c66563d8ed3cb5346327cbbb5d9c} 
-static void {\bfseries print\+Students\+Per\+Class\+Of\+AGiven\+Uc} (string class\+Code, string uc\+Code)
-\end{DoxyCompactItemize}
+\index{Class@{Class}!printStudentsPerClassOfAGivenUc@{printStudentsPerClassOfAGivenUc}}
+\index{printStudentsPerClassOfAGivenUc@{printStudentsPerClassOfAGivenUc}!Class@{Class}}
+\doxysubsubsection{\texorpdfstring{printStudentsPerClassOfAGivenUc()}{printStudentsPerClassOfAGivenUc()}}
+{\footnotesize\ttfamily void Class\+::print\+Students\+Per\+Class\+Of\+AGiven\+Uc (\begin{DoxyParamCaption}\item[{string}]{class\+Code,  }\item[{string}]{uc\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints the Students of a \doxylink{class_class}{Class} of a Given \doxylink{class_uc}{Uc}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Code} & \doxylink{class_class}{Class} Code \\
+\hline
+{\em uc\+Code} & \doxylink{class_uc}{Uc} Code \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-source/Class.\+h\item 
-source/Class.\+cpp\end{DoxyCompactItemize}
+D\+:/\+FEUP/\+Informatica/2 ano/\+AED2324\+\_\+\+PRJ1\+\_\+\+G117/source/Class.\+h\item 
+D\+:/\+FEUP/\+Informatica/2 ano/\+AED2324\+\_\+\+PRJ1\+\_\+\+G117/source/Class.\+cpp\end{DoxyCompactItemize}

@@ -6,8 +6,6 @@
 #define GREEN "\033[32m"
 #define YELLOW "\033[93m"
 
-Scheduler menuScheduler;
-
 void Menu::initMenu() {
     cout << endl << YELLOW << "=================[OPTIONS]=================" << RESET << endl << endl;
     cout << BOLDWHITE << "   1 - Display" << endl;
@@ -195,14 +193,11 @@ void Menu::changeMenu() {
 
     queue<string> studentInfo;
 
-    vector<classes> studentClasses;
-
     while (true) {
         cout << "Insert Student Name: ";
         cin >> txtOption1;
 
         if (StudentSchedule::isStudent(txtOption1)) {
-            studentClasses = StudentSchedule::getStudentSchedule(StudentSchedule::getStudentCode(txtOption1));
             studentInfo.push(StudentSchedule::getStudentCode(txtOption1));
             break;
         }
@@ -261,54 +256,52 @@ void Menu::requestsMenu() {
     cin >> option;
     cout << endl;
 
-    while (true) {
-        switch (option) {
-            case 1: // View Requests
-                Scheduler::printRequests();
-                system("PAUSE");
-                system("CLS");
-                requestsMenu();
-                break;
+    switch (option) {
+        case 1: // View Requests
+            Scheduler::printRequests();
+            system("PAUSE");
+            system("CLS");
+            requestsMenu();
+            break;
 
-            case 2: // Process Requests
-                Scheduler::processRequest();
-                system("PAUSE");
-                system("CLS");
-                requestsMenu();
-                break;
+        case 2: // Process Requests
+            Scheduler::processRequest();
+            system("PAUSE");
+            system("CLS");
+            requestsMenu();
+            break;
 
-            case 3: // View Successful Requests
-                Scheduler::printRequestSuccessLogs();
-                system("PAUSE");
-                system("CLS");
-                requestsMenu();
-                break;
+        case 3: // View Successful Requests
+            Scheduler::printRequestSuccessLogs();
+            system("PAUSE");
+            system("CLS");
+            requestsMenu();
+            break;
 
-            case 4: // View Failed Requests
-                Scheduler::printRequestFailLogs();
-                system("PAUSE");
-                system("CLS");
-                requestsMenu();
-                break;
+        case 4: // View Failed Requests
+            Scheduler::printRequestFailLogs();
+            system("PAUSE");
+            system("CLS");
+            requestsMenu();
+            break;
 
-            case 5: // Revert Last Request
-                Scheduler::revertLastChange();
-                system("PAUSE");
-                system("CLS");
-                requestsMenu();
-                break;
+        case 5: // Revert Last Request
+            Scheduler::revertLastChange();
+            system("PAUSE");
+            system("CLS");
+            requestsMenu();
+            break;
 
-            case 0: // Go Back
-                system("CLS");
-                initMenu();
-                break;
+        case 0: // Go Back
+            system("CLS");
+            initMenu();
+            break;
 
-            default:
-                cout << RED << "Invalid Option!" << RESET << endl;
-                system("PAUSE");
-                system("CLS");
-                requestsMenu();
-        }
+        default:
+            cout << RED << "Invalid Option!" << RESET << endl;
+            system("PAUSE");
+            system("CLS");
+            requestsMenu();
     }
 }
 

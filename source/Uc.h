@@ -2,15 +2,15 @@
 #define CODE_UC_H
 
 #include "structs.h"
-#include "App.h"
 #include "Class.h"
+#include "Menu.h"
 
 using namespace std;
 
 class Uc {
 public:
     /** @brief Checks if a given ucCode exists in the classes_per_uc file
-     * ;complexity O(n)
+     * @note Time Complexity: O(n)
      *  @param ucCode The ucCode to check
      *  @note If the return is true, the ucCode exists
      *  @return bool

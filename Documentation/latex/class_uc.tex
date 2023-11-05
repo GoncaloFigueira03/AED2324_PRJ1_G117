@@ -3,18 +3,95 @@
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_uc_ad9883a5ce48c1415f57d277464ff009f}\label{class_uc_ad9883a5ce48c1415f57d277464ff009f} 
-static bool {\bfseries is\+Uc} (string uc\+Code)
-\item 
+static bool \mbox{\hyperlink{class_uc_ad9883a5ce48c1415f57d277464ff009f}{is\+Uc}} (string uc\+Code)
+\begin{DoxyCompactList}\small\item\em Checks if a given uc\+Code exists in the \doxylink{structclasses__per__uc}{classes\+\_\+per\+\_\+uc} file. \end{DoxyCompactList}\item 
+static vector$<$ \mbox{\hyperlink{structclasses}{classes}} $>$ \mbox{\hyperlink{class_uc_a974e5f8a547532b816e48833a1b57e5f}{get\+Uc\+Schedule}} (string uc\+Code)
+\begin{DoxyCompactList}\small\item\em Gets the Schedule of a Given \doxylink{class_uc}{Uc}. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_uc_a136361720ecd75554c55a65b933643d0}{print\+Students\+In\+AUc}} (string uc\+Code)
+\begin{DoxyCompactList}\small\item\em Prints the Students in a Given \doxylink{class_uc}{Uc}. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_uc_a70da25bbdd461f991d2dec11e9a65924}{get\+Student\+Count}} (string uc\+Code)
+\begin{DoxyCompactList}\small\item\em Gets the Student Count of a Given \doxylink{class_uc}{Uc}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_uc_a70da25bbdd461f991d2dec11e9a65924}\label{class_uc_a70da25bbdd461f991d2dec11e9a65924} 
+\index{Uc@{Uc}!getStudentCount@{getStudentCount}}
+\index{getStudentCount@{getStudentCount}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{getStudentCount()}{getStudentCount()}}
+{\footnotesize\ttfamily int Uc\+::get\+Student\+Count (\begin{DoxyParamCaption}\item[{string}]{uc\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the Student Count of a Given \doxylink{class_uc}{Uc}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Code} & \doxylink{class_uc}{Uc} Code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Student Count of a Given \doxylink{class_uc}{Uc} 
+\end{DoxyReturn}
 \Hypertarget{class_uc_a974e5f8a547532b816e48833a1b57e5f}\label{class_uc_a974e5f8a547532b816e48833a1b57e5f} 
-static vector$<$ \mbox{\hyperlink{structclasses}{classes}} $>$ {\bfseries get\+Uc\+Schedule} (string uc\+Code)
-\item 
+\index{Uc@{Uc}!getUcSchedule@{getUcSchedule}}
+\index{getUcSchedule@{getUcSchedule}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{getUcSchedule()}{getUcSchedule()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{structclasses}{classes}} $>$ Uc\+::get\+Uc\+Schedule (\begin{DoxyParamCaption}\item[{string}]{uc\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the Schedule of a Given \doxylink{class_uc}{Uc}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Code} & \doxylink{class_uc}{Uc} Code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$classes$>$ Schedule of a Given \doxylink{class_uc}{Uc} 
+\end{DoxyReturn}
+\Hypertarget{class_uc_ad9883a5ce48c1415f57d277464ff009f}\label{class_uc_ad9883a5ce48c1415f57d277464ff009f} 
+\index{Uc@{Uc}!isUc@{isUc}}
+\index{isUc@{isUc}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{isUc()}{isUc()}}
+{\footnotesize\ttfamily bool Uc\+::is\+Uc (\begin{DoxyParamCaption}\item[{string}]{uc\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if a given uc\+Code exists in the \doxylink{structclasses__per__uc}{classes\+\_\+per\+\_\+uc} file. 
+
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(n) 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Code} & The uc\+Code to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If the return is true, the uc\+Code exists 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
 \Hypertarget{class_uc_a136361720ecd75554c55a65b933643d0}\label{class_uc_a136361720ecd75554c55a65b933643d0} 
-static void {\bfseries print\+Students\+In\+AUc} (string uc\+Code)
-\end{DoxyCompactItemize}
+\index{Uc@{Uc}!printStudentsInAUc@{printStudentsInAUc}}
+\index{printStudentsInAUc@{printStudentsInAUc}!Uc@{Uc}}
+\doxysubsubsection{\texorpdfstring{printStudentsInAUc()}{printStudentsInAUc()}}
+{\footnotesize\ttfamily void Uc\+::print\+Students\+In\+AUc (\begin{DoxyParamCaption}\item[{string}]{uc\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints the Students in a Given \doxylink{class_uc}{Uc}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Code} & \doxylink{class_uc}{Uc} Code \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-source/Uc.\+h\item 
-source/Uc.\+cpp\end{DoxyCompactItemize}
+D\+:/\+FEUP/\+Informatica/2 ano/\+AED2324\+\_\+\+PRJ1\+\_\+\+G117/source/Uc.\+h\item 
+D\+:/\+FEUP/\+Informatica/2 ano/\+AED2324\+\_\+\+PRJ1\+\_\+\+G117/source/Uc.\+cpp\end{DoxyCompactItemize}

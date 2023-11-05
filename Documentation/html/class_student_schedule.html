@@ -78,49 +78,548 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a4eeb07b2df74b1122bb938155de6e61b" id="r_a4eeb07b2df74b1122bb938155de6e61b"><td class="memItemLeft" align="right" valign="top"><a id="a4eeb07b2df74b1122bb938155de6e61b" name="a4eeb07b2df74b1122bb938155de6e61b"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>isStudent</b> (string studentCode)</td></tr>
+<tr class="memitem:a4eeb07b2df74b1122bb938155de6e61b" id="r_a4eeb07b2df74b1122bb938155de6e61b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student_schedule.html#a4eeb07b2df74b1122bb938155de6e61b">isStudent</a> (string studentCode)</td></tr>
+<tr class="memdesc:a4eeb07b2df74b1122bb938155de6e61b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a student exists in the students_classes.csv file ;comlexity O(n)  <br /></td></tr>
 <tr class="separator:a4eeb07b2df74b1122bb938155de6e61b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf78bb8a3a6979853eb97a77d8037b44" id="r_aaf78bb8a3a6979853eb97a77d8037b44"><td class="memItemLeft" align="right" valign="top"><a id="aaf78bb8a3a6979853eb97a77d8037b44" name="aaf78bb8a3a6979853eb97a77d8037b44"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>doesClassBelongToStudent</b> (string studentCode, string classCode, string ucCode)</td></tr>
+<tr class="memitem:aaf78bb8a3a6979853eb97a77d8037b44" id="r_aaf78bb8a3a6979853eb97a77d8037b44"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student_schedule.html#aaf78bb8a3a6979853eb97a77d8037b44">doesClassBelongToStudent</a> (string studentCode, string classCode, string ucCode)</td></tr>
+<tr class="memdesc:aaf78bb8a3a6979853eb97a77d8037b44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a Student is enrolled in a <a class="el" href="class_class.html">Class</a> of a certain <a class="el" href="class_uc.html">Uc</a>.  <br /></td></tr>
 <tr class="separator:aaf78bb8a3a6979853eb97a77d8037b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a805db8946f939efffb6c22dd2b9629a9" id="r_a805db8946f939efffb6c22dd2b9629a9"><td class="memItemLeft" align="right" valign="top"><a id="a805db8946f939efffb6c22dd2b9629a9" name="a805db8946f939efffb6c22dd2b9629a9"></a>
-static string&#160;</td><td class="memItemRight" valign="bottom"><b>getStudentCode</b> (string studentNameOrCode)</td></tr>
+<tr class="memitem:a805db8946f939efffb6c22dd2b9629a9" id="r_a805db8946f939efffb6c22dd2b9629a9"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student_schedule.html#a805db8946f939efffb6c22dd2b9629a9">getStudentCode</a> (string studentNameOrCode)</td></tr>
+<tr class="memdesc:a805db8946f939efffb6c22dd2b9629a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Student Code.  <br /></td></tr>
 <tr class="separator:a805db8946f939efffb6c22dd2b9629a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a69830330db047ff56f06ece2d2ca96" id="r_a9a69830330db047ff56f06ece2d2ca96"><td class="memItemLeft" align="right" valign="top"><a id="a9a69830330db047ff56f06ece2d2ca96" name="a9a69830330db047ff56f06ece2d2ca96"></a>
-static string&#160;</td><td class="memItemRight" valign="bottom"><b>getStudentName</b> (string studentCode)</td></tr>
+<tr class="memitem:a9a69830330db047ff56f06ece2d2ca96" id="r_a9a69830330db047ff56f06ece2d2ca96"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student_schedule.html#a9a69830330db047ff56f06ece2d2ca96">getStudentName</a> (string studentCode)</td></tr>
+<tr class="memdesc:a9a69830330db047ff56f06ece2d2ca96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Student Name.  <br /></td></tr>
 <tr class="separator:a9a69830330db047ff56f06ece2d2ca96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab41869b3fcffa8fd6ab27b4b59252731" id="r_ab41869b3fcffa8fd6ab27b4b59252731"><td class="memItemLeft" align="right" valign="top"><a id="ab41869b3fcffa8fd6ab27b4b59252731" name="ab41869b3fcffa8fd6ab27b4b59252731"></a>
-static vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getStudentClassCodes</b> (string studentCode)</td></tr>
+<tr class="memitem:ab41869b3fcffa8fd6ab27b4b59252731" id="r_ab41869b3fcffa8fd6ab27b4b59252731"><td class="memItemLeft" align="right" valign="top">static vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student_schedule.html#ab41869b3fcffa8fd6ab27b4b59252731">getStudentClassCodes</a> (string studentCode)</td></tr>
+<tr class="memdesc:ab41869b3fcffa8fd6ab27b4b59252731"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Student Classes.  <br /></td></tr>
 <tr class="separator:ab41869b3fcffa8fd6ab27b4b59252731"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79d43b8b8ffb0f153bb1be98f9b9be86" id="r_a79d43b8b8ffb0f153bb1be98f9b9be86"><td class="memItemLeft" align="right" valign="top"><a id="a79d43b8b8ffb0f153bb1be98f9b9be86" name="a79d43b8b8ffb0f153bb1be98f9b9be86"></a>
-static vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getStudentUcCodes</b> (string studentCode)</td></tr>
+<tr class="memitem:a79d43b8b8ffb0f153bb1be98f9b9be86" id="r_a79d43b8b8ffb0f153bb1be98f9b9be86"><td class="memItemLeft" align="right" valign="top">static vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student_schedule.html#a79d43b8b8ffb0f153bb1be98f9b9be86">getStudentUcCodes</a> (string studentCode)</td></tr>
+<tr class="memdesc:a79d43b8b8ffb0f153bb1be98f9b9be86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Student Ucs.  <br /></td></tr>
 <tr class="separator:a79d43b8b8ffb0f153bb1be98f9b9be86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99c6af800a3b351b6abae6ea2e521ceb" id="r_a99c6af800a3b351b6abae6ea2e521ceb"><td class="memItemLeft" align="right" valign="top"><a id="a99c6af800a3b351b6abae6ea2e521ceb" name="a99c6af800a3b351b6abae6ea2e521ceb"></a>
-static list&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>pairStudentUcCodesWithClassCodes</b> (vector&lt; string &gt; ucCodes, vector&lt; string &gt; classCodes)</td></tr>
+<tr class="memitem:a99c6af800a3b351b6abae6ea2e521ceb" id="r_a99c6af800a3b351b6abae6ea2e521ceb"><td class="memItemLeft" align="right" valign="top">static list&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student_schedule.html#a99c6af800a3b351b6abae6ea2e521ceb">pairStudentUcCodesWithClassCodes</a> (vector&lt; string &gt; ucCodes, vector&lt; string &gt; classCodes)</td></tr>
+<tr class="memdesc:a99c6af800a3b351b6abae6ea2e521ceb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pairs the Student Ucs with the Student Classes in a list.  <br /></td></tr>
 <tr class="separator:a99c6af800a3b351b6abae6ea2e521ceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fa78907e7910fcc6e1c62668e7c7f68" id="r_a4fa78907e7910fcc6e1c62668e7c7f68"><td class="memItemLeft" align="right" valign="top"><a id="a4fa78907e7910fcc6e1c62668e7c7f68" name="a4fa78907e7910fcc6e1c62668e7c7f68"></a>
-static vector&lt; <a class="el" href="structclasses.html">classes</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getStudentClasses</b> (list&lt; string &gt; studentUcCodesWithClassCodes)</td></tr>
+<tr class="memitem:a4fa78907e7910fcc6e1c62668e7c7f68" id="r_a4fa78907e7910fcc6e1c62668e7c7f68"><td class="memItemLeft" align="right" valign="top">static vector&lt; <a class="el" href="structclasses.html">classes</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student_schedule.html#a4fa78907e7910fcc6e1c62668e7c7f68">getStudentClasses</a> (list&lt; string &gt; studentUcCodesWithClassCodes)</td></tr>
+<tr class="memdesc:a4fa78907e7910fcc6e1c62668e7c7f68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Student Classes.  <br /></td></tr>
 <tr class="separator:a4fa78907e7910fcc6e1c62668e7c7f68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a605bbb22ef9be5a6980d5ee119c99d56" id="r_a605bbb22ef9be5a6980d5ee119c99d56"><td class="memItemLeft" align="right" valign="top"><a id="a605bbb22ef9be5a6980d5ee119c99d56" name="a605bbb22ef9be5a6980d5ee119c99d56"></a>
-static vector&lt; <a class="el" href="structclasses.html">classes</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getStudentSchedule</b> (string studentCode)</td></tr>
+<tr class="memitem:a605bbb22ef9be5a6980d5ee119c99d56" id="r_a605bbb22ef9be5a6980d5ee119c99d56"><td class="memItemLeft" align="right" valign="top">static vector&lt; <a class="el" href="structclasses.html">classes</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student_schedule.html#a605bbb22ef9be5a6980d5ee119c99d56">getStudentSchedule</a> (string studentCode)</td></tr>
+<tr class="memdesc:a605bbb22ef9be5a6980d5ee119c99d56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Student Schedule without Overlapping Classes.  <br /></td></tr>
 <tr class="separator:a605bbb22ef9be5a6980d5ee119c99d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16bd4d101ae7763740d5984f0ca43538" id="r_a16bd4d101ae7763740d5984f0ca43538"><td class="memItemLeft" align="right" valign="top"><a id="a16bd4d101ae7763740d5984f0ca43538" name="a16bd4d101ae7763740d5984f0ca43538"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>printStudentClasses</b> (string studentCode)</td></tr>
+<tr class="memitem:a16bd4d101ae7763740d5984f0ca43538" id="r_a16bd4d101ae7763740d5984f0ca43538"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student_schedule.html#a16bd4d101ae7763740d5984f0ca43538">printStudentClasses</a> (string studentCode)</td></tr>
+<tr class="memdesc:a16bd4d101ae7763740d5984f0ca43538"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the Student Classes.  <br /></td></tr>
 <tr class="separator:a16bd4d101ae7763740d5984f0ca43538"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abeb28ee19bdd78aab007188a2daae598" id="r_abeb28ee19bdd78aab007188a2daae598"><td class="memItemLeft" align="right" valign="top"><a id="abeb28ee19bdd78aab007188a2daae598" name="abeb28ee19bdd78aab007188a2daae598"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>printStudentUcs</b> (string studentCode)</td></tr>
+<tr class="memitem:abeb28ee19bdd78aab007188a2daae598" id="r_abeb28ee19bdd78aab007188a2daae598"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student_schedule.html#abeb28ee19bdd78aab007188a2daae598">printStudentUcs</a> (string studentCode)</td></tr>
+<tr class="memdesc:abeb28ee19bdd78aab007188a2daae598"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the Student Ucs.  <br /></td></tr>
 <tr class="separator:abeb28ee19bdd78aab007188a2daae598"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a887ac3db9f339f6bcae22a2ec78d9b47" id="r_a887ac3db9f339f6bcae22a2ec78d9b47"><td class="memItemLeft" align="right" valign="top"><a id="a887ac3db9f339f6bcae22a2ec78d9b47" name="a887ac3db9f339f6bcae22a2ec78d9b47"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>isTClassOverTPOrPL</b> (<a class="el" href="structclasses.html">classes</a> tClass, <a class="el" href="structclasses.html">classes</a> secondClass)</td></tr>
+<tr class="memitem:a8443b5803388ab4ff5d760974eaa1946" id="r_a8443b5803388ab4ff5d760974eaa1946"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student_schedule.html#a8443b5803388ab4ff5d760974eaa1946">printStudentClassesAndUcs</a> (string studentCode)</td></tr>
+<tr class="memdesc:a8443b5803388ab4ff5d760974eaa1946"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the Student Classes and Ucs.  <br /></td></tr>
+<tr class="separator:a8443b5803388ab4ff5d760974eaa1946"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a887ac3db9f339f6bcae22a2ec78d9b47" id="r_a887ac3db9f339f6bcae22a2ec78d9b47"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student_schedule.html#a887ac3db9f339f6bcae22a2ec78d9b47">isTClassOverTPOrPL</a> (<a class="el" href="structclasses.html">classes</a> tClass, <a class="el" href="structclasses.html">classes</a> secondClass)</td></tr>
+<tr class="memdesc:a887ac3db9f339f6bcae22a2ec78d9b47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if there are Overlapping T Classes with PL or TP Classes.  <br /></td></tr>
 <tr class="separator:a887ac3db9f339f6bcae22a2ec78d9b47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a597d57c91c4b963d065efac721bef18f" id="r_a597d57c91c4b963d065efac721bef18f"><td class="memItemLeft" align="right" valign="top"><a id="a597d57c91c4b963d065efac721bef18f" name="a597d57c91c4b963d065efac721bef18f"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>isTClassOverTPOrPLV2</b> (<a class="el" href="structclasses.html">classes</a> tClass, vector&lt; <a class="el" href="structclasses.html">classes</a> &gt; secondClasses, vector&lt; <a class="el" href="structclasses.html">classes</a> &gt; studentClassesFixed)</td></tr>
-<tr class="separator:a597d57c91c4b963d065efac721bef18f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aaf78bb8a3a6979853eb97a77d8037b44" name="aaf78bb8a3a6979853eb97a77d8037b44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf78bb8a3a6979853eb97a77d8037b44">&#9670;&#160;</a></span>doesClassBelongToStudent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool StudentSchedule::doesClassBelongToStudent </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>studentCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>classCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>ucCode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if a Student is enrolled in a <a class="el" href="class_class.html">Class</a> of a certain <a class="el" href="class_uc.html">Uc</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">studentCode</td><td>Student Code </td></tr>
+    <tr><td class="paramname">classCode</td><td><a class="el" href="class_class.html">Class</a> Code </td></tr>
+    <tr><td class="paramname">ucCode</td><td><a class="el" href="class_uc.html">Uc</a> Code </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>If the return is true, the student is enrolled in the class </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
+</div>
+</div>
+<a id="ab41869b3fcffa8fd6ab27b4b59252731" name="ab41869b3fcffa8fd6ab27b4b59252731"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab41869b3fcffa8fd6ab27b4b59252731">&#9670;&#160;</a></span>getStudentClassCodes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; string &gt; StudentSchedule::getStudentClassCodes </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>studentCode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the Student Classes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">studentCode</td><td>Student Code </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;string&gt; Student <a class="el" href="class_class.html">Class</a> Codes </dd></dl>
+
+</div>
+</div>
+<a id="a4fa78907e7910fcc6e1c62668e7c7f68" name="a4fa78907e7910fcc6e1c62668e7c7f68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fa78907e7910fcc6e1c62668e7c7f68">&#9670;&#160;</a></span>getStudentClasses()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="structclasses.html">classes</a> &gt; StudentSchedule::getStudentClasses </td>
+          <td>(</td>
+          <td class="paramtype">list&lt; string &gt;&#160;</td>
+          <td class="paramname"><em>studentUcCodesWithClassCodes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the Student Classes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">studentUcCodesWithClassCodes</td><td>List with Student <a class="el" href="class_uc.html">Uc</a> Codes and <a class="el" href="class_class.html">Class</a> Codes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;classes&gt; Student Classes </dd></dl>
+
+</div>
+</div>
+<a id="a805db8946f939efffb6c22dd2b9629a9" name="a805db8946f939efffb6c22dd2b9629a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a805db8946f939efffb6c22dd2b9629a9">&#9670;&#160;</a></span>getStudentCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string StudentSchedule::getStudentCode </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>studentNameOrCode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the Student Code. </p>
+<dl class="section note"><dt>Note</dt><dd>Time Complexity: O(n) </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">studentNameOrCode</td><td>Student Name or Code </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>string Student Code </dd></dl>
+
+</div>
+</div>
+<a id="a9a69830330db047ff56f06ece2d2ca96" name="a9a69830330db047ff56f06ece2d2ca96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a69830330db047ff56f06ece2d2ca96">&#9670;&#160;</a></span>getStudentName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string StudentSchedule::getStudentName </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>studentCode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the Student Name. </p>
+<dl class="section note"><dt>Note</dt><dd>Time Complexity: O(n^2) </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">studentCode</td><td>Student Code </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>string Student Name </dd></dl>
+
+</div>
+</div>
+<a id="a605bbb22ef9be5a6980d5ee119c99d56" name="a605bbb22ef9be5a6980d5ee119c99d56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a605bbb22ef9be5a6980d5ee119c99d56">&#9670;&#160;</a></span>getStudentSchedule()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="structclasses.html">classes</a> &gt; StudentSchedule::getStudentSchedule </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>studentCode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the Student Schedule without Overlapping Classes. </p>
+<dl class="section note"><dt>Note</dt><dd>Time Complexity: O(n^2) </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">studentCode</td><td>Student Code </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;classes&gt; Student Schedule </dd></dl>
+
+</div>
+</div>
+<a id="a79d43b8b8ffb0f153bb1be98f9b9be86" name="a79d43b8b8ffb0f153bb1be98f9b9be86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79d43b8b8ffb0f153bb1be98f9b9be86">&#9670;&#160;</a></span>getStudentUcCodes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; string &gt; StudentSchedule::getStudentUcCodes </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>studentCode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the Student Ucs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">studentCode</td><td>Student Code </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;string&gt; Student Ucs </dd></dl>
+
+</div>
+</div>
+<a id="a4eeb07b2df74b1122bb938155de6e61b" name="a4eeb07b2df74b1122bb938155de6e61b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eeb07b2df74b1122bb938155de6e61b">&#9670;&#160;</a></span>isStudent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool StudentSchedule::isStudent </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>studentCode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if a student exists in the students_classes.csv file ;comlexity O(n) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">studentCode</td><td>Student Code </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>If the return is true, the student exists </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
+</div>
+</div>
+<a id="a887ac3db9f339f6bcae22a2ec78d9b47" name="a887ac3db9f339f6bcae22a2ec78d9b47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a887ac3db9f339f6bcae22a2ec78d9b47">&#9670;&#160;</a></span>isTClassOverTPOrPL()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool StudentSchedule::isTClassOverTPOrPL </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structclasses.html">classes</a>&#160;</td>
+          <td class="paramname"><em>tClass</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structclasses.html">classes</a>&#160;</td>
+          <td class="paramname"><em>secondClass</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if there are Overlapping T Classes with PL or TP Classes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tClass</td><td>T <a class="el" href="class_class.html">Class</a> </td></tr>
+    <tr><td class="paramname">secondClass</td><td>Second <a class="el" href="class_class.html">Class</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>If the return is true, there are Overlapping T Classes with PL or TP Classes </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
+</div>
+</div>
+<a id="a99c6af800a3b351b6abae6ea2e521ceb" name="a99c6af800a3b351b6abae6ea2e521ceb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99c6af800a3b351b6abae6ea2e521ceb">&#9670;&#160;</a></span>pairStudentUcCodesWithClassCodes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">list&lt; string &gt; StudentSchedule::pairStudentUcCodesWithClassCodes </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; string &gt;&#160;</td>
+          <td class="paramname"><em>ucCodes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; string &gt;&#160;</td>
+          <td class="paramname"><em>classCodes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pairs the Student Ucs with the Student Classes in a list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ucCodes</td><td><a class="el" href="class_uc.html">Uc</a> Codes </td></tr>
+    <tr><td class="paramname">classCodes</td><td><a class="el" href="class_class.html">Class</a> Codes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>list&lt;string&gt; Student <a class="el" href="class_uc.html">Uc</a> Codes with <a class="el" href="class_class.html">Class</a> Codes </dd></dl>
+
+</div>
+</div>
+<a id="a16bd4d101ae7763740d5984f0ca43538" name="a16bd4d101ae7763740d5984f0ca43538"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16bd4d101ae7763740d5984f0ca43538">&#9670;&#160;</a></span>printStudentClasses()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StudentSchedule::printStudentClasses </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>studentCode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Prints the Student Classes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">studentCode</td><td>Student Code </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8443b5803388ab4ff5d760974eaa1946" name="a8443b5803388ab4ff5d760974eaa1946"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8443b5803388ab4ff5d760974eaa1946">&#9670;&#160;</a></span>printStudentClassesAndUcs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StudentSchedule::printStudentClassesAndUcs </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>studentCode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Prints the Student Classes and Ucs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">studentCode</td><td>Student Code </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abeb28ee19bdd78aab007188a2daae598" name="abeb28ee19bdd78aab007188a2daae598"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeb28ee19bdd78aab007188a2daae598">&#9670;&#160;</a></span>printStudentUcs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StudentSchedule::printStudentUcs </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>studentCode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Prints the Student Ucs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">studentCode</td><td>Student Code </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>source/<a class="el" href="_student_8h_source.html">Student.h</a></li>
-<li>source/<b>Student.cpp</b></li>
+<li>D:/FEUP/Informatica/2 ano/AED2324_PRJ1_G117/source/<a class="el" href="_student_8h_source.html">Student.h</a></li>
+<li>D:/FEUP/Informatica/2 ano/AED2324_PRJ1_G117/source/<b>Student.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

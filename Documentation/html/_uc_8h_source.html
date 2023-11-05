@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AED2324_PROJ1: source/Uc.h Source File</title>
+<title>AED2324_PROJ1: D:/FEUP/Informatica/2 ano/AED2324_PRJ1_G117/source/Uc.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -81,32 +81,34 @@ $(document).ready(function() { init_codefold(0); });
   <div class="headertitle"><div class="title">Uc.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#ifndef CODE_UC_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#define CODE_UC_H</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;structs.h&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;App.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;Class.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">using namespace </span>std;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_uc.html">   11</a></span><span class="keyword">class </span><a class="code hl_class" href="class_uc.html">Uc</a> {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">// Is Uc a Real Uc</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> isUc(<span class="keywordtype">string</span> ucCode);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">// Gets the Schedule of a Given Uc</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">static</span> vector&lt;classes&gt; getUcSchedule(<span class="keywordtype">string</span> ucCode);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment">// Prints the Students in a Given Uc</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> printStudentsInAUc(<span class="keywordtype">string</span> ucCode);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>};</div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CODE_UC_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define CODE_UC_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;structs.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;Class.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;Menu.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_uc.html">   10</a></span><span class="keyword">class </span><a class="code hl_class" href="class_uc.html">Uc</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_uc.html#ad9883a5ce48c1415f57d277464ff009f">isUc</a>(<span class="keywordtype">string</span> ucCode);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">static</span> vector&lt;classes&gt; <a class="code hl_function" href="class_uc.html#a974e5f8a547532b816e48833a1b57e5f">getUcSchedule</a>(<span class="keywordtype">string</span> ucCode);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_uc.html#a136361720ecd75554c55a65b933643d0">printStudentsInAUc</a>(<span class="keywordtype">string</span> ucCode);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_uc.html#a70da25bbdd461f991d2dec11e9a65924">getStudentCount</a>(<span class="keywordtype">string</span> ucCode);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
 </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#endif </span><span class="comment">//CODE_UC_H</span></div>
-<div class="ttc" id="aclass_uc_html"><div class="ttname"><a href="class_uc.html">Uc</a></div><div class="ttdef"><b>Definition</b> Uc.h:11</div></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#endif </span><span class="comment">//CODE_UC_H</span></div>
+<div class="ttc" id="aclass_uc_html"><div class="ttname"><a href="class_uc.html">Uc</a></div><div class="ttdef"><b>Definition</b> Uc.h:10</div></div>
+<div class="ttc" id="aclass_uc_html_a136361720ecd75554c55a65b933643d0"><div class="ttname"><a href="class_uc.html#a136361720ecd75554c55a65b933643d0">Uc::printStudentsInAUc</a></div><div class="ttdeci">static void printStudentsInAUc(string ucCode)</div><div class="ttdoc">Prints the Students in a Given Uc.</div><div class="ttdef"><b>Definition</b> Uc.cpp:32</div></div>
+<div class="ttc" id="aclass_uc_html_a70da25bbdd461f991d2dec11e9a65924"><div class="ttname"><a href="class_uc.html#a70da25bbdd461f991d2dec11e9a65924">Uc::getStudentCount</a></div><div class="ttdeci">static int getStudentCount(string ucCode)</div><div class="ttdoc">Gets the Student Count of a Given Uc.</div><div class="ttdef"><b>Definition</b> Uc.cpp:49</div></div>
+<div class="ttc" id="aclass_uc_html_a974e5f8a547532b816e48833a1b57e5f"><div class="ttname"><a href="class_uc.html#a974e5f8a547532b816e48833a1b57e5f">Uc::getUcSchedule</a></div><div class="ttdeci">static vector&lt; classes &gt; getUcSchedule(string ucCode)</div><div class="ttdoc">Gets the Schedule of a Given Uc.</div><div class="ttdef"><b>Definition</b> Uc.cpp:18</div></div>
+<div class="ttc" id="aclass_uc_html_ad9883a5ce48c1415f57d277464ff009f"><div class="ttname"><a href="class_uc.html#ad9883a5ce48c1415f57d277464ff009f">Uc::isUc</a></div><div class="ttdeci">static bool isUc(string ucCode)</div><div class="ttdoc">Checks if a given ucCode exists in the classes_per_uc file.</div><div class="ttdef"><b>Definition</b> Uc.cpp:6</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

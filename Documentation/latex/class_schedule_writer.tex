@@ -3,15 +3,78 @@
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_schedule_writer_a3bd87a13a3462e8e2677ebcf4d8480af}{Schedule\+Writer}} (\mbox{\hyperlink{class_reader}{Reader}} \&reader)
+\begin{DoxyCompactList}\small\item\em Initializes the Schedule Writer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_schedule_writer_a626ec023185ccc36d94cbe40f888e7b1}{write}} (\mbox{\hyperlink{structstudent_class_change}{student\+Class\+Change}} last\+Change)
+\begin{DoxyCompactList}\small\item\em Writes the Schedule Changes to the students\+\_\+classes.\+csv File. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_schedule_writer_ac7ea183c2bcae0866b797557384d7cf4}{write\+Changes}} (\mbox{\hyperlink{structstudent_class_change}{student\+Class\+Change}} last\+Change)
+\begin{DoxyCompactList}\small\item\em Writes the Schedule Changes Logs to changes.\+csv File. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_schedule_writer_a3bd87a13a3462e8e2677ebcf4d8480af}\label{class_schedule_writer_a3bd87a13a3462e8e2677ebcf4d8480af} 
-{\bfseries Schedule\+Writer} (\mbox{\hyperlink{class_reader}{Reader}} \&reader)
-\item 
+\index{ScheduleWriter@{ScheduleWriter}!ScheduleWriter@{ScheduleWriter}}
+\index{ScheduleWriter@{ScheduleWriter}!ScheduleWriter@{ScheduleWriter}}
+\doxysubsubsection{\texorpdfstring{ScheduleWriter()}{ScheduleWriter()}}
+{\footnotesize\ttfamily Schedule\+Writer\+::\+Schedule\+Writer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_reader}{Reader}} \&}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Initializes the Schedule Writer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & The file \doxylink{class_reader}{Reader} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
 \Hypertarget{class_schedule_writer_a626ec023185ccc36d94cbe40f888e7b1}\label{class_schedule_writer_a626ec023185ccc36d94cbe40f888e7b1} 
-bool {\bfseries write} (\mbox{\hyperlink{structstudent_class_change}{student\+Class\+Change}} last\+Change)
-\end{DoxyCompactItemize}
+\index{ScheduleWriter@{ScheduleWriter}!write@{write}}
+\index{write@{write}!ScheduleWriter@{ScheduleWriter}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily bool Schedule\+Writer\+::write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstudent_class_change}{student\+Class\+Change}}}]{last\+Change }\end{DoxyParamCaption})}
+
+
+
+Writes the Schedule Changes to the students\+\_\+classes.\+csv File. 
+
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(n) 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em last\+Change} & Is the first change on the Queue Request to be Written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{class_schedule_writer_ac7ea183c2bcae0866b797557384d7cf4}\label{class_schedule_writer_ac7ea183c2bcae0866b797557384d7cf4} 
+\index{ScheduleWriter@{ScheduleWriter}!writeChanges@{writeChanges}}
+\index{writeChanges@{writeChanges}!ScheduleWriter@{ScheduleWriter}}
+\doxysubsubsection{\texorpdfstring{writeChanges()}{writeChanges()}}
+{\footnotesize\ttfamily bool Schedule\+Writer\+::write\+Changes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstudent_class_change}{student\+Class\+Change}}}]{last\+Change }\end{DoxyParamCaption})}
+
+
+
+Writes the Schedule Changes Logs to changes.\+csv File. 
+
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(n) 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em last\+Change} & Is the first change on the Queue Request to be Written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-source/Writer.\+h\item 
-source/Writer.\+cpp\end{DoxyCompactItemize}
+D\+:/\+FEUP/\+Informatica/2 ano/\+AED2324\+\_\+\+PRJ1\+\_\+\+G117/source/Writer.\+h\item 
+D\+:/\+FEUP/\+Informatica/2 ano/\+AED2324\+\_\+\+PRJ1\+\_\+\+G117/source/Writer.\+cpp\end{DoxyCompactItemize}

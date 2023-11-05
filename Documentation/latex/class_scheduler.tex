@@ -3,72 +3,55 @@
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_scheduler_aa9e0b8dbe692f17c06d8e764ca46e384}\label{class_scheduler_aa9e0b8dbe692f17c06d8e764ca46e384} 
-int {\bfseries get\+Max\+Ucs\+Per\+Student} ()
-\item 
-\Hypertarget{class_scheduler_a191f5ca773a717593723876ee76936dc}\label{class_scheduler_a191f5ca773a717593723876ee76936dc} 
-int {\bfseries get\+Max\+Students\+Per\+Class} ()
-\item 
-\Hypertarget{class_scheduler_a4b307cd7ae23911e6a671185c483d118}\label{class_scheduler_a4b307cd7ae23911e6a671185c483d118} 
-int {\bfseries get\+Max\+Students\+Per\+Class\+Change\+Gap} ()
-\item 
-\Hypertarget{class_scheduler_a4810c5ab0eafd14554136b5504a14108}\label{class_scheduler_a4810c5ab0eafd14554136b5504a14108} 
-int {\bfseries get\+Class\+Students\+Number\+Avg} (char class\+Year, string uc\+Code)
-\end{DoxyCompactItemize}
+int \mbox{\hyperlink{class_scheduler_aa9e0b8dbe692f17c06d8e764ca46e384}{get\+Max\+Ucs\+Per\+Student}} ()
+\begin{DoxyCompactList}\small\item\em Gets the Maximum Number of Ucs a Student can have. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_scheduler_a191f5ca773a717593723876ee76936dc}{get\+Max\+Students\+Per\+Class}} ()
+\begin{DoxyCompactList}\small\item\em Gets the Maximum Number of Students a \doxylink{class_class}{Class} can have. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_scheduler_a4b307cd7ae23911e6a671185c483d118}{get\+Max\+Students\+Per\+Class\+Change\+Gap}} ()
+\begin{DoxyCompactList}\small\item\em Gets the Maximum Difference in the Number of Students between Classes in order to Change a Student\textquotesingle{}s \doxylink{class_class}{Class}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_scheduler_a4810c5ab0eafd14554136b5504a14108}{get\+Class\+Students\+Number\+Avg}} (char class\+Year, string uc\+Code)
+\begin{DoxyCompactList}\small\item\em Gets \doxylink{class_class}{Class} Students Number Average. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_scheduler_a1d3b5be3a8253d80711058f84b2a3217}\label{class_scheduler_a1d3b5be3a8253d80711058f84b2a3217} 
-static void {\bfseries add\+Uc\+To\+Student} (queue$<$ string $>$ student\+Info)
-\item 
-\Hypertarget{class_scheduler_a23bd7b8ab2ae21764352d60376c0ffc0}\label{class_scheduler_a23bd7b8ab2ae21764352d60376c0ffc0} 
-static void {\bfseries remove\+Uc\+From\+Student} (queue$<$ string $>$ student\+Info)
-\item 
-\Hypertarget{class_scheduler_a3933535c20591394c5410293abaf2107}\label{class_scheduler_a3933535c20591394c5410293abaf2107} 
-static void {\bfseries request\+Change\+In\+Student\+Class} (queue$<$ string $>$ student\+Info)
-\item 
+static void \mbox{\hyperlink{class_scheduler_a1d3b5be3a8253d80711058f84b2a3217}{add\+Uc\+To\+Student}} (queue$<$ string $>$ student\+Info)
+\begin{DoxyCompactList}\small\item\em Add an \doxylink{class_uc}{Uc} to a Student. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_scheduler_a23bd7b8ab2ae21764352d60376c0ffc0}{remove\+Uc\+From\+Student}} (queue$<$ string $>$ student\+Info)
+\begin{DoxyCompactList}\small\item\em Remove an \doxylink{class_uc}{Uc} from a Student. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_scheduler_a3933535c20591394c5410293abaf2107}{request\+Change\+In\+Student\+Class}} (queue$<$ string $>$ student\+Info)
+\begin{DoxyCompactList}\small\item\em Change a Student\textquotesingle{}s \doxylink{class_class}{Class}. \end{DoxyCompactList}\item 
 \Hypertarget{class_scheduler_ad335063eb37553d8ccd98a811a8f886b}\label{class_scheduler_ad335063eb37553d8ccd98a811a8f886b} 
 static void {\bfseries print\+Requests} ()
-\item 
-\Hypertarget{class_scheduler_ae8dc28a7d48690a53ed1b855bdb3b0a3}\label{class_scheduler_ae8dc28a7d48690a53ed1b855bdb3b0a3} 
-static void {\bfseries process\+Request} ()
-\item 
-\Hypertarget{class_scheduler_af553190cea2a4fa7bd1f0081cad7c595}\label{class_scheduler_af553190cea2a4fa7bd1f0081cad7c595} 
-static bool {\bfseries process\+Add\+Request} ()
-\item 
-\Hypertarget{class_scheduler_ab2825bfd42a1f0c85d7e61835aa081ae}\label{class_scheduler_ab2825bfd42a1f0c85d7e61835aa081ae} 
-static bool {\bfseries process\+Remove\+Request} ()
-\item 
-\Hypertarget{class_scheduler_aa6db716c652c0a9a7bb7f68589853caa}\label{class_scheduler_aa6db716c652c0a9a7bb7f68589853caa} 
-static void {\bfseries process\+Change\+Request} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Prints the Requests in the Request Queue. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_scheduler_ae8dc28a7d48690a53ed1b855bdb3b0a3}{process\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Processes the Requests in the Request Queue. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_scheduler_af553190cea2a4fa7bd1f0081cad7c595}{process\+Add\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Processes the Add Request. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_scheduler_ab2825bfd42a1f0c85d7e61835aa081ae}{process\+Remove\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Processes the Remove Request. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_scheduler_aa6db716c652c0a9a7bb7f68589853caa}{process\+Change\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Processes the Change Request. \end{DoxyCompactList}\item 
 \Hypertarget{class_scheduler_aa53d1b6ab4966cda51606d2ab05554d9}\label{class_scheduler_aa53d1b6ab4966cda51606d2ab05554d9} 
 static void {\bfseries revert\+Last\+Change} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Reverts the Last Change to the Student\textquotesingle{}s Classes. \end{DoxyCompactList}\item 
 \Hypertarget{class_scheduler_ab642c94133e0ba8c70a2e5cdb3bede25}\label{class_scheduler_ab642c94133e0ba8c70a2e5cdb3bede25} 
 static void {\bfseries print\+Request\+Success\+Logs} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Prints the Processing Requests Success Logs. \end{DoxyCompactList}\item 
 \Hypertarget{class_scheduler_af1ec6feeaa15ba50346b201138df9733}\label{class_scheduler_af1ec6feeaa15ba50346b201138df9733} 
 static void {\bfseries print\+Request\+Fail\+Logs} ()
-\item 
-\Hypertarget{class_scheduler_abe04dfe42b42ca05805405e593e01fd9}\label{class_scheduler_abe04dfe42b42ca05805405e593e01fd9} 
-static int {\bfseries get\+Student\+Ucs\+Number} (string student\+Name\+Or\+Code)
-\item 
-\Hypertarget{class_scheduler_a9a417de874bdeb5cf40808ce937f8662}\label{class_scheduler_a9a417de874bdeb5cf40808ce937f8662} 
-static int {\bfseries get\+Class\+Students\+Number} (string class\+Code, string uc\+Code)
-\item 
-\Hypertarget{class_scheduler_a9ff4c5378e386fda9498160a1e104629}\label{class_scheduler_a9ff4c5378e386fda9498160a1e104629} 
-static bool {\bfseries does\+Uc\+Belong\+To\+Class} (string uc\+Code, string class\+Code)
-\item 
-\Hypertarget{class_scheduler_ad26b888dd50b1c4535247d7bab9137b8}\label{class_scheduler_ad26b888dd50b1c4535247d7bab9137b8} 
-static bool {\bfseries is\+Class\+Full} (string class\+Code, string uc\+Code)
-\item 
-\Hypertarget{class_scheduler_a53c9e438c67fdbfd80c2c28e477d324e}\label{class_scheduler_a53c9e438c67fdbfd80c2c28e477d324e} 
-static bool {\bfseries is\+Change\+Gap\+Respected} (string class\+Code, string uc\+Code)
-\item 
-\Hypertarget{class_scheduler_a8935a9b2ed974b2c857cb24208cff471}\label{class_scheduler_a8935a9b2ed974b2c857cb24208cff471} 
-static bool {\bfseries is\+Schedule\+Change\+Valid} (\mbox{\hyperlink{structstudent_class_change}{student\+Class\+Change}} \mbox{\hyperlink{structstudent_class_change}{student\+Class\+Change}})
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Prints the Processing Requests Fail Logs. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_scheduler_abe04dfe42b42ca05805405e593e01fd9}{get\+Student\+Ucs\+Number}} (string student\+Name\+Or\+Code)
+\begin{DoxyCompactList}\small\item\em Gets the Student\textquotesingle{}s Ucs Count. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_scheduler_a9a417de874bdeb5cf40808ce937f8662}{get\+Class\+Students\+Number}} (string class\+Code, string uc\+Code)
+\begin{DoxyCompactList}\small\item\em Gets the Number of students Enrolled in a specific \doxylink{class_class}{Class} and \doxylink{class_uc}{Uc}. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_scheduler_a9ff4c5378e386fda9498160a1e104629}{does\+Uc\+Belong\+To\+Class}} (string uc\+Code, string class\+Code)
+\begin{DoxyCompactList}\small\item\em Checks if the Given \doxylink{class_uc}{Uc} Belongs to Given \doxylink{class_class}{Class}. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_scheduler_ad26b888dd50b1c4535247d7bab9137b8}{is\+Class\+Full}} (string class\+Code, string uc\+Code)
+\begin{DoxyCompactList}\small\item\em Checks if the Given \doxylink{class_class}{Class} of the Given \doxylink{class_uc}{Uc} is Full. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_scheduler_a53c9e438c67fdbfd80c2c28e477d324e}{is\+Change\+Gap\+Respected}} (string class\+Code, string uc\+Code)
+\begin{DoxyCompactList}\small\item\em Checks if the Difference in the Student Count of the \doxylink{class_class}{Class} of the Given \doxylink{class_uc}{Uc} if Higher than the Maximum Difference in the Number of Students between Classes in order to Change a Student\textquotesingle{}s \doxylink{class_class}{Class}. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_scheduler_a8935a9b2ed974b2c857cb24208cff471}{is\+Schedule\+Change\+Valid}} (\mbox{\hyperlink{structstudent_class_change}{student\+Class\+Change}} \mbox{\hyperlink{structstudent_class_change}{student\+Class\+Change}})
+\begin{DoxyCompactList}\small\item\em Checks if the are no Overlapping TP or PL Classes in the Student Schedule After the Change. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -77,7 +60,301 @@ static bool {\bfseries is\+Schedule\+Change\+Valid} (\mbox{\hyperlink{structstud
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_scheduler_a1d3b5be3a8253d80711058f84b2a3217}\label{class_scheduler_a1d3b5be3a8253d80711058f84b2a3217} 
+\index{Scheduler@{Scheduler}!addUcToStudent@{addUcToStudent}}
+\index{addUcToStudent@{addUcToStudent}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{addUcToStudent()}{addUcToStudent()}}
+{\footnotesize\ttfamily void Scheduler\+::add\+Uc\+To\+Student (\begin{DoxyParamCaption}\item[{queue$<$ string $>$}]{student\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Add an \doxylink{class_uc}{Uc} to a Student. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Info} & It\textquotesingle{}s a queue with the Addition Request Information of the Student \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_scheduler_a9ff4c5378e386fda9498160a1e104629}\label{class_scheduler_a9ff4c5378e386fda9498160a1e104629} 
+\index{Scheduler@{Scheduler}!doesUcBelongToClass@{doesUcBelongToClass}}
+\index{doesUcBelongToClass@{doesUcBelongToClass}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{doesUcBelongToClass()}{doesUcBelongToClass()}}
+{\footnotesize\ttfamily bool Scheduler\+::does\+Uc\+Belong\+To\+Class (\begin{DoxyParamCaption}\item[{string}]{uc\+Code,  }\item[{string}]{class\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if the Given \doxylink{class_uc}{Uc} Belongs to Given \doxylink{class_class}{Class}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Code} & \doxylink{class_uc}{Uc} Code \\
+\hline
+{\em class\+Code} & \doxylink{class_class}{Class} Code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If the return is True, the \doxylink{class_uc}{Uc} Belongs to the \doxylink{class_class}{Class} 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{class_scheduler_a9a417de874bdeb5cf40808ce937f8662}\label{class_scheduler_a9a417de874bdeb5cf40808ce937f8662} 
+\index{Scheduler@{Scheduler}!getClassStudentsNumber@{getClassStudentsNumber}}
+\index{getClassStudentsNumber@{getClassStudentsNumber}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{getClassStudentsNumber()}{getClassStudentsNumber()}}
+{\footnotesize\ttfamily int Scheduler\+::get\+Class\+Students\+Number (\begin{DoxyParamCaption}\item[{string}]{class\+Code,  }\item[{string}]{uc\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the Number of students Enrolled in a specific \doxylink{class_class}{Class} and \doxylink{class_uc}{Uc}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Name\+Or\+Code} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Students Enrolled in a specific \doxylink{class_class}{Class} and \doxylink{class_uc}{Uc} 
+\end{DoxyReturn}
+\Hypertarget{class_scheduler_a4810c5ab0eafd14554136b5504a14108}\label{class_scheduler_a4810c5ab0eafd14554136b5504a14108} 
+\index{Scheduler@{Scheduler}!getClassStudentsNumberAvg@{getClassStudentsNumberAvg}}
+\index{getClassStudentsNumberAvg@{getClassStudentsNumberAvg}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{getClassStudentsNumberAvg()}{getClassStudentsNumberAvg()}}
+{\footnotesize\ttfamily int Scheduler\+::get\+Class\+Students\+Number\+Avg (\begin{DoxyParamCaption}\item[{char}]{class\+Year,  }\item[{string}]{uc\+Code }\end{DoxyParamCaption})}
+
+
+
+Gets \doxylink{class_class}{Class} Students Number Average. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Year} & It\textquotesingle{}s the \doxylink{class_class}{Class} Year \\
+\hline
+{\em uc\+Code} & It\textquotesingle{}s the \doxylink{class_uc}{Uc} Code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int class\+Students\+Number\+Avg 
+\end{DoxyReturn}
+\Hypertarget{class_scheduler_a191f5ca773a717593723876ee76936dc}\label{class_scheduler_a191f5ca773a717593723876ee76936dc} 
+\index{Scheduler@{Scheduler}!getMaxStudentsPerClass@{getMaxStudentsPerClass}}
+\index{getMaxStudentsPerClass@{getMaxStudentsPerClass}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{getMaxStudentsPerClass()}{getMaxStudentsPerClass()}}
+{\footnotesize\ttfamily int Scheduler\+::get\+Max\+Students\+Per\+Class (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the Maximum Number of Students a \doxylink{class_class}{Class} can have. 
+
+\begin{DoxyReturn}{Returns}
+int max\+Students\+Per\+Class 
+\end{DoxyReturn}
+\Hypertarget{class_scheduler_a4b307cd7ae23911e6a671185c483d118}\label{class_scheduler_a4b307cd7ae23911e6a671185c483d118} 
+\index{Scheduler@{Scheduler}!getMaxStudentsPerClassChangeGap@{getMaxStudentsPerClassChangeGap}}
+\index{getMaxStudentsPerClassChangeGap@{getMaxStudentsPerClassChangeGap}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{getMaxStudentsPerClassChangeGap()}{getMaxStudentsPerClassChangeGap()}}
+{\footnotesize\ttfamily int Scheduler\+::get\+Max\+Students\+Per\+Class\+Change\+Gap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the Maximum Difference in the Number of Students between Classes in order to Change a Student\textquotesingle{}s \doxylink{class_class}{Class}. 
+
+\begin{DoxyReturn}{Returns}
+int max\+Students\+Per\+Class\+Change\+Gap 
+\end{DoxyReturn}
+\Hypertarget{class_scheduler_aa9e0b8dbe692f17c06d8e764ca46e384}\label{class_scheduler_aa9e0b8dbe692f17c06d8e764ca46e384} 
+\index{Scheduler@{Scheduler}!getMaxUcsPerStudent@{getMaxUcsPerStudent}}
+\index{getMaxUcsPerStudent@{getMaxUcsPerStudent}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{getMaxUcsPerStudent()}{getMaxUcsPerStudent()}}
+{\footnotesize\ttfamily int Scheduler\+::get\+Max\+Ucs\+Per\+Student (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the Maximum Number of Ucs a Student can have. 
+
+\begin{DoxyReturn}{Returns}
+int max\+Ucs\+Per\+Student 
+\end{DoxyReturn}
+\Hypertarget{class_scheduler_abe04dfe42b42ca05805405e593e01fd9}\label{class_scheduler_abe04dfe42b42ca05805405e593e01fd9} 
+\index{Scheduler@{Scheduler}!getStudentUcsNumber@{getStudentUcsNumber}}
+\index{getStudentUcsNumber@{getStudentUcsNumber}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{getStudentUcsNumber()}{getStudentUcsNumber()}}
+{\footnotesize\ttfamily int Scheduler\+::get\+Student\+Ucs\+Number (\begin{DoxyParamCaption}\item[{string}]{student\+Name\+Or\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the Student\textquotesingle{}s Ucs Count. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Name\+Or\+Code} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Student Ucs Count 
+\end{DoxyReturn}
+\Hypertarget{class_scheduler_a53c9e438c67fdbfd80c2c28e477d324e}\label{class_scheduler_a53c9e438c67fdbfd80c2c28e477d324e} 
+\index{Scheduler@{Scheduler}!isChangeGapRespected@{isChangeGapRespected}}
+\index{isChangeGapRespected@{isChangeGapRespected}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{isChangeGapRespected()}{isChangeGapRespected()}}
+{\footnotesize\ttfamily bool Scheduler\+::is\+Change\+Gap\+Respected (\begin{DoxyParamCaption}\item[{string}]{class\+Code,  }\item[{string}]{uc\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if the Difference in the Student Count of the \doxylink{class_class}{Class} of the Given \doxylink{class_uc}{Uc} if Higher than the Maximum Difference in the Number of Students between Classes in order to Change a Student\textquotesingle{}s \doxylink{class_class}{Class}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Code} & \doxylink{class_class}{Class} Code \\
+\hline
+{\em uc\+Code} & \doxylink{class_uc}{Uc} Code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_scheduler_ad26b888dd50b1c4535247d7bab9137b8}\label{class_scheduler_ad26b888dd50b1c4535247d7bab9137b8} 
+\index{Scheduler@{Scheduler}!isClassFull@{isClassFull}}
+\index{isClassFull@{isClassFull}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{isClassFull()}{isClassFull()}}
+{\footnotesize\ttfamily bool Scheduler\+::is\+Class\+Full (\begin{DoxyParamCaption}\item[{string}]{class\+Code,  }\item[{string}]{uc\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if the Given \doxylink{class_class}{Class} of the Given \doxylink{class_uc}{Uc} is Full. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Code} & \doxylink{class_class}{Class} Code \\
+\hline
+{\em uc\+Code} & \doxylink{class_uc}{Uc} Code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If the return is True, the \doxylink{class_class}{Class} of the \doxylink{class_uc}{Uc} is Full 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{class_scheduler_a8935a9b2ed974b2c857cb24208cff471}\label{class_scheduler_a8935a9b2ed974b2c857cb24208cff471} 
+\index{Scheduler@{Scheduler}!isScheduleChangeValid@{isScheduleChangeValid}}
+\index{isScheduleChangeValid@{isScheduleChangeValid}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{isScheduleChangeValid()}{isScheduleChangeValid()}}
+{\footnotesize\ttfamily bool Scheduler\+::is\+Schedule\+Change\+Valid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstudent_class_change}{student\+Class\+Change}}}]{student\+Class\+Change }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if the are no Overlapping TP or PL Classes in the Student Schedule After the Change. 
+
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(n\texorpdfstring{$^\wedge$}{\string^}2) 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{structstudent_class_change}{student\+Class\+Change}} & Student \doxylink{class_class}{Class} Change Information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If the return is True, the Change is Valid 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{class_scheduler_af553190cea2a4fa7bd1f0081cad7c595}\label{class_scheduler_af553190cea2a4fa7bd1f0081cad7c595} 
+\index{Scheduler@{Scheduler}!processAddRequest@{processAddRequest}}
+\index{processAddRequest@{processAddRequest}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{processAddRequest()}{processAddRequest()}}
+{\footnotesize\ttfamily bool Scheduler\+::process\+Add\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Processes the Add Request. 
+
+\begin{DoxyNote}{Note}
+If the return is True, the Processing of the Request was Successful 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{class_scheduler_aa6db716c652c0a9a7bb7f68589853caa}\label{class_scheduler_aa6db716c652c0a9a7bb7f68589853caa} 
+\index{Scheduler@{Scheduler}!processChangeRequest@{processChangeRequest}}
+\index{processChangeRequest@{processChangeRequest}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{processChangeRequest()}{processChangeRequest()}}
+{\footnotesize\ttfamily void Scheduler\+::process\+Change\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Processes the Change Request. 
+
+\begin{DoxyNote}{Note}
+If the return is True, the Processing of the Request was Successful 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{class_scheduler_ab2825bfd42a1f0c85d7e61835aa081ae}\label{class_scheduler_ab2825bfd42a1f0c85d7e61835aa081ae} 
+\index{Scheduler@{Scheduler}!processRemoveRequest@{processRemoveRequest}}
+\index{processRemoveRequest@{processRemoveRequest}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{processRemoveRequest()}{processRemoveRequest()}}
+{\footnotesize\ttfamily bool Scheduler\+::process\+Remove\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Processes the Remove Request. 
+
+\begin{DoxyNote}{Note}
+If the return is True, the Processing of the Request was Successful 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{class_scheduler_ae8dc28a7d48690a53ed1b855bdb3b0a3}\label{class_scheduler_ae8dc28a7d48690a53ed1b855bdb3b0a3} 
+\index{Scheduler@{Scheduler}!processRequest@{processRequest}}
+\index{processRequest@{processRequest}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{processRequest()}{processRequest()}}
+{\footnotesize\ttfamily void Scheduler\+::process\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Processes the Requests in the Request Queue. 
+
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(n\texorpdfstring{$^\wedge$}{\string^}2) 
+\end{DoxyNote}
+\Hypertarget{class_scheduler_a23bd7b8ab2ae21764352d60376c0ffc0}\label{class_scheduler_a23bd7b8ab2ae21764352d60376c0ffc0} 
+\index{Scheduler@{Scheduler}!removeUcFromStudent@{removeUcFromStudent}}
+\index{removeUcFromStudent@{removeUcFromStudent}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{removeUcFromStudent()}{removeUcFromStudent()}}
+{\footnotesize\ttfamily void Scheduler\+::remove\+Uc\+From\+Student (\begin{DoxyParamCaption}\item[{queue$<$ string $>$}]{student\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Remove an \doxylink{class_uc}{Uc} from a Student. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Info} & It\textquotesingle{}s a queue with the Removal Request Information of the Student \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_scheduler_a3933535c20591394c5410293abaf2107}\label{class_scheduler_a3933535c20591394c5410293abaf2107} 
+\index{Scheduler@{Scheduler}!requestChangeInStudentClass@{requestChangeInStudentClass}}
+\index{requestChangeInStudentClass@{requestChangeInStudentClass}!Scheduler@{Scheduler}}
+\doxysubsubsection{\texorpdfstring{requestChangeInStudentClass()}{requestChangeInStudentClass()}}
+{\footnotesize\ttfamily void Scheduler\+::request\+Change\+In\+Student\+Class (\begin{DoxyParamCaption}\item[{queue$<$ string $>$}]{student\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Change a Student\textquotesingle{}s \doxylink{class_class}{Class}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Info} & It\textquotesingle{}s a queue with the Change Request Information of the Student \\
+\hline
+\end{DoxyParams}
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-source/Schedule.\+h\item 
-source/Schedule.\+cpp\end{DoxyCompactItemize}
+D\+:/\+FEUP/\+Informatica/2 ano/\+AED2324\+\_\+\+PRJ1\+\_\+\+G117/source/Schedule.\+h\item 
+D\+:/\+FEUP/\+Informatica/2 ano/\+AED2324\+\_\+\+PRJ1\+\_\+\+G117/source/Schedule.\+cpp\end{DoxyCompactItemize}

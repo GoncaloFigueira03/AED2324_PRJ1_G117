@@ -3,48 +3,289 @@
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_student_schedule_a4eeb07b2df74b1122bb938155de6e61b}\label{class_student_schedule_a4eeb07b2df74b1122bb938155de6e61b} 
-static bool {\bfseries is\+Student} (string student\+Code)
-\item 
+static bool \mbox{\hyperlink{class_student_schedule_a4eeb07b2df74b1122bb938155de6e61b}{is\+Student}} (string student\+Code)
+\begin{DoxyCompactList}\small\item\em Checks if a student exists in the students\+\_\+classes.\+csv file ;comlexity O(n) \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_student_schedule_aaf78bb8a3a6979853eb97a77d8037b44}{does\+Class\+Belong\+To\+Student}} (string student\+Code, string class\+Code, string uc\+Code)
+\begin{DoxyCompactList}\small\item\em Checks if a Student is enrolled in a \doxylink{class_class}{Class} of a certain \doxylink{class_uc}{Uc}. \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{class_student_schedule_a805db8946f939efffb6c22dd2b9629a9}{get\+Student\+Code}} (string student\+Name\+Or\+Code)
+\begin{DoxyCompactList}\small\item\em Gets the Student Code. \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{class_student_schedule_a9a69830330db047ff56f06ece2d2ca96}{get\+Student\+Name}} (string student\+Code)
+\begin{DoxyCompactList}\small\item\em Gets the Student Name. \end{DoxyCompactList}\item 
+static vector$<$ string $>$ \mbox{\hyperlink{class_student_schedule_ab41869b3fcffa8fd6ab27b4b59252731}{get\+Student\+Class\+Codes}} (string student\+Code)
+\begin{DoxyCompactList}\small\item\em Gets the Student Classes. \end{DoxyCompactList}\item 
+static vector$<$ string $>$ \mbox{\hyperlink{class_student_schedule_a79d43b8b8ffb0f153bb1be98f9b9be86}{get\+Student\+Uc\+Codes}} (string student\+Code)
+\begin{DoxyCompactList}\small\item\em Gets the Student Ucs. \end{DoxyCompactList}\item 
+static list$<$ string $>$ \mbox{\hyperlink{class_student_schedule_a99c6af800a3b351b6abae6ea2e521ceb}{pair\+Student\+Uc\+Codes\+With\+Class\+Codes}} (vector$<$ string $>$ uc\+Codes, vector$<$ string $>$ class\+Codes)
+\begin{DoxyCompactList}\small\item\em Pairs the Student Ucs with the Student Classes in a list. \end{DoxyCompactList}\item 
+static vector$<$ \mbox{\hyperlink{structclasses}{classes}} $>$ \mbox{\hyperlink{class_student_schedule_a4fa78907e7910fcc6e1c62668e7c7f68}{get\+Student\+Classes}} (list$<$ string $>$ student\+Uc\+Codes\+With\+Class\+Codes)
+\begin{DoxyCompactList}\small\item\em Gets the Student Classes. \end{DoxyCompactList}\item 
+static vector$<$ \mbox{\hyperlink{structclasses}{classes}} $>$ \mbox{\hyperlink{class_student_schedule_a605bbb22ef9be5a6980d5ee119c99d56}{get\+Student\+Schedule}} (string student\+Code)
+\begin{DoxyCompactList}\small\item\em Gets the Student Schedule without Overlapping Classes. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_student_schedule_a16bd4d101ae7763740d5984f0ca43538}{print\+Student\+Classes}} (string student\+Code)
+\begin{DoxyCompactList}\small\item\em Prints the Student Classes. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_student_schedule_abeb28ee19bdd78aab007188a2daae598}{print\+Student\+Ucs}} (string student\+Code)
+\begin{DoxyCompactList}\small\item\em Prints the Student Ucs. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_student_schedule_a8443b5803388ab4ff5d760974eaa1946}{print\+Student\+Classes\+And\+Ucs}} (string student\+Code)
+\begin{DoxyCompactList}\small\item\em Prints the Student Classes and Ucs. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_student_schedule_a887ac3db9f339f6bcae22a2ec78d9b47}{is\+TClass\+Over\+TPOr\+PL}} (\mbox{\hyperlink{structclasses}{classes}} t\+Class, \mbox{\hyperlink{structclasses}{classes}} second\+Class)
+\begin{DoxyCompactList}\small\item\em Checks if there are Overlapping T Classes with PL or TP Classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
 \Hypertarget{class_student_schedule_aaf78bb8a3a6979853eb97a77d8037b44}\label{class_student_schedule_aaf78bb8a3a6979853eb97a77d8037b44} 
-static bool {\bfseries does\+Class\+Belong\+To\+Student} (string student\+Code, string class\+Code, string uc\+Code)
-\item 
-\Hypertarget{class_student_schedule_a805db8946f939efffb6c22dd2b9629a9}\label{class_student_schedule_a805db8946f939efffb6c22dd2b9629a9} 
-static string {\bfseries get\+Student\+Code} (string student\+Name\+Or\+Code)
-\item 
-\Hypertarget{class_student_schedule_a9a69830330db047ff56f06ece2d2ca96}\label{class_student_schedule_a9a69830330db047ff56f06ece2d2ca96} 
-static string {\bfseries get\+Student\+Name} (string student\+Code)
-\item 
+\index{StudentSchedule@{StudentSchedule}!doesClassBelongToStudent@{doesClassBelongToStudent}}
+\index{doesClassBelongToStudent@{doesClassBelongToStudent}!StudentSchedule@{StudentSchedule}}
+\doxysubsubsection{\texorpdfstring{doesClassBelongToStudent()}{doesClassBelongToStudent()}}
+{\footnotesize\ttfamily bool Student\+Schedule\+::does\+Class\+Belong\+To\+Student (\begin{DoxyParamCaption}\item[{string}]{student\+Code,  }\item[{string}]{class\+Code,  }\item[{string}]{uc\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if a Student is enrolled in a \doxylink{class_class}{Class} of a certain \doxylink{class_uc}{Uc}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Code} & Student Code \\
+\hline
+{\em class\+Code} & \doxylink{class_class}{Class} Code \\
+\hline
+{\em uc\+Code} & \doxylink{class_uc}{Uc} Code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If the return is true, the student is enrolled in the class 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
 \Hypertarget{class_student_schedule_ab41869b3fcffa8fd6ab27b4b59252731}\label{class_student_schedule_ab41869b3fcffa8fd6ab27b4b59252731} 
-static vector$<$ string $>$ {\bfseries get\+Student\+Class\+Codes} (string student\+Code)
-\item 
-\Hypertarget{class_student_schedule_a79d43b8b8ffb0f153bb1be98f9b9be86}\label{class_student_schedule_a79d43b8b8ffb0f153bb1be98f9b9be86} 
-static vector$<$ string $>$ {\bfseries get\+Student\+Uc\+Codes} (string student\+Code)
-\item 
-\Hypertarget{class_student_schedule_a99c6af800a3b351b6abae6ea2e521ceb}\label{class_student_schedule_a99c6af800a3b351b6abae6ea2e521ceb} 
-static list$<$ string $>$ {\bfseries pair\+Student\+Uc\+Codes\+With\+Class\+Codes} (vector$<$ string $>$ uc\+Codes, vector$<$ string $>$ class\+Codes)
-\item 
+\index{StudentSchedule@{StudentSchedule}!getStudentClassCodes@{getStudentClassCodes}}
+\index{getStudentClassCodes@{getStudentClassCodes}!StudentSchedule@{StudentSchedule}}
+\doxysubsubsection{\texorpdfstring{getStudentClassCodes()}{getStudentClassCodes()}}
+{\footnotesize\ttfamily vector$<$ string $>$ Student\+Schedule\+::get\+Student\+Class\+Codes (\begin{DoxyParamCaption}\item[{string}]{student\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the Student Classes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Code} & Student Code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$string$>$ Student \doxylink{class_class}{Class} Codes 
+\end{DoxyReturn}
 \Hypertarget{class_student_schedule_a4fa78907e7910fcc6e1c62668e7c7f68}\label{class_student_schedule_a4fa78907e7910fcc6e1c62668e7c7f68} 
-static vector$<$ \mbox{\hyperlink{structclasses}{classes}} $>$ {\bfseries get\+Student\+Classes} (list$<$ string $>$ student\+Uc\+Codes\+With\+Class\+Codes)
-\item 
+\index{StudentSchedule@{StudentSchedule}!getStudentClasses@{getStudentClasses}}
+\index{getStudentClasses@{getStudentClasses}!StudentSchedule@{StudentSchedule}}
+\doxysubsubsection{\texorpdfstring{getStudentClasses()}{getStudentClasses()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{structclasses}{classes}} $>$ Student\+Schedule\+::get\+Student\+Classes (\begin{DoxyParamCaption}\item[{list$<$ string $>$}]{student\+Uc\+Codes\+With\+Class\+Codes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the Student Classes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Uc\+Codes\+With\+Class\+Codes} & List with Student \doxylink{class_uc}{Uc} Codes and \doxylink{class_class}{Class} Codes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$classes$>$ Student Classes 
+\end{DoxyReturn}
+\Hypertarget{class_student_schedule_a805db8946f939efffb6c22dd2b9629a9}\label{class_student_schedule_a805db8946f939efffb6c22dd2b9629a9} 
+\index{StudentSchedule@{StudentSchedule}!getStudentCode@{getStudentCode}}
+\index{getStudentCode@{getStudentCode}!StudentSchedule@{StudentSchedule}}
+\doxysubsubsection{\texorpdfstring{getStudentCode()}{getStudentCode()}}
+{\footnotesize\ttfamily string Student\+Schedule\+::get\+Student\+Code (\begin{DoxyParamCaption}\item[{string}]{student\+Name\+Or\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the Student Code. 
+
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(n) 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Name\+Or\+Code} & Student Name or Code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string Student Code 
+\end{DoxyReturn}
+\Hypertarget{class_student_schedule_a9a69830330db047ff56f06ece2d2ca96}\label{class_student_schedule_a9a69830330db047ff56f06ece2d2ca96} 
+\index{StudentSchedule@{StudentSchedule}!getStudentName@{getStudentName}}
+\index{getStudentName@{getStudentName}!StudentSchedule@{StudentSchedule}}
+\doxysubsubsection{\texorpdfstring{getStudentName()}{getStudentName()}}
+{\footnotesize\ttfamily string Student\+Schedule\+::get\+Student\+Name (\begin{DoxyParamCaption}\item[{string}]{student\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the Student Name. 
+
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(n\texorpdfstring{$^\wedge$}{\string^}2) 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Code} & Student Code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string Student Name 
+\end{DoxyReturn}
 \Hypertarget{class_student_schedule_a605bbb22ef9be5a6980d5ee119c99d56}\label{class_student_schedule_a605bbb22ef9be5a6980d5ee119c99d56} 
-static vector$<$ \mbox{\hyperlink{structclasses}{classes}} $>$ {\bfseries get\+Student\+Schedule} (string student\+Code)
-\item 
-\Hypertarget{class_student_schedule_a16bd4d101ae7763740d5984f0ca43538}\label{class_student_schedule_a16bd4d101ae7763740d5984f0ca43538} 
-static void {\bfseries print\+Student\+Classes} (string student\+Code)
-\item 
-\Hypertarget{class_student_schedule_abeb28ee19bdd78aab007188a2daae598}\label{class_student_schedule_abeb28ee19bdd78aab007188a2daae598} 
-static void {\bfseries print\+Student\+Ucs} (string student\+Code)
-\item 
+\index{StudentSchedule@{StudentSchedule}!getStudentSchedule@{getStudentSchedule}}
+\index{getStudentSchedule@{getStudentSchedule}!StudentSchedule@{StudentSchedule}}
+\doxysubsubsection{\texorpdfstring{getStudentSchedule()}{getStudentSchedule()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{structclasses}{classes}} $>$ Student\+Schedule\+::get\+Student\+Schedule (\begin{DoxyParamCaption}\item[{string}]{student\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the Student Schedule without Overlapping Classes. 
+
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(n\texorpdfstring{$^\wedge$}{\string^}2) 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Code} & Student Code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$classes$>$ Student Schedule 
+\end{DoxyReturn}
+\Hypertarget{class_student_schedule_a79d43b8b8ffb0f153bb1be98f9b9be86}\label{class_student_schedule_a79d43b8b8ffb0f153bb1be98f9b9be86} 
+\index{StudentSchedule@{StudentSchedule}!getStudentUcCodes@{getStudentUcCodes}}
+\index{getStudentUcCodes@{getStudentUcCodes}!StudentSchedule@{StudentSchedule}}
+\doxysubsubsection{\texorpdfstring{getStudentUcCodes()}{getStudentUcCodes()}}
+{\footnotesize\ttfamily vector$<$ string $>$ Student\+Schedule\+::get\+Student\+Uc\+Codes (\begin{DoxyParamCaption}\item[{string}]{student\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the Student Ucs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Code} & Student Code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$string$>$ Student Ucs 
+\end{DoxyReturn}
+\Hypertarget{class_student_schedule_a4eeb07b2df74b1122bb938155de6e61b}\label{class_student_schedule_a4eeb07b2df74b1122bb938155de6e61b} 
+\index{StudentSchedule@{StudentSchedule}!isStudent@{isStudent}}
+\index{isStudent@{isStudent}!StudentSchedule@{StudentSchedule}}
+\doxysubsubsection{\texorpdfstring{isStudent()}{isStudent()}}
+{\footnotesize\ttfamily bool Student\+Schedule\+::is\+Student (\begin{DoxyParamCaption}\item[{string}]{student\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if a student exists in the students\+\_\+classes.\+csv file ;comlexity O(n) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Code} & Student Code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If the return is true, the student exists 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
 \Hypertarget{class_student_schedule_a887ac3db9f339f6bcae22a2ec78d9b47}\label{class_student_schedule_a887ac3db9f339f6bcae22a2ec78d9b47} 
-static bool {\bfseries is\+TClass\+Over\+TPOr\+PL} (\mbox{\hyperlink{structclasses}{classes}} t\+Class, \mbox{\hyperlink{structclasses}{classes}} second\+Class)
-\item 
-\Hypertarget{class_student_schedule_a597d57c91c4b963d065efac721bef18f}\label{class_student_schedule_a597d57c91c4b963d065efac721bef18f} 
-static void {\bfseries is\+TClass\+Over\+TPOr\+PLV2} (\mbox{\hyperlink{structclasses}{classes}} t\+Class, vector$<$ \mbox{\hyperlink{structclasses}{classes}} $>$ second\+Classes, vector$<$ \mbox{\hyperlink{structclasses}{classes}} $>$ student\+Classes\+Fixed)
-\end{DoxyCompactItemize}
+\index{StudentSchedule@{StudentSchedule}!isTClassOverTPOrPL@{isTClassOverTPOrPL}}
+\index{isTClassOverTPOrPL@{isTClassOverTPOrPL}!StudentSchedule@{StudentSchedule}}
+\doxysubsubsection{\texorpdfstring{isTClassOverTPOrPL()}{isTClassOverTPOrPL()}}
+{\footnotesize\ttfamily bool Student\+Schedule\+::is\+TClass\+Over\+TPOr\+PL (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structclasses}{classes}}}]{t\+Class,  }\item[{\mbox{\hyperlink{structclasses}{classes}}}]{second\+Class }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if there are Overlapping T Classes with PL or TP Classes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Class} & T \doxylink{class_class}{Class} \\
+\hline
+{\em second\+Class} & Second \doxylink{class_class}{Class} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If the return is true, there are Overlapping T Classes with PL or TP Classes 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{class_student_schedule_a99c6af800a3b351b6abae6ea2e521ceb}\label{class_student_schedule_a99c6af800a3b351b6abae6ea2e521ceb} 
+\index{StudentSchedule@{StudentSchedule}!pairStudentUcCodesWithClassCodes@{pairStudentUcCodesWithClassCodes}}
+\index{pairStudentUcCodesWithClassCodes@{pairStudentUcCodesWithClassCodes}!StudentSchedule@{StudentSchedule}}
+\doxysubsubsection{\texorpdfstring{pairStudentUcCodesWithClassCodes()}{pairStudentUcCodesWithClassCodes()}}
+{\footnotesize\ttfamily list$<$ string $>$ Student\+Schedule\+::pair\+Student\+Uc\+Codes\+With\+Class\+Codes (\begin{DoxyParamCaption}\item[{vector$<$ string $>$}]{uc\+Codes,  }\item[{vector$<$ string $>$}]{class\+Codes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Pairs the Student Ucs with the Student Classes in a list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Codes} & \doxylink{class_uc}{Uc} Codes \\
+\hline
+{\em class\+Codes} & \doxylink{class_class}{Class} Codes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list$<$string$>$ Student \doxylink{class_uc}{Uc} Codes with \doxylink{class_class}{Class} Codes 
+\end{DoxyReturn}
+\Hypertarget{class_student_schedule_a16bd4d101ae7763740d5984f0ca43538}\label{class_student_schedule_a16bd4d101ae7763740d5984f0ca43538} 
+\index{StudentSchedule@{StudentSchedule}!printStudentClasses@{printStudentClasses}}
+\index{printStudentClasses@{printStudentClasses}!StudentSchedule@{StudentSchedule}}
+\doxysubsubsection{\texorpdfstring{printStudentClasses()}{printStudentClasses()}}
+{\footnotesize\ttfamily void Student\+Schedule\+::print\+Student\+Classes (\begin{DoxyParamCaption}\item[{string}]{student\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints the Student Classes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Code} & Student Code \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_student_schedule_a8443b5803388ab4ff5d760974eaa1946}\label{class_student_schedule_a8443b5803388ab4ff5d760974eaa1946} 
+\index{StudentSchedule@{StudentSchedule}!printStudentClassesAndUcs@{printStudentClassesAndUcs}}
+\index{printStudentClassesAndUcs@{printStudentClassesAndUcs}!StudentSchedule@{StudentSchedule}}
+\doxysubsubsection{\texorpdfstring{printStudentClassesAndUcs()}{printStudentClassesAndUcs()}}
+{\footnotesize\ttfamily void Student\+Schedule\+::print\+Student\+Classes\+And\+Ucs (\begin{DoxyParamCaption}\item[{string}]{student\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints the Student Classes and Ucs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Code} & Student Code \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_student_schedule_abeb28ee19bdd78aab007188a2daae598}\label{class_student_schedule_abeb28ee19bdd78aab007188a2daae598} 
+\index{StudentSchedule@{StudentSchedule}!printStudentUcs@{printStudentUcs}}
+\index{printStudentUcs@{printStudentUcs}!StudentSchedule@{StudentSchedule}}
+\doxysubsubsection{\texorpdfstring{printStudentUcs()}{printStudentUcs()}}
+{\footnotesize\ttfamily void Student\+Schedule\+::print\+Student\+Ucs (\begin{DoxyParamCaption}\item[{string}]{student\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints the Student Ucs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Code} & Student Code \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-source/Student.\+h\item 
-source/Student.\+cpp\end{DoxyCompactItemize}
+D\+:/\+FEUP/\+Informatica/2 ano/\+AED2324\+\_\+\+PRJ1\+\_\+\+G117/source/Student.\+h\item 
+D\+:/\+FEUP/\+Informatica/2 ano/\+AED2324\+\_\+\+PRJ1\+\_\+\+G117/source/Student.\+cpp\end{DoxyCompactItemize}

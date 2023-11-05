@@ -2,7 +2,6 @@
 #define CODE_STUDENT_H
 
 #include "structs.h"
-#include "App.h"
 #include "Menu.h"
 #include "Sort.h"
 
@@ -31,7 +30,7 @@ public:
 
     /**
      * @brief Gets the Student Code
-     * ;complexity O(n)
+     * @note Time Complexity: O(n)
      * @param studentNameOrCode Student Name or Code
      * @return string Student Code
      */
@@ -39,7 +38,7 @@ public:
 
     /**
      * @brief Gets the Student Name
-     * ;complexity O(n^2)
+     * @note Time Complexity: O(n^2)
      * @param studentCode Student Code
      * @return string Student Name
      */
@@ -76,7 +75,7 @@ public:
 
     /**
      * @brief Gets the Student Schedule without Overlapping Classes
-     * ;complexity O(n^2)
+     * @note Time Complexity: O(n^2)
      * @param studentCode Student Code
      * @return vector<classes> Student Schedule
      */

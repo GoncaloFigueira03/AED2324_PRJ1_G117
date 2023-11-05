@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AED2324_PROJ1: source/Schedule.h Source File</title>
+<title>AED2324_PROJ1: D:/FEUP/Informatica/2 ano/AED2324_PRJ1_G117/source/Schedule.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -81,89 +81,110 @@ $(document).ready(function() { init_codefold(0); });
   <div class="headertitle"><div class="title">Schedule.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#ifndef CODE_SCHEDULE_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#define CODE_SCHEDULE_H</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;App.h&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;Student.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;Writer.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;queue&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;stack&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">using namespace </span>std;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_scheduler.html">   14</a></span><span class="keyword">class </span><a class="code hl_class" href="class_scheduler.html">Scheduler</a> {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">// The Maximum Number of Ucs a Student can have</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> maxUcsPerStudent = 7;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment">// The Maximum Number of Students a Class can have</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> maxStudentsPerClass = 30;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">// The Maximum Difference in the Number of Students between Classes in order to Change a Student&#39;s Class</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> maxStudentsPerClassChangeGap = 4;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">// Stores the Information About Student Classes Changes</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    stack&lt;studentClassChange&gt; studentsClassesChangesStack;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">// Stores the Information about Requests</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    queue&lt;studentClassChange&gt; requestQueue;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CODE_SCHEDULE_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define CODE_SCHEDULE_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;Student.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;Menu.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;Writer.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;queue&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;stack&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_scheduler.html">   13</a></span><span class="keyword">class </span><a class="code hl_class" href="class_scheduler.html">Scheduler</a> {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">// The Maximum Number of Ucs a Student can have</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> maxUcsPerStudent = 7;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="comment">// The Maximum Number of Students a Class can have</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> maxStudentsPerClass = 30;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">// The Maximum Difference in the Number of Students between Classes in order to Change a Student&#39;s Class</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> maxStudentsPerClassChangeGap = 4;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">// Stores the Information About Student Classes Changes</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    stack&lt;studentClassChange&gt; studentsClassesChangesStack;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">// Stores the Information about Requests</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    queue&lt;studentClassChange&gt; requestQueue;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">// Stores the Information about the Requests that were not Successfully Processed</span></div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    vector&lt;string&gt; processRequestFailedMessages;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_struct" href="structstudent_class_change.html">studentClassChange</a> lastChange;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">int</span> getMaxUcsPerStudent();</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">int</span> getMaxStudentsPerClass();</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">int</span> getMaxStudentsPerClassChangeGap();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_scheduler.html#aa9e0b8dbe692f17c06d8e764ca46e384">getMaxUcsPerStudent</a>();</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">int</span> getClassStudentsNumberAvg(<span class="keywordtype">char</span> classYear, <span class="keywordtype">string</span> ucCode);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> addUcToStudent(queue &lt;string&gt; studentInfo);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> removeUcFromStudent(queue &lt;string&gt; studentInfo);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_scheduler.html#a191f5ca773a717593723876ee76936dc">getMaxStudentsPerClass</a>();</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> requestChangeInStudentClass(queue &lt;string&gt; studentInfo);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> printRequests();</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> processRequest();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_scheduler.html#a4b307cd7ae23911e6a671185c483d118">getMaxStudentsPerClassChangeGap</a>();</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> processAddRequest();</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> processRemoveRequest();</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> processChangeRequest();</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> revertLastChange();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_scheduler.html#a4810c5ab0eafd14554136b5504a14108">getClassStudentsNumberAvg</a>(<span class="keywordtype">char</span> classYear, <span class="keywordtype">string</span> ucCode);</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> printRequestSuccessLogs();</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> printRequestFailLogs();</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> getStudentUcsNumber(<span class="keywordtype">string</span> studentNameOrCode);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_scheduler.html#a1d3b5be3a8253d80711058f84b2a3217">addUcToStudent</a>(queue &lt;string&gt; studentInfo);</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> getClassStudentsNumber(<span class="keywordtype">string</span> classCode, <span class="keywordtype">string</span> ucCode);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> doesUcBelongToClass(<span class="keywordtype">string</span> ucCode, <span class="keywordtype">string</span> classCode);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> isClassFull(<span class="keywordtype">string</span> classCode, <span class="keywordtype">string</span> ucCode);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_scheduler.html#a23bd7b8ab2ae21764352d60376c0ffc0">removeUcFromStudent</a>(queue &lt;string&gt; studentInfo);</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> isChangeGapRespected(<span class="keywordtype">string</span> classCode, <span class="keywordtype">string</span> ucCode);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> isScheduleChangeValid(<a class="code hl_struct" href="structstudent_class_change.html">studentClassChange</a> <a class="code hl_struct" href="structstudent_class_change.html">studentClassChange</a>);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>};</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_scheduler.html#a3933535c20591394c5410293abaf2107">requestChangeInStudentClass</a>(queue &lt;string&gt; studentInfo);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_scheduler.html#ad335063eb37553d8ccd98a811a8f886b">printRequests</a>();</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_scheduler.html#ae8dc28a7d48690a53ed1b855bdb3b0a3">processRequest</a>();</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_scheduler.html#af553190cea2a4fa7bd1f0081cad7c595">processAddRequest</a>();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_scheduler.html#ab2825bfd42a1f0c85d7e61835aa081ae">processRemoveRequest</a>();</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_scheduler.html#aa6db716c652c0a9a7bb7f68589853caa">processChangeRequest</a>();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_scheduler.html#aa53d1b6ab4966cda51606d2ab05554d9">revertLastChange</a>();</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_scheduler.html#ab642c94133e0ba8c70a2e5cdb3bede25">printRequestSuccessLogs</a>();</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_scheduler.html#af1ec6feeaa15ba50346b201138df9733">printRequestFailLogs</a>();</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_scheduler.html#abe04dfe42b42ca05805405e593e01fd9">getStudentUcsNumber</a>(<span class="keywordtype">string</span> studentNameOrCode);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_scheduler.html#a9a417de874bdeb5cf40808ce937f8662">getClassStudentsNumber</a>(<span class="keywordtype">string</span> classCode, <span class="keywordtype">string</span> ucCode);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_scheduler.html#a9ff4c5378e386fda9498160a1e104629">doesUcBelongToClass</a>(<span class="keywordtype">string</span> ucCode, <span class="keywordtype">string</span> classCode);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_scheduler.html#ad26b888dd50b1c4535247d7bab9137b8">isClassFull</a>(<span class="keywordtype">string</span> classCode, <span class="keywordtype">string</span> ucCode);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_scheduler.html#a53c9e438c67fdbfd80c2c28e477d324e">isChangeGapRespected</a>(<span class="keywordtype">string</span> classCode, <span class="keywordtype">string</span> ucCode);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_scheduler.html#a8935a9b2ed974b2c857cb24208cff471">isScheduleChangeValid</a>(<a class="code hl_struct" href="structstudent_class_change.html">studentClassChange</a> <a class="code hl_struct" href="structstudent_class_change.html">studentClassChange</a>);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>};</div>
 </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#endif </span><span class="comment">//CODE_SCHEDULE_H</span></div>
-<div class="ttc" id="aclass_scheduler_html"><div class="ttname"><a href="class_scheduler.html">Scheduler</a></div><div class="ttdef"><b>Definition</b> Schedule.h:14</div></div>
-<div class="ttc" id="astructstudent_class_change_html"><div class="ttname"><a href="structstudent_class_change.html">studentClassChange</a></div><div class="ttdef"><b>Definition</b> structs.h:41</div></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="preprocessor">#endif </span><span class="comment">//CODE_SCHEDULE_H</span></div>
+<div class="ttc" id="aclass_scheduler_html"><div class="ttname"><a href="class_scheduler.html">Scheduler</a></div><div class="ttdef"><b>Definition</b> Schedule.h:13</div></div>
+<div class="ttc" id="aclass_scheduler_html_a191f5ca773a717593723876ee76936dc"><div class="ttname"><a href="class_scheduler.html#a191f5ca773a717593723876ee76936dc">Scheduler::getMaxStudentsPerClass</a></div><div class="ttdeci">int getMaxStudentsPerClass()</div><div class="ttdoc">Gets the Maximum Number of Students a Class can have.</div><div class="ttdef"><b>Definition</b> Schedule.cpp:14</div></div>
+<div class="ttc" id="aclass_scheduler_html_a1d3b5be3a8253d80711058f84b2a3217"><div class="ttname"><a href="class_scheduler.html#a1d3b5be3a8253d80711058f84b2a3217">Scheduler::addUcToStudent</a></div><div class="ttdeci">static void addUcToStudent(queue&lt; string &gt; studentInfo)</div><div class="ttdoc">Add an Uc to a Student.</div><div class="ttdef"><b>Definition</b> Schedule.cpp:132</div></div>
+<div class="ttc" id="aclass_scheduler_html_a23bd7b8ab2ae21764352d60376c0ffc0"><div class="ttname"><a href="class_scheduler.html#a23bd7b8ab2ae21764352d60376c0ffc0">Scheduler::removeUcFromStudent</a></div><div class="ttdeci">static void removeUcFromStudent(queue&lt; string &gt; studentInfo)</div><div class="ttdoc">Remove an Uc from a Student.</div><div class="ttdef"><b>Definition</b> Schedule.cpp:149</div></div>
+<div class="ttc" id="aclass_scheduler_html_a3933535c20591394c5410293abaf2107"><div class="ttname"><a href="class_scheduler.html#a3933535c20591394c5410293abaf2107">Scheduler::requestChangeInStudentClass</a></div><div class="ttdeci">static void requestChangeInStudentClass(queue&lt; string &gt; studentInfo)</div><div class="ttdoc">Change a Student's Class.</div><div class="ttdef"><b>Definition</b> Schedule.cpp:166</div></div>
+<div class="ttc" id="aclass_scheduler_html_a4810c5ab0eafd14554136b5504a14108"><div class="ttname"><a href="class_scheduler.html#a4810c5ab0eafd14554136b5504a14108">Scheduler::getClassStudentsNumberAvg</a></div><div class="ttdeci">int getClassStudentsNumberAvg(char classYear, string ucCode)</div><div class="ttdoc">Gets Class Students Number Average.</div><div class="ttdef"><b>Definition</b> Schedule.cpp:40</div></div>
+<div class="ttc" id="aclass_scheduler_html_a4b307cd7ae23911e6a671185c483d118"><div class="ttname"><a href="class_scheduler.html#a4b307cd7ae23911e6a671185c483d118">Scheduler::getMaxStudentsPerClassChangeGap</a></div><div class="ttdeci">int getMaxStudentsPerClassChangeGap()</div><div class="ttdoc">Gets the Maximum Difference in the Number of Students between Classes in order to Change a Student's ...</div><div class="ttdef"><b>Definition</b> Schedule.cpp:18</div></div>
+<div class="ttc" id="aclass_scheduler_html_a53c9e438c67fdbfd80c2c28e477d324e"><div class="ttname"><a href="class_scheduler.html#a53c9e438c67fdbfd80c2c28e477d324e">Scheduler::isChangeGapRespected</a></div><div class="ttdeci">static bool isChangeGapRespected(string classCode, string ucCode)</div><div class="ttdoc">Checks if the Difference in the Student Count of the Class of the Given Uc if Higher than the Maximum...</div><div class="ttdef"><b>Definition</b> Schedule.cpp:82</div></div>
+<div class="ttc" id="aclass_scheduler_html_a8935a9b2ed974b2c857cb24208cff471"><div class="ttname"><a href="class_scheduler.html#a8935a9b2ed974b2c857cb24208cff471">Scheduler::isScheduleChangeValid</a></div><div class="ttdeci">static bool isScheduleChangeValid(studentClassChange studentClassChange)</div><div class="ttdoc">Checks if the are no Overlapping TP or PL Classes in the Student Schedule After the Change.</div><div class="ttdef"><b>Definition</b> Schedule.cpp:90</div></div>
+<div class="ttc" id="aclass_scheduler_html_a9a417de874bdeb5cf40808ce937f8662"><div class="ttname"><a href="class_scheduler.html#a9a417de874bdeb5cf40808ce937f8662">Scheduler::getClassStudentsNumber</a></div><div class="ttdeci">static int getClassStudentsNumber(string classCode, string ucCode)</div><div class="ttdoc">Gets the Number of students Enrolled in a specific Class and Uc.</div><div class="ttdef"><b>Definition</b> Schedule.cpp:26</div></div>
+<div class="ttc" id="aclass_scheduler_html_a9ff4c5378e386fda9498160a1e104629"><div class="ttname"><a href="class_scheduler.html#a9ff4c5378e386fda9498160a1e104629">Scheduler::doesUcBelongToClass</a></div><div class="ttdeci">static bool doesUcBelongToClass(string ucCode, string classCode)</div><div class="ttdoc">Checks if the Given Uc Belongs to Given Class.</div><div class="ttdef"><b>Definition</b> Schedule.cpp:62</div></div>
+<div class="ttc" id="aclass_scheduler_html_aa53d1b6ab4966cda51606d2ab05554d9"><div class="ttname"><a href="class_scheduler.html#aa53d1b6ab4966cda51606d2ab05554d9">Scheduler::revertLastChange</a></div><div class="ttdeci">static void revertLastChange()</div><div class="ttdoc">Reverts the Last Change to the Student's Classes.</div><div class="ttdef"><b>Definition</b> Schedule.cpp:314</div></div>
+<div class="ttc" id="aclass_scheduler_html_aa6db716c652c0a9a7bb7f68589853caa"><div class="ttname"><a href="class_scheduler.html#aa6db716c652c0a9a7bb7f68589853caa">Scheduler::processChangeRequest</a></div><div class="ttdeci">static void processChangeRequest()</div><div class="ttdoc">Processes the Change Request.</div><div class="ttdef"><b>Definition</b> Schedule.cpp:287</div></div>
+<div class="ttc" id="aclass_scheduler_html_aa9e0b8dbe692f17c06d8e764ca46e384"><div class="ttname"><a href="class_scheduler.html#aa9e0b8dbe692f17c06d8e764ca46e384">Scheduler::getMaxUcsPerStudent</a></div><div class="ttdeci">int getMaxUcsPerStudent()</div><div class="ttdoc">Gets the Maximum Number of Ucs a Student can have.</div><div class="ttdef"><b>Definition</b> Schedule.cpp:22</div></div>
+<div class="ttc" id="aclass_scheduler_html_ab2825bfd42a1f0c85d7e61835aa081ae"><div class="ttname"><a href="class_scheduler.html#ab2825bfd42a1f0c85d7e61835aa081ae">Scheduler::processRemoveRequest</a></div><div class="ttdeci">static bool processRemoveRequest()</div><div class="ttdoc">Processes the Remove Request.</div><div class="ttdef"><b>Definition</b> Schedule.cpp:256</div></div>
+<div class="ttc" id="aclass_scheduler_html_ab642c94133e0ba8c70a2e5cdb3bede25"><div class="ttname"><a href="class_scheduler.html#ab642c94133e0ba8c70a2e5cdb3bede25">Scheduler::printRequestSuccessLogs</a></div><div class="ttdeci">static void printRequestSuccessLogs()</div><div class="ttdoc">Prints the Processing Requests Success Logs.</div><div class="ttdef"><b>Definition</b> Schedule.cpp:346</div></div>
+<div class="ttc" id="aclass_scheduler_html_abe04dfe42b42ca05805405e593e01fd9"><div class="ttname"><a href="class_scheduler.html#abe04dfe42b42ca05805405e593e01fd9">Scheduler::getStudentUcsNumber</a></div><div class="ttdeci">static int getStudentUcsNumber(string studentNameOrCode)</div><div class="ttdoc">Gets the Student's Ucs Count.</div><div class="ttdef"><b>Definition</b> Schedule.cpp:56</div></div>
+<div class="ttc" id="aclass_scheduler_html_ad26b888dd50b1c4535247d7bab9137b8"><div class="ttname"><a href="class_scheduler.html#ad26b888dd50b1c4535247d7bab9137b8">Scheduler::isClassFull</a></div><div class="ttdeci">static bool isClassFull(string classCode, string ucCode)</div><div class="ttdoc">Checks if the Given Class of the Given Uc is Full.</div><div class="ttdef"><b>Definition</b> Schedule.cpp:74</div></div>
+<div class="ttc" id="aclass_scheduler_html_ad335063eb37553d8ccd98a811a8f886b"><div class="ttname"><a href="class_scheduler.html#ad335063eb37553d8ccd98a811a8f886b">Scheduler::printRequests</a></div><div class="ttdeci">static void printRequests()</div><div class="ttdoc">Prints the Requests in the Request Queue.</div><div class="ttdef"><b>Definition</b> Schedule.cpp:337</div></div>
+<div class="ttc" id="aclass_scheduler_html_ae8dc28a7d48690a53ed1b855bdb3b0a3"><div class="ttname"><a href="class_scheduler.html#ae8dc28a7d48690a53ed1b855bdb3b0a3">Scheduler::processRequest</a></div><div class="ttdeci">static void processRequest()</div><div class="ttdoc">Processes the Requests in the Request Queue.</div><div class="ttdef"><b>Definition</b> Schedule.cpp:187</div></div>
+<div class="ttc" id="aclass_scheduler_html_af1ec6feeaa15ba50346b201138df9733"><div class="ttname"><a href="class_scheduler.html#af1ec6feeaa15ba50346b201138df9733">Scheduler::printRequestFailLogs</a></div><div class="ttdeci">static void printRequestFailLogs()</div><div class="ttdoc">Prints the Processing Requests Fail Logs.</div><div class="ttdef"><b>Definition</b> Schedule.cpp:365</div></div>
+<div class="ttc" id="aclass_scheduler_html_af553190cea2a4fa7bd1f0081cad7c595"><div class="ttname"><a href="class_scheduler.html#af553190cea2a4fa7bd1f0081cad7c595">Scheduler::processAddRequest</a></div><div class="ttdeci">static bool processAddRequest()</div><div class="ttdoc">Processes the Add Request.</div><div class="ttdef"><b>Definition</b> Schedule.cpp:220</div></div>
+<div class="ttc" id="astructstudent_class_change_html"><div class="ttname"><a href="structstudent_class_change.html">studentClassChange</a></div><div class="ttdef"><b>Definition</b> structs.h:40</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

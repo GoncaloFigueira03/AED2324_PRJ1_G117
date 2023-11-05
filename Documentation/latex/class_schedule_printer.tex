@@ -3,27 +3,123 @@
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+static \mbox{\hyperlink{structclass_time_indexes}{class\+Time\+Indexes}} \mbox{\hyperlink{class_schedule_printer_a761cc92d00b87d682eccbe8ec110c479}{get\+Class\+Times}} (\mbox{\hyperlink{structclasses}{classes}} class\+Times)
+\begin{DoxyCompactList}\small\item\em Take the \doxylink{class_class}{Class} Times and return the Indexes for the Schedule. \end{DoxyCompactList}\item 
+static vector$<$ vector$<$ string $>$ $>$ \mbox{\hyperlink{class_schedule_printer_a13b421435d384e6259750faf022a2154}{schedule\+Builder}} (vector$<$ \mbox{\hyperlink{structclasses}{classes}} $>$ classes\+Schedule)
+\begin{DoxyCompactList}\small\item\em Build the Schedule. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_schedule_printer_a7abb912adc7282e14f4ac393f366a2c0}{print\+Schedule}} (vector$<$ vector$<$ string $>$ $>$ schedule)
+\begin{DoxyCompactList}\small\item\em Print the Schedule. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_schedule_printer_aa9ad79f1224c7cef052fc7764b389f70}{print\+Student\+Schedule}} (string student\+Name\+Or\+Code)
+\begin{DoxyCompactList}\small\item\em Called to Print the Schedule of a Student. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_schedule_printer_a0b31c289ae38c7a4b9fba6ce7cd3df34}{print\+Class\+Schedule}} (string class\+Code)
+\begin{DoxyCompactList}\small\item\em Called to Print the Schedule of a \doxylink{class_class}{Class}. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_schedule_printer_a2f42cd6d058620d4e0927b804556d548}{print\+Uc\+Schedule}} (string uc\+Code)
+\begin{DoxyCompactList}\small\item\em Called to Print the Schedule of an \doxylink{class_uc}{Uc}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
 \Hypertarget{class_schedule_printer_a761cc92d00b87d682eccbe8ec110c479}\label{class_schedule_printer_a761cc92d00b87d682eccbe8ec110c479} 
-static \mbox{\hyperlink{structclass_time_indexes}{class\+Time\+Indexes}} {\bfseries get\+Class\+Times} (\mbox{\hyperlink{structclasses}{classes}} class\+Times)
-\item 
-\Hypertarget{class_schedule_printer_a13b421435d384e6259750faf022a2154}\label{class_schedule_printer_a13b421435d384e6259750faf022a2154} 
-static vector$<$ vector$<$ string $>$ $>$ {\bfseries schedule\+Builder} (vector$<$ \mbox{\hyperlink{structclasses}{classes}} $>$ classes\+Schedule)
-\item 
-\Hypertarget{class_schedule_printer_a7abb912adc7282e14f4ac393f366a2c0}\label{class_schedule_printer_a7abb912adc7282e14f4ac393f366a2c0} 
-static void {\bfseries print\+Schedule} (vector$<$ vector$<$ string $>$ $>$ schedule)
-\item 
-\Hypertarget{class_schedule_printer_aa9ad79f1224c7cef052fc7764b389f70}\label{class_schedule_printer_aa9ad79f1224c7cef052fc7764b389f70} 
-static void {\bfseries print\+Student\+Schedule} (string student\+Name\+Or\+Code)
-\item 
+\index{SchedulePrinter@{SchedulePrinter}!getClassTimes@{getClassTimes}}
+\index{getClassTimes@{getClassTimes}!SchedulePrinter@{SchedulePrinter}}
+\doxysubsubsection{\texorpdfstring{getClassTimes()}{getClassTimes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structclass_time_indexes}{class\+Time\+Indexes}} Schedule\+Printer\+::get\+Class\+Times (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structclasses}{classes}}}]{class\+Times }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Take the \doxylink{class_class}{Class} Times and return the Indexes for the Schedule. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Times} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structclass_time_indexes}{class\+Time\+Indexes} The Time Indexes for the Schedule (Weekday Index, Start Hour Index and Duration Index) 
+\end{DoxyReturn}
 \Hypertarget{class_schedule_printer_a0b31c289ae38c7a4b9fba6ce7cd3df34}\label{class_schedule_printer_a0b31c289ae38c7a4b9fba6ce7cd3df34} 
-static void {\bfseries print\+Class\+Schedule} (string class\+Code)
-\item 
+\index{SchedulePrinter@{SchedulePrinter}!printClassSchedule@{printClassSchedule}}
+\index{printClassSchedule@{printClassSchedule}!SchedulePrinter@{SchedulePrinter}}
+\doxysubsubsection{\texorpdfstring{printClassSchedule()}{printClassSchedule()}}
+{\footnotesize\ttfamily void Schedule\+Printer\+::print\+Class\+Schedule (\begin{DoxyParamCaption}\item[{string}]{class\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Called to Print the Schedule of a \doxylink{class_class}{Class}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Code} & \doxylink{class_class}{Class} Code \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_schedule_printer_a7abb912adc7282e14f4ac393f366a2c0}\label{class_schedule_printer_a7abb912adc7282e14f4ac393f366a2c0} 
+\index{SchedulePrinter@{SchedulePrinter}!printSchedule@{printSchedule}}
+\index{printSchedule@{printSchedule}!SchedulePrinter@{SchedulePrinter}}
+\doxysubsubsection{\texorpdfstring{printSchedule()}{printSchedule()}}
+{\footnotesize\ttfamily void Schedule\+Printer\+::print\+Schedule (\begin{DoxyParamCaption}\item[{vector$<$ vector$<$ string $>$ $>$}]{schedule }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Print the Schedule. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em schedule} & The Schedule to Print \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_schedule_printer_aa9ad79f1224c7cef052fc7764b389f70}\label{class_schedule_printer_aa9ad79f1224c7cef052fc7764b389f70} 
+\index{SchedulePrinter@{SchedulePrinter}!printStudentSchedule@{printStudentSchedule}}
+\index{printStudentSchedule@{printStudentSchedule}!SchedulePrinter@{SchedulePrinter}}
+\doxysubsubsection{\texorpdfstring{printStudentSchedule()}{printStudentSchedule()}}
+{\footnotesize\ttfamily void Schedule\+Printer\+::print\+Student\+Schedule (\begin{DoxyParamCaption}\item[{string}]{student\+Name\+Or\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Called to Print the Schedule of a Student. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Name\+Or\+Code} & Student Name or Student Code \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_schedule_printer_a2f42cd6d058620d4e0927b804556d548}\label{class_schedule_printer_a2f42cd6d058620d4e0927b804556d548} 
-static void {\bfseries print\+Uc\+Schedule} (string uc\+Code)
-\end{DoxyCompactItemize}
+\index{SchedulePrinter@{SchedulePrinter}!printUcSchedule@{printUcSchedule}}
+\index{printUcSchedule@{printUcSchedule}!SchedulePrinter@{SchedulePrinter}}
+\doxysubsubsection{\texorpdfstring{printUcSchedule()}{printUcSchedule()}}
+{\footnotesize\ttfamily void Schedule\+Printer\+::print\+Uc\+Schedule (\begin{DoxyParamCaption}\item[{string}]{uc\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Called to Print the Schedule of an \doxylink{class_uc}{Uc}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uc\+Code} & \doxylink{class_uc}{Uc} Code \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_schedule_printer_a13b421435d384e6259750faf022a2154}\label{class_schedule_printer_a13b421435d384e6259750faf022a2154} 
+\index{SchedulePrinter@{SchedulePrinter}!scheduleBuilder@{scheduleBuilder}}
+\index{scheduleBuilder@{scheduleBuilder}!SchedulePrinter@{SchedulePrinter}}
+\doxysubsubsection{\texorpdfstring{scheduleBuilder()}{scheduleBuilder()}}
+{\footnotesize\ttfamily vector$<$ vector$<$ string $>$ $>$ Schedule\+Printer\+::schedule\+Builder (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{structclasses}{classes}} $>$}]{classes\+Schedule }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Build the Schedule. 
+
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(n\texorpdfstring{$^\wedge$}{\string^}2) 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em classes\+Schedule} & The Classes Schedule \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$vector$<$string$>$$>$ The Schedule Itself as a 2D vector 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-source/Schedule\+Printer.\+h\item 
-source/Schedule\+Printer.\+cpp\end{DoxyCompactItemize}
+D\+:/\+FEUP/\+Informatica/2 ano/\+AED2324\+\_\+\+PRJ1\+\_\+\+G117/source/Schedule\+Printer.\+h\item 
+D\+:/\+FEUP/\+Informatica/2 ano/\+AED2324\+\_\+\+PRJ1\+\_\+\+G117/source/Schedule\+Printer.\+cpp\end{DoxyCompactItemize}

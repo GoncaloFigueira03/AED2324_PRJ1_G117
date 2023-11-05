@@ -78,16 +78,111 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3bd87a13a3462e8e2677ebcf4d8480af" id="r_a3bd87a13a3462e8e2677ebcf4d8480af"><td class="memItemLeft" align="right" valign="top"><a id="a3bd87a13a3462e8e2677ebcf4d8480af" name="a3bd87a13a3462e8e2677ebcf4d8480af"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ScheduleWriter</b> (<a class="el" href="class_reader.html">Reader</a> &amp;reader)</td></tr>
+<tr class="memitem:a3bd87a13a3462e8e2677ebcf4d8480af" id="r_a3bd87a13a3462e8e2677ebcf4d8480af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_schedule_writer.html#a3bd87a13a3462e8e2677ebcf4d8480af">ScheduleWriter</a> (<a class="el" href="class_reader.html">Reader</a> &amp;reader)</td></tr>
+<tr class="memdesc:a3bd87a13a3462e8e2677ebcf4d8480af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Schedule Writer.  <br /></td></tr>
 <tr class="separator:a3bd87a13a3462e8e2677ebcf4d8480af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a626ec023185ccc36d94cbe40f888e7b1" id="r_a626ec023185ccc36d94cbe40f888e7b1"><td class="memItemLeft" align="right" valign="top"><a id="a626ec023185ccc36d94cbe40f888e7b1" name="a626ec023185ccc36d94cbe40f888e7b1"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (<a class="el" href="structstudent_class_change.html">studentClassChange</a> lastChange)</td></tr>
+<tr class="memitem:a626ec023185ccc36d94cbe40f888e7b1" id="r_a626ec023185ccc36d94cbe40f888e7b1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_schedule_writer.html#a626ec023185ccc36d94cbe40f888e7b1">write</a> (<a class="el" href="structstudent_class_change.html">studentClassChange</a> lastChange)</td></tr>
+<tr class="memdesc:a626ec023185ccc36d94cbe40f888e7b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the Schedule Changes to the students_classes.csv File.  <br /></td></tr>
 <tr class="separator:a626ec023185ccc36d94cbe40f888e7b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7ea183c2bcae0866b797557384d7cf4" id="r_ac7ea183c2bcae0866b797557384d7cf4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_schedule_writer.html#ac7ea183c2bcae0866b797557384d7cf4">writeChanges</a> (<a class="el" href="structstudent_class_change.html">studentClassChange</a> lastChange)</td></tr>
+<tr class="memdesc:ac7ea183c2bcae0866b797557384d7cf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the Schedule Changes Logs to changes.csv File.  <br /></td></tr>
+<tr class="separator:ac7ea183c2bcae0866b797557384d7cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3bd87a13a3462e8e2677ebcf4d8480af" name="a3bd87a13a3462e8e2677ebcf4d8480af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bd87a13a3462e8e2677ebcf4d8480af">&#9670;&#160;</a></span>ScheduleWriter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ScheduleWriter::ScheduleWriter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_reader.html">Reader</a> &amp;&#160;</td>
+          <td class="paramname"><em>reader</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes the Schedule Writer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reader</td><td>The file <a class="el" href="class_reader.html">Reader</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a626ec023185ccc36d94cbe40f888e7b1" name="a626ec023185ccc36d94cbe40f888e7b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a626ec023185ccc36d94cbe40f888e7b1">&#9670;&#160;</a></span>write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ScheduleWriter::write </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstudent_class_change.html">studentClassChange</a>&#160;</td>
+          <td class="paramname"><em>lastChange</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes the Schedule Changes to the students_classes.csv File. </p>
+<dl class="section note"><dt>Note</dt><dd>Time Complexity: O(n) </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lastChange</td><td>Is the first change on the Queue Request to be Written </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
+</div>
+</div>
+<a id="ac7ea183c2bcae0866b797557384d7cf4" name="ac7ea183c2bcae0866b797557384d7cf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7ea183c2bcae0866b797557384d7cf4">&#9670;&#160;</a></span>writeChanges()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ScheduleWriter::writeChanges </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structstudent_class_change.html">studentClassChange</a>&#160;</td>
+          <td class="paramname"><em>lastChange</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes the Schedule Changes Logs to changes.csv File. </p>
+<dl class="section note"><dt>Note</dt><dd>Time Complexity: O(n) </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lastChange</td><td>Is the first change on the Queue Request to be Written </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>source/<a class="el" href="_writer_8h_source.html">Writer.h</a></li>
-<li>source/<b>Writer.cpp</b></li>
+<li>D:/FEUP/Informatica/2 ano/AED2324_PRJ1_G117/source/<a class="el" href="_writer_8h_source.html">Writer.h</a></li>
+<li>D:/FEUP/Informatica/2 ano/AED2324_PRJ1_G117/source/<b>Writer.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

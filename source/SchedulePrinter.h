@@ -21,7 +21,7 @@ public:
 
     /**
      * @brief Build the Schedule
-     * ;complexity O(n^2)
+     * @note Time Complexity: O(n^2)
      * @param classesSchedule The Classes Schedule
      * @return vector<vector<string>> The Schedule Itself as a 2D vector
      */

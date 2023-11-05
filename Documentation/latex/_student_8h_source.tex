@@ -1,59 +1,44 @@
 \doxysection{Student.\+h}
-\hypertarget{_student_8h_source}{}\label{_student_8h_source}\index{source/Student.h@{source/Student.h}}
+\hypertarget{_student_8h_source}{}\label{_student_8h_source}\index{D:/FEUP/Informatica/2 ano/AED2324\_PRJ1\_G117/source/Student.h@{D:/FEUP/Informatica/2 ano/AED2324\_PRJ1\_G117/source/Student.h}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ }
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ CODE\_STUDENT\_H}}
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ CODE\_STUDENT\_H}}
-\DoxyCodeLine{00004\ }
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}structs.h"{}}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}App.h"{}}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Menu.h"{}}}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_student_schedule}{StudentSchedule}}\ \{}
-\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//\ Is\ Student\ a\ Real\ Student}}
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isStudent(\textcolor{keywordtype}{string}\ studentCode);}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ Does\ Class\ Belong\ to\ Student}}
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ doesClassBelongToStudent(\textcolor{keywordtype}{string}\ studentCode,\ \textcolor{keywordtype}{string}\ classCode,\ \textcolor{keywordtype}{string}\ ucCode);}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ Gets\ Student\ Code}}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ getStudentCode(\textcolor{keywordtype}{string}\ studentNameOrCode);}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ Get\ Student\ Name}}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ getStudentName(\textcolor{keywordtype}{string}\ studentCode);}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ Gets\ the\ Class\ Codes\ of\ a\ Student}}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ vector<string>\ getStudentClassCodes(\textcolor{keywordtype}{string}\ studentCode);}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Gets\ the\ Uc\ Codes\ of\ a\ Student}}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{static}\ vector<string>\ getStudentUcCodes(\textcolor{keywordtype}{string}\ studentCode);}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CODE\_STUDENT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CODE\_STUDENT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}structs.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Menu.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Sort.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_student_schedule}{StudentSchedule}}\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_student_schedule_a4eeb07b2df74b1122bb938155de6e61b}{isStudent}}(\textcolor{keywordtype}{string}\ studentCode);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_student_schedule_aaf78bb8a3a6979853eb97a77d8037b44}{doesClassBelongToStudent}}(\textcolor{keywordtype}{string}\ studentCode,\ \textcolor{keywordtype}{string}\ classCode,\ \textcolor{keywordtype}{string}\ ucCode);}
 \DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ Pairs\ the\ Uc\ Codes\ with\ the\ Class\ Codes}}
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{static}\ list<string>\ pairStudentUcCodesWithClassCodes(vector<string>\ ucCodes,\ vector<string>\ classCodes);}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Outputs\ a\ Vector\ with\ the\ Classes\ of\ a\ Student}}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{static}\ vector<classes>\ getStudentClasses(list<string>\ studentUcCodesWithClassCodes);}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ Outputs\ a\ Vector\ with\ the\ Final\ Schedule\ of\ a\ Student\ (without\ overlapping\ classes)}}
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static}\ vector<classes>\ getStudentSchedule(\textcolor{keywordtype}{string}\ studentCode);}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ Prints\ the\ Student\ Classes}}
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ printStudentClasses(\textcolor{keywordtype}{string}\ studentCode);}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ Prints\ the\ Student\ Ucs}}
-\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ printStudentUcs(\textcolor{keywordtype}{string}\ studentCode);}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ Checks\ if\ there\ are\ Overlapping\ T\ Classes\ with\ PL\ or\ TP\ Classes}}
-\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isTClassOverTPOrPL(\mbox{\hyperlink{structclasses}{classes}}\ tClass,\ \mbox{\hyperlink{structclasses}{classes}}\ secondClass);}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ Different\ version\ of\ isTClassOverTPOrPL\ (still\ work\ in\ progress)}}
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ isTClassOverTPOrPLV2(\mbox{\hyperlink{structclasses}{classes}}\ tClass,\ vector<classes>\ secondClasses,\ vector<classes>\ studentClassesFixed);}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00052\ \};}
-\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//CODE\_STUDENT\_H}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_student_schedule_a805db8946f939efffb6c22dd2b9629a9}{getStudentCode}}(\textcolor{keywordtype}{string}\ studentNameOrCode);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_student_schedule_a9a69830330db047ff56f06ece2d2ca96}{getStudentName}}(\textcolor{keywordtype}{string}\ studentCode);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{static}\ vector<string>\ \mbox{\hyperlink{class_student_schedule_ab41869b3fcffa8fd6ab27b4b59252731}{getStudentClassCodes}}(\textcolor{keywordtype}{string}\ studentCode);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{static}\ vector<string>\ \mbox{\hyperlink{class_student_schedule_a79d43b8b8ffb0f153bb1be98f9b9be86}{getStudentUcCodes}}(\textcolor{keywordtype}{string}\ studentCode);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{static}\ list<string>\ \mbox{\hyperlink{class_student_schedule_a99c6af800a3b351b6abae6ea2e521ceb}{pairStudentUcCodesWithClassCodes}}(vector<string>\ ucCodes,\ vector<string>\ classCodes);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{static}\ vector<classes>\ \mbox{\hyperlink{class_student_schedule_a4fa78907e7910fcc6e1c62668e7c7f68}{getStudentClasses}}(list<string>\ studentUcCodesWithClassCodes);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{static}\ vector<classes>\ \mbox{\hyperlink{class_student_schedule_a605bbb22ef9be5a6980d5ee119c99d56}{getStudentSchedule}}(\textcolor{keywordtype}{string}\ studentCode);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_student_schedule_a16bd4d101ae7763740d5984f0ca43538}{printStudentClasses}}(\textcolor{keywordtype}{string}\ studentCode);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_student_schedule_abeb28ee19bdd78aab007188a2daae598}{printStudentUcs}}(\textcolor{keywordtype}{string}\ studentCode);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_student_schedule_a8443b5803388ab4ff5d760974eaa1946}{printStudentClassesAndUcs}}(\textcolor{keywordtype}{string}\ studentCode);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_student_schedule_a887ac3db9f339f6bcae22a2ec78d9b47}{isTClassOverTPOrPL}}(\mbox{\hyperlink{structclasses}{classes}}\ tClass,\ \mbox{\hyperlink{structclasses}{classes}}\ secondClass);}
+\DoxyCodeLine{00110\ \};}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//CODE\_STUDENT\_H}}
 
 \end{DoxyCode}

@@ -1,85 +1,85 @@
 \doxysection{Schedule.\+h}
-\hypertarget{_schedule_8h_source}{}\label{_schedule_8h_source}\index{source/Schedule.h@{source/Schedule.h}}
+\hypertarget{_schedule_8h_source}{}\label{_schedule_8h_source}\index{D:/FEUP/Informatica/2 ano/AED2324\_PRJ1\_G117/source/Schedule.h@{D:/FEUP/Informatica/2 ano/AED2324\_PRJ1\_G117/source/Schedule.h}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ }
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ CODE\_SCHEDULE\_H}}
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ CODE\_SCHEDULE\_H}}
-\DoxyCodeLine{00004\ }
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}App.h"{}}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Student.h"{}}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Writer.h"{}}}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <queue>}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stack>}}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_scheduler}{Scheduler}}\ \{}
-\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ The\ Maximum\ Number\ of\ Ucs\ a\ Student\ can\ have}}
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ maxUcsPerStudent\ =\ 7;}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ The\ Maximum\ Number\ of\ Students\ a\ Class\ can\ have}}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ maxStudentsPerClass\ =\ 30;}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ The\ Maximum\ Difference\ in\ the\ Number\ of\ Students\ between\ Classes\ in\ order\ to\ Change\ a\ Student's\ Class}}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ maxStudentsPerClassChangeGap\ =\ 4;}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ Stores\ the\ Information\ About\ Student\ Classes\ Changes}}
-\DoxyCodeLine{00026\ \ \ \ \ stack<studentClassChange>\ studentsClassesChangesStack;}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Stores\ the\ Information\ about\ Requests}}
-\DoxyCodeLine{00029\ \ \ \ \ queue<studentClassChange>\ requestQueue;}
-\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CODE\_SCHEDULE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CODE\_SCHEDULE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Student.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Menu.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Writer.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stack>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_scheduler}{Scheduler}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ The\ Maximum\ Number\ of\ Ucs\ a\ Student\ can\ have}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ maxUcsPerStudent\ =\ 7;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ The\ Maximum\ Number\ of\ Students\ a\ Class\ can\ have}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ maxStudentsPerClass\ =\ 30;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ The\ Maximum\ Difference\ in\ the\ Number\ of\ Students\ between\ Classes\ in\ order\ to\ Change\ a\ Student's\ Class}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ maxStudentsPerClassChangeGap\ =\ 4;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Stores\ the\ Information\ About\ Student\ Classes\ Changes}}
+\DoxyCodeLine{00025\ \ \ \ \ stack<studentClassChange>\ studentsClassesChangesStack;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Stores\ the\ Information\ about\ Requests}}
+\DoxyCodeLine{00028\ \ \ \ \ queue<studentClassChange>\ requestQueue;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ Stores\ the\ Information\ about\ the\ Requests\ that\ were\ not\ Successfully\ Processed}}
 \DoxyCodeLine{00031\ \ \ \ \ vector<string>\ processRequestFailedMessages;}
 \DoxyCodeLine{00032\ }
 \DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
 \DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{structstudent_class_change}{studentClassChange}}\ lastChange;}
 \DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ getMaxUcsPerStudent();}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ getMaxStudentsPerClass();}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ getMaxStudentsPerClassChangeGap();}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_scheduler_aa9e0b8dbe692f17c06d8e764ca46e384}{getMaxUcsPerStudent}}();}
 \DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ getClassStudentsNumberAvg(\textcolor{keywordtype}{char}\ classYear,\ \textcolor{keywordtype}{string}\ ucCode);}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ addUcToStudent(queue\ <string>\ studentInfo);}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ removeUcFromStudent(queue\ <string>\ studentInfo);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_scheduler_a191f5ca773a717593723876ee76936dc}{getMaxStudentsPerClass}}();}
 \DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ requestChangeInStudentClass(queue\ <string>\ studentInfo);}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ printRequests();}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ processRequest();}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_scheduler_a4b307cd7ae23911e6a671185c483d118}{getMaxStudentsPerClassChangeGap}}();}
 \DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ processAddRequest();}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ processRemoveRequest();}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ processChangeRequest();}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ revertLastChange();}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_scheduler_a4810c5ab0eafd14554136b5504a14108}{getClassStudentsNumberAvg}}(\textcolor{keywordtype}{char}\ classYear,\ \textcolor{keywordtype}{string}\ ucCode);}
 \DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ printRequestSuccessLogs();}
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ printRequestFailLogs();}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ getStudentUcsNumber(\textcolor{keywordtype}{string}\ studentNameOrCode);}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scheduler_a1d3b5be3a8253d80711058f84b2a3217}{addUcToStudent}}(queue\ <string>\ studentInfo);}
 \DoxyCodeLine{00067\ }
-\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ getClassStudentsNumber(\textcolor{keywordtype}{string}\ classCode,\ \textcolor{keywordtype}{string}\ ucCode);}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ doesUcBelongToClass(\textcolor{keywordtype}{string}\ ucCode,\ \textcolor{keywordtype}{string}\ classCode);}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isClassFull(\textcolor{keywordtype}{string}\ classCode,\ \textcolor{keywordtype}{string}\ ucCode);}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scheduler_a23bd7b8ab2ae21764352d60376c0ffc0}{removeUcFromStudent}}(queue\ <string>\ studentInfo);}
 \DoxyCodeLine{00073\ }
-\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isChangeGapRespected(\textcolor{keywordtype}{string}\ classCode,\ \textcolor{keywordtype}{string}\ ucCode);}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isScheduleChangeValid(\mbox{\hyperlink{structstudent_class_change}{studentClassChange}}\ \mbox{\hyperlink{structstudent_class_change}{studentClassChange}});}
-\DoxyCodeLine{00077\ \};}
-\DoxyCodeLine{00078\ }
-\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//CODE\_SCHEDULE\_H}}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scheduler_a3933535c20591394c5410293abaf2107}{requestChangeInStudentClass}}(queue\ <string>\ studentInfo);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scheduler_ad335063eb37553d8ccd98a811a8f886b}{printRequests}}();}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scheduler_ae8dc28a7d48690a53ed1b855bdb3b0a3}{processRequest}}();}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_scheduler_af553190cea2a4fa7bd1f0081cad7c595}{processAddRequest}}();}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_scheduler_ab2825bfd42a1f0c85d7e61835aa081ae}{processRemoveRequest}}();}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scheduler_aa6db716c652c0a9a7bb7f68589853caa}{processChangeRequest}}();}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scheduler_aa53d1b6ab4966cda51606d2ab05554d9}{revertLastChange}}();}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scheduler_ab642c94133e0ba8c70a2e5cdb3bede25}{printRequestSuccessLogs}}();}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scheduler_af1ec6feeaa15ba50346b201138df9733}{printRequestFailLogs}}();}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_scheduler_abe04dfe42b42ca05805405e593e01fd9}{getStudentUcsNumber}}(\textcolor{keywordtype}{string}\ studentNameOrCode);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_scheduler_a9a417de874bdeb5cf40808ce937f8662}{getClassStudentsNumber}}(\textcolor{keywordtype}{string}\ classCode,\ \textcolor{keywordtype}{string}\ ucCode);}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_scheduler_a9ff4c5378e386fda9498160a1e104629}{doesUcBelongToClass}}(\textcolor{keywordtype}{string}\ ucCode,\ \textcolor{keywordtype}{string}\ classCode);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_scheduler_ad26b888dd50b1c4535247d7bab9137b8}{isClassFull}}(\textcolor{keywordtype}{string}\ classCode,\ \textcolor{keywordtype}{string}\ ucCode);}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_scheduler_a53c9e438c67fdbfd80c2c28e477d324e}{isChangeGapRespected}}(\textcolor{keywordtype}{string}\ classCode,\ \textcolor{keywordtype}{string}\ ucCode);}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_scheduler_a8935a9b2ed974b2c857cb24208cff471}{isScheduleChangeValid}}(\mbox{\hyperlink{structstudent_class_change}{studentClassChange}}\ \mbox{\hyperlink{structstudent_class_change}{studentClassChange}});}
+\DoxyCodeLine{00175\ \};}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//CODE\_SCHEDULE\_H}}
 
 \end{DoxyCode}

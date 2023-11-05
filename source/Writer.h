@@ -1,9 +1,10 @@
 #ifndef CODE_WRITER_H
 #define CODE_WRITER_H
 
-#include <fstream>
 #include "structs.h"
 #include "Schedule.h"
+
+#include <fstream>
 
 using namespace std;
 
@@ -17,11 +18,11 @@ public:
      * @brief Initializes the Schedule Writer
      * @param reader The file Reader
      */
-    ScheduleWriter(Reader &reader);
+    explicit ScheduleWriter(Reader &reader);
 
     /**
      * @brief Writes the Schedule Changes to the students_classes.csv File
-     * ;complexity O(n)
+     * @note Time Complexity: O(n)
      * @param lastChange Is the first change on the Queue Request to be Written
      * @return bool
      */
@@ -29,7 +30,7 @@ public:
 
     /**
      * @brief Writes the Schedule Changes Logs to changes.csv File
-     * ;complexity O(n)
+     * @note Time Complexity: O(n)
      * @param lastChange Is the first change on the Queue Request to be Written
      * @return
      */

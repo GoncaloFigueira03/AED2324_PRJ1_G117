@@ -2,8 +2,8 @@
 #define CODE_CLASS_H
 
 #include "structs.h"
-#include "App.h"
 #include "Class.h"
+#include "Menu.h"
 
 #include <stack>
 
@@ -11,7 +11,7 @@ class Class {
 public:
     /**
      * @brief Checks if a class exists in the classes.csv file
-     * ;complexity O(n)
+     * @note Time Complexity: O(n)
      * @param classCode Class Code
      * @note If the return is true, the class exists
      * @return bool
