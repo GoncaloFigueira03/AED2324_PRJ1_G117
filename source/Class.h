@@ -11,6 +11,7 @@ class Class {
 public:
     /**
      * @brief Checks if a class exists in the classes.csv file
+     * ;complexity O(n)
      * @param classCode Class Code
      * @note If the return is true, the class exists
      * @return bool

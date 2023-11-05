@@ -12,6 +12,7 @@ class StudentSchedule {
 public:
     /**
      * @brief Checks if a student exists in the students_classes.csv file
+     * ;comlexity O(n)
      * @param studentCode Student Code
      * @note If the return is true, the student exists
      * @return bool
@@ -30,6 +31,7 @@ public:
 
     /**
      * @brief Gets the Student Code
+     * ;complexity O(n)
      * @param studentNameOrCode Student Name or Code
      * @return string Student Code
      */
@@ -37,6 +39,7 @@ public:
 
     /**
      * @brief Gets the Student Name
+     * ;complexity O(n^2)
      * @param studentCode Student Code
      * @return string Student Name
      */
@@ -73,6 +76,7 @@ public:
 
     /**
      * @brief Gets the Student Schedule without Overlapping Classes
+     * ;complexity O(n^2)
      * @param studentCode Student Code
      * @return vector<classes> Student Schedule
      */
@@ -89,6 +93,12 @@ public:
      * @param studentCode Student Code
      */
     static void printStudentUcs(string studentCode);
+
+    /**
+     * @brief Prints the Student Classes and Ucs
+     * @param studentCode Student Code
+     */
+    static void printStudentClassesAndUcs(string studentCode);
 
     /**
      * @brief Checks if there are Overlapping T Classes with PL or TP Classes

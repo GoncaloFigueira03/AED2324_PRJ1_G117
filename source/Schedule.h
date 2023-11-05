@@ -84,6 +84,7 @@ public:
 
     /**
      * @brief Processes the Requests in the Request Queue
+     * ;complexity O(n^2)
      */
     static void processRequest();
 
@@ -165,6 +166,7 @@ public:
 
     /**
      * @brief Checks if the are no Overlapping TP or PL Classes in the Student Schedule After the Change
+     * ;complexity O(n^2)
      * @param studentClassChange Student Class Change Information
      * @note If the return is True, the Change is Valid
      * @return bool

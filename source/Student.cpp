@@ -143,16 +143,6 @@ vector<classes> StudentSchedule::getStudentClasses(list<string> studentUcCodesWi
         }
     }
 
-/*
-    for (auto it_studentClasses:studentClasses) {
-        if (it_studentClasses.Type == "T") {
-            StudentSchedule::isTClassOverTPOrPLV2(it_studentClasses, studentClasses, studentClassesFixed);
-        }
-        else
-            studentClassesFixed.push_back(it_studentClasses);
-    }
-*/
-
     return studentClassesFixed;
 }
 
@@ -169,6 +159,7 @@ vector<classes> StudentSchedule::getStudentSchedule(string studentCode) {
 
 void StudentSchedule::printStudentClasses(string studentCode) {
     vector<string> studentClassCodes = getStudentClassCodes(studentCode);
+    stack<string> studentClassCodesStack;
 
     for (auto it_studentClassCodes:studentClassCodes) {
         cout << it_studentClassCodes << endl;
@@ -180,5 +171,14 @@ void StudentSchedule::printStudentUcs(string studentCode) {
 
     for (auto it_studentUcCodes:studentUcCodes) {
         cout << it_studentUcCodes << endl;
+    }
+}
+
+void StudentSchedule::printStudentClassesAndUcs(string studentCode) {
+    vector<string> studentClassCodes = getStudentClassCodes(studentCode);
+    vector<string> studentUcCodes = getStudentUcCodes(studentCode);
+
+    for (int i=0; i < studentClassCodes.size(); i++) {
+        cout << studentUcCodes[i] << ", " << studentClassCodes[i] << endl;
     }
 }

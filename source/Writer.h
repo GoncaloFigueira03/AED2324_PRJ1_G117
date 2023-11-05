@@ -1,4 +1,3 @@
-
 #ifndef CODE_WRITER_H
 #define CODE_WRITER_H
 
@@ -22,6 +21,7 @@ public:
 
     /**
      * @brief Writes the Schedule Changes to the students_classes.csv File
+     * ;complexity O(n)
      * @param lastChange Is the first change on the Queue Request to be Written
      * @return bool
      */
@@ -29,6 +29,7 @@ public:
 
     /**
      * @brief Writes the Schedule Changes Logs to changes.csv File
+     * ;complexity O(n)
      * @param lastChange Is the first change on the Queue Request to be Written
      * @return
      */

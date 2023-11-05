@@ -149,39 +149,33 @@ void Menu::removeMenu() {
     string txtOption3;
 
     queue<string> studentInfo;
-    while (true) {
-        cout << "Insert the Code of the Desired Uc:";
-        cin >> txtOption2;
-        if (Uc::isUc(txtOption2)) {
-            break;
-        }
-        cout << RED << "Uc " + txtOption2 + " does not exist!" << RESET << endl;
-    }
-
-    while (true) {
-        cout << "Insert the Code of the Desired Class:";
-        cin >> txtOption3;
-        if (Class::isClass(txtOption3)) {
-            break;
-        }
-        cout << RED << "Class " + txtOption3 + " does not exist!" << RESET << endl;
-    }
-
-    if (!Scheduler::doesUcBelongToClass(txtOption2, txtOption3)) {
-        cout << RED << "Uc " + txtOption2 + " does not belong to Class " + txtOption3 + "!" << RESET << endl;
-        removeMenu();
-    }
 
     while (true) {
         cout << "Insert the Name or Code of the Desired Student:";
         cin >> txtOption1;
         if (StudentSchedule::isStudent(txtOption1)) {
+            break;
+        }
+
+        cout << RED << "Student " + txtOption1 + " does not exist!" << RESET << endl;
+    }
+
+    cout << "Current Student Classes: " << endl;
+    StudentSchedule::printStudentClassesAndUcs(StudentSchedule::getStudentCode(txtOption1));
+    cout << endl;
+
+    while (true) {
+        cout << "Insert the Uc Code and Class Code to remove (separated by a space): ";
+        cin >> txtOption2 >> txtOption3;
+
+        if (StudentSchedule::doesClassBelongToStudent(StudentSchedule::getStudentCode(txtOption1), txtOption3, txtOption2)) {
             cout << GREEN << "Remove Request Added Successfully!" << RESET << endl << endl;
             system("PAUSE");
             system("CLS");
             break;
         }
-        cout << endl << RED << "Student " + txtOption1 + " does not exist!" << RESET << endl;
+
+        cout << RED << "Student " + txtOption1 + " does not have Class " + txtOption3 + " of Uc " + txtOption2 + "!" << RESET << endl;
     }
 
     studentInfo.push(StudentSchedule::getStudentCode(txtOption1));
@@ -216,9 +210,7 @@ void Menu::changeMenu() {
     }
 
     cout << "Current Student Classes: " << endl;
-    for (auto it_studentClasses:studentClasses) {
-        cout << it_studentClasses.UcCode << " " << it_studentClasses.ClassCode << endl;
-    }
+    StudentSchedule::printStudentClassesAndUcs(StudentSchedule::getStudentCode(txtOption1));
 
     while (true) {
         cout << "Type the Uc Code and Class Code to change (separated by a space): ";
