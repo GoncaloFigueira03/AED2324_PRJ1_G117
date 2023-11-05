@@ -43,8 +43,9 @@ bool ScheduleWriter::write(studentClassChange lastChange) {
 }
 
 bool ScheduleWriter::writeChanges(studentClassChange lastChange) {
+
     ofstream changeFile;
-    changeFile.open("../changes.csv");
+    changeFile.open("../changes_output.csv");
     if (!changeFile.is_open()) {
         cout << "Could not open file" << endl;
 
@@ -54,6 +55,14 @@ bool ScheduleWriter::writeChanges(studentClassChange lastChange) {
     changeFile << "Type,StudentCode,StudentName,OldUcCode,OldClassCode,NewUcCode,NewClassCode\n";
     changeFile << lastChange.type << "," << lastChange.studentCode << "," << lastChange.studentName << "," << lastChange.oldUcCode << "," << lastChange.oldClassCode << "," << lastChange.newUcCode << "," << lastChange.newClassCode << "\n";
 
+    for (auto it_readChange: reader.read_changes()) {
+        changeFile << it_readChange.type << "," << it_readChange.studentCode << "," << it_readChange.studentName << "," << it_readChange.oldUcCode << "," << it_readChange.oldClassCode << "," << it_readChange.newUcCode << "," << it_readChange.newClassCode << "\n";
+    }
+
     changeFile.close();
+
+    remove("../changes.csv");
+    rename("../changes_output.csv", "../changes.csv");
+
     return true;
 }

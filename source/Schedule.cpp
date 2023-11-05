@@ -158,6 +158,7 @@ void Scheduler::removeUcFromStudent(queue <string> studentInfo) {
 
     scheduler.lastChange.type = "Remove";
     scheduler.lastChange.studentName = StudentSchedule::getStudentName(scheduler.lastChange.studentCode);
+    cout << scheduler.lastChange.studentName << endl;
     scheduler.lastChange.newUcCode = "";
     scheduler.lastChange.newClassCode = "";
     scheduler.requestQueue.push(scheduler.lastChange);
